@@ -107,11 +107,14 @@ def run_evaluation(out_dir, cfg):
         return {"n": len(sub), **dict(zip(Q_LABELS, qs))}
 
     # gene_calls.tsv is wide: sample_id, CRT, GCH1, MDR1, PM2_PM3, crr_CRT, ...
-    wide = (
-        pd.read_csv(os.path.join(out_dir, "gene_calls.tsv"), sep="\t")
-        .astype({g: pd.Int64Dtype() for g in GENES})
-        .rename(columns={"sample_id": "Sample"})
-    )
+    _wide_raw = pd.read_csv(os.path.join(out_dir, "gene_calls.tsv"), sep="\t")
+    _cast = {g: pd.Int64Dtype() for g in GENES if g in _wide_raw.columns}
+    _missing_cols = [g for g in GENES if g not in _wide_raw.columns]
+    if _missing_cols:
+        print(f"WARNING: gene_calls.tsv missing columns {_missing_cols} — skipping in eval",
+              flush=True)
+    wide = _wide_raw.astype(_cast).rename(columns={"sample_id": "Sample"})
+    del _wide_raw
 
     gt_cols = ["Sample"] + [GT_COL.format(gene=g) for g in GENES]
     pf9_cnv = pd.read_csv(pf9_gt_path, sep="\t", usecols=gt_cols)
@@ -135,6 +138,9 @@ def run_evaluation(out_dir, cfg):
     crr_results  = {}
 
     for gene in GENES:
+        if gene not in df.columns:
+            print(f"  Skipping {gene}: no calls in gene_calls.tsv", flush=True)
+            continue
         gt      = df[GT_COL.format(gene=gene)]
         pred_gt = _cn_to_gt(df[gene])
         crr     = df[f"crr_{gene}"]
@@ -175,6 +181,9 @@ def run_evaluation(out_dir, cfg):
 
     del df
     gc.collect()
+
+    # Genes that were actually evaluated (subset of GENES if some had no calls).
+    eval_genes = [g for g in GENES if g in gene_results]
 
     # ── Segment diagnostics ──────────────────────────────────────────────────
     seg_diag = _segment_diagnostics(out_dir)
@@ -239,7 +248,7 @@ def run_evaluation(out_dir, cfg):
         f"{'Gene':<10} {'MCC':>5} {'FNR':>5} {'PPV':>5} {'call_rate':>10} {'n_eval':>8}",
         "-" * W,
     ]
-    for gene in GENES:
+    for gene in eval_genes:
         m = gene_results[gene]["overall"]
         call_rate = round(1.0 - (m["new_missing_rate"] or 0.0), 2)
         lines.append(
@@ -251,7 +260,7 @@ def run_evaluation(out_dir, cfg):
         "", "MISSINGNESS", "-" * W,
         f"{'Gene':<10} {'pf9_miss':>10} {'model_miss':>12} {'delta':>8}", "-" * W,
     ]
-    for gene in GENES:
+    for gene in eval_genes:
         m = gene_results[gene]["overall"]
         lines.append(
             f"{gene:<10} {_fmt(m['pf9_missing_rate']):>10} "
@@ -262,7 +271,7 @@ def run_evaluation(out_dir, cfg):
     q_header = "  " + " ".join(f"{q:>5}" for q in Q_LABELS)
     lines += ["", "CRR BY PREDICTED LABEL  (CRR = gene/flank copy ratio)", "-" * W,
               f"  {'label':<12} {'n':>6}  {q_header.strip()}"]
-    for gene in GENES:
+    for gene in eval_genes:
         lines.append(f"  — {gene}")
         for label, d in crr_results[gene]["by_pred"].items():
             lines.append(_crr_row(label, d))
@@ -274,14 +283,14 @@ def run_evaluation(out_dir, cfg):
         "-" * W,
         f"  {'outcome':<12} {'n':>6}  {q_header.strip()}",
     ]
-    for gene in GENES:
+    for gene in eval_genes:
         lines.append(f"  — {gene}")
         for label, d in crr_results[gene]["by_outcome"].items():
             lines.append(_crr_row(label, d))
 
     # BY POPULATION (overall, one table per gene)
-    if any("by_population" in gene_results[g] for g in GENES):
-        for gene in GENES:
+    if any("by_population" in gene_results[g] for g in eval_genes):
+        for gene in eval_genes:
             if "by_population" not in gene_results[gene]:
                 continue
             lines += [
@@ -296,8 +305,8 @@ def run_evaluation(out_dir, cfg):
                 )
 
     # BY (YEAR, POPULATION) — one combined table per gene, groups with n_eval >= min_group_n
-    if any(gene_results[g].get("by_year_population") for g in GENES):
-        for gene in GENES:
+    if any(gene_results[g].get("by_year_population") for g in eval_genes):
+        for gene in eval_genes:
             yp = gene_results[gene].get("by_year_population", {})
             if not yp:
                 continue

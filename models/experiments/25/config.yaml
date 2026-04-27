@@ -1,0 +1,61 @@
+# Versioned components
+architecture: "05_conv_vae"   # residual skip connections in encoder
+hmm:          "02_gaussian_hmm"
+cnv:          "08_genome_cnv_caller"   # genome-wide CNV calling + fixed-center logistic sharpness metric
+evaluation:   "03_pf9_evaluation"
+
+# Data
+store_path: "../../../data/inputs/Pf9-53973-samples-1000bp-core-npy"
+out_dir:    "../../../data/results/25_skip_st0.90_sin_curriculum_r0.30_genome_wide_thr1.20"
+normalise:  true
+
+# Gene annotation — GFF3 for all protein-coding genes in P. falciparum 3D7.
+# Used by 08_genome_cnv_caller to call CNVs genome-wide.
+gff_path: "../../../assets/PlasmoDB-54_Pfalciparum3D7.gff"
+
+# Model — reuse exp 21 checkpoint; no retraining.
+# Latents, reconstructions, sample_ids are symlinked from exp 21 in run.sh.
+# Segments are NOT symlinked — HMM is re-run with new self_transition.
+pretrained_checkpoint: "../../../data/results/21_skip_st0.80_sin_curriculum_r0.30/checkpoint.pth"
+latent_dim:    10
+batch_size:    128
+epochs:        100
+lr:            1.0e-4
+weight_decay:  1.0e-5
+max_beta:      1.0
+warmup_epochs: 0
+patience:      20
+
+# Curriculum-weighted sampler — same as exp 21.
+cnv_downsample_ratio_initial:  0.05
+cnv_downsample_ratio_final:    0.30
+cnv_downsample_warmup_epochs:  40
+
+# Sin loss — same as exp 21.
+sin_loss_max_weight:    1.0
+sin_loss_warmup_epochs: 30
+
+# HMM segmentation — self_transition raised from 0.80 to 0.90.
+# Exp 24 produced p90=1167 within-chrom transitions per sample, indicating the HMM is
+# extremely jumpy and generating spurious micro-calls in noisy regions. A stickier HMM
+# penalises rapid state switching and should reduce borderline FPs without touching the
+# threshold gate.
+hmm_n_states:          6
+hmm_self_transition:   0.90   # raised from 0.80; targets FP surge from HMM jumpiness
+hmm_low_cov_threshold: 10
+hmm_n_jobs:            -1
+
+# CNV calling — same as exp 24 (threshold 1.20, caller 08).
+cnv_min_cn1_proportion:         0.55
+cnv_min_confidence:             0.50
+cnv_flank_padding:              100000
+cnv_crr_amp_threshold:          1.20
+cnv_crr_gate_threshold:         1.35   # unused by v08; retained for compatibility
+cnv_crr_min_bins_fallback:      3
+cnv_min_gene_coverage_fraction: 0.50   # unused by v08; retained for compatibility
+
+# Evaluation — applied to the 4 reference genes (GCH1, CRT, MDR1, PM2_PM3),
+# using gene_calls.tsv written by 08_genome_cnv_caller.
+pf9_gt_path:   "../../../assets/20260313_full_cnv_data_pf9.tsv"
+pf9_meta_path: "../../../assets/Pf_9_samples_20260227.txt"
+eval_min_group_n: 10

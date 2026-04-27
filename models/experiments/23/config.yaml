@@ -1,0 +1,59 @@
+# Versioned components
+architecture: "05_conv_vae"   # residual skip connections in encoder
+hmm:          "02_gaussian_hmm"
+cnv:          "06_genome_cnv_caller"   # genome-wide CNV calling across all protein-coding genes
+evaluation:   "03_pf9_evaluation"
+
+# Data
+store_path: "../../../data/inputs/Pf9-53973-samples-1000bp-core-npy"
+out_dir:    "../../../data/results/23_skip_st0.80_sin_curriculum_r0.30_genome_wide"
+normalise:  true
+
+# Gene annotation — GFF3 for all protein-coding genes in P. falciparum 3D7.
+# Used by 06_genome_cnv_caller to call CNVs genome-wide.
+gff_path: "../../../assets/PlasmoDB-54_Pfalciparum3D7.gff"
+
+# Model — reuse exp 21 checkpoint; no retraining. Latents, reconstructions, and
+# segments are symlinked from exp 21 in run.sh. Only the CNV caller is re-run.
+pretrained_checkpoint: "../../../data/results/21_skip_st0.80_sin_curriculum_r0.30/checkpoint.pth"
+latent_dim:    10
+batch_size:    128
+epochs:        100
+lr:            1.0e-4
+weight_decay:  1.0e-5
+max_beta:      1.0
+warmup_epochs: 0
+patience:      20
+
+# Curriculum-weighted sampler — same as exp 21.
+cnv_downsample_ratio_initial:  0.05
+cnv_downsample_ratio_final:    0.30
+cnv_downsample_warmup_epochs:  40
+
+# Sin loss — same as exp 21.
+sin_loss_max_weight:    1.0
+sin_loss_warmup_epochs: 30
+
+# HMM segmentation — same params as exp 21.
+hmm_n_states:          6
+hmm_self_transition:   0.80
+hmm_low_cov_threshold: 10
+hmm_n_jobs:            -1
+
+# CNV calling — threshold lowered from 1.30 to 1.25 for genome-wide sensitivity.
+# FN CRR p90=1.29 in exp 22; TN CRR p90=1.14. A gate at 1.25 captures FNs
+# just below 1.30 while remaining well above 90% of true negatives.
+# No aug_normal_poisson — exp 22 showed it degraded PPV without boosting FN CRR.
+cnv_min_cn1_proportion:         0.55
+cnv_min_confidence:             0.50
+cnv_flank_padding:              100000
+cnv_crr_amp_threshold:          1.25   # lowered from 1.30
+cnv_crr_gate_threshold:         1.35   # unused by v06; retained for compatibility
+cnv_crr_min_bins_fallback:      3
+cnv_min_gene_coverage_fraction: 0.50   # unused by v06; retained for compatibility
+
+# Evaluation — applied to the 4 reference genes (GCH1, CRT, MDR1, PM2_PM3) only,
+# using gene_calls.tsv written by 06_genome_cnv_caller.
+pf9_gt_path:   "../../../assets/20260313_full_cnv_data_pf9.tsv"
+pf9_meta_path: "../../../assets/Pf_9_samples_20260227.txt"
+eval_min_group_n: 10

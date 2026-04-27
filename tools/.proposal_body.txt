@@ -1,45 +1,67 @@
 Hi Chiyun,
 
-Exp 19 results summary:
-- PM2_PM3: FNR=0.01, PPV=0.93 — far exceeded predictions (predicted 0.10–0.25). Only 2 FNs remain.
-- GCH1: FNR=0.07, PPV=0.91 — unchanged from exp 18. All 139 FNs have CRR just below the fallback gate (p50=1.24, p90=1.29).
-- CRT and MDR1: near-perfect and stable (FNR≤0.03, PPV≥0.95).
+Experiment 27 results summary (last completed):
 
-My diagnosis:
-Both PM2_PM3 failure modes from exp 18 are resolved. The fractional coverage check
-fixed non-spanning segments, and the gate at 1.35 recovered gate-vetoed FNs. The
-remaining bottleneck is GCH1. Because GCH1 spans only ~2 bins at 1000bp resolution,
-it uses a simple CRR threshold (cnv_crr_amp_threshold=1.30) rather than the spanning/
-fractional logic. All 139 FNs have CRR p50=1.24 and p90=1.29 — real signal that sits
-just below 1.30. AF-E is the main driver (population FNR=0.32), especially pre-2010
-samples. The signal is present; the threshold is the bottleneck.
+- GCH1: FNR 0.11, PPV 0.96, MCC 0.91 — PPV far exceeded prediction; FNR regressed (0.04 → 0.11)
+- MDR1: FNR 0.01, PPV 0.91, MCC 0.95 — both better than predicted
+- PM2_PM3: FNR 0.06, PPV 0.73, MCC 0.82 — PPV exceeded prediction
+- CRT: FNR 0.00, PPV 0.42, MCC 0.65 — PPV exceeded prediction
 
-Proposed experiment 20: Lower GCH1 fallback threshold to 1.25
-Changes from exp 19:
-- cnv_crr_amp_threshold: 1.30 → 1.25 (GCH1 fallback gate only).
-  Recovers FNs with CRR in [1.25, 1.30] — roughly the top half of the FN distribution
-  (p50=1.24 to p90=1.29).
-- All other parameters unchanged (cnv_crr_gate_threshold=1.35 unaffected — it governs
-  the long-gene fractional path, not GCH1).
-- Reuses exp 19 checkpoint, reconstructions, and HMM segments via symlinks. No retraining.
-- out_dir: 20_skip_st0.80_sin_partialspan_gate1.25.
+Clarification — what is the band filter?
+
+CRR (Copy Read Ratio) is the ratio of read depth inside a gene to the depth in the
+surrounding 100 kb flanking region. Amplified genes should have CRR > 1.0. The problem
+is that systematic biases (GC content, mappability, sample noise) can inflate CRR to
+1.20–1.35 without any real copy gain. These false positives have no sustained copy
+elevation in the genomic neighbourhood — the HMM does not assign them to a CN≥2 segment.
+
+So calls in the range CRR [1.20, 1.35) are held for an extra check: what fraction of
+the gene's bins fall inside a CN≥2 HMM segment? If the fraction is below a threshold
+the call is demoted to CN=1 (not a real amplification). The "band" is this intermediate
+CRR zone where the signal is ambiguous and needs HMM confirmation.
+
+The "two-tier" part: exp 27 found that a single 50% threshold is too strict in the
+upper sub-range [1.25, 1.35). Real GCH1 amplifications in that range have partial HMM
+segment coverage — enough to confirm a real copy gain exists, but not 50% of gene bins.
+So we split the band into two zones with different thresholds:
+
+  Core zone   [1.20, 1.25):  ≥ 50% of gene bins in CN≥2 segments (artefacts here
+                              are easily separated from TPs — the 0.50 threshold is clean)
+  Extended zone [1.25, 1.35): ≥ 20% of gene bins in CN≥2 segments (lenient, to
+                              recover weak-signal TPs while still blocking pure artefacts)
+  Above 1.35:                unconditional pass (strong signal; no HMM check needed)
+
+No data augmentation: confirmed. The codebase has an AugmentedNormalDataset class
+that does Poisson resampling of normal samples, but it is only activated by
+aug_normal_poisson: true in the config. Exp 29's config does not set that key, so
+training runs on the raw read count data with log2 normalisation only.
+
+Proposed experiment 29: 06_conv_vae trained on 400 bp core genome (dynamic n_bins)
+Changes from exp 27 (last completed):
+- architecture: 05_conv_vae → 06_conv_vae (same topology; n_bins auto-derived from data shape)
+- store_path: 1000 bp core → 400 bp core (51986 bins vs 20814 bins; ~2.5× resolution)
+- batch_size: 128 → 64 (wider inputs increase per-batch memory)
+- Full retraining from scratch (linear layer dims change with bin count)
+- Two-tier band caller (v11) already included — same thresholds as exp 28 proposal
 
 What I expect:
-GCH1 FNR should drop from 0.07 to ~0.03–0.04 as FNs with CRR ≥ 1.25 get promoted
-from CN=1 to CN=2. pred_normal GCH1 p90=1.14, so there is a 0.11-unit gap before
-the new threshold — very few true-normal samples should be affected. PPV predicted
-to stay ≥ 0.89. PM2_PM3, CRT, and MDR1 are on a different calling path and will
-not change.
+GCH1 FNR should drop from 0.11 toward 0.04–0.08. At 400 bp, GCH1 spans ~5 bins
+instead of ~2, giving the HMM a longer consecutive elevated run to commit to.
+Combined with the lenient 20% threshold in the extended zone, marginal-CRR TPs in
+[1.25, 1.35) should be reliably recovered. MDR1 and CRT are already well-resolved
+at 1000 bp; no regression expected. PM2_PM3 FNs have CRR≈0 (coverage failures, not
+resolution failures) — no improvement expected there.
 
 What we could do instead:
-1. Population-specific thresholds — AF-E (FNR=0.32) drives most of the GCH1 loss.
-   A gene×population gate would concentrate the recovery without loosening globally.
-2. self_transition=0.75 — longer HMM segments may aggregate weak GCH1 signal better.
-   Still untested; try if exp 20 shows only partial recovery.
+- Run exp 28 (two-tier band only, 1000 bp model) first to isolate the threshold
+  effect before committing to a full retrain on 400 bp data — cleaner attribution
+  but slower path to a better GCH1 FNR.
+- Increase HMM self_transition above 0.90 to reduce partial-coverage GCH1 FNs
+  at 1000 bp before adding resolution, avoiding the full retrain cost.
 
-Run time estimate: ~30 minutes (CNV calling + evaluation only, no training or HMM).
+Run time estimate: ~6–10 hours (full training + HMM + evaluation).
 
-Reply AUTHORISE to run this on the Mac mini, or reply with feedback
-and I'll revise the proposal.
+Reply AUTHORISE to run this on the Mac mini, or reply with feedback and I'll revise
+the proposal.
 
 Claude

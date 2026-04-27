@@ -7,7 +7,7 @@ import matplotlib.pyplot as plt
 
 from src.utils import (load_meta, load_results, load_inputs, process_sample,
                        compute_pca, compute_pca_contours, plot_latents, plot_pca,
-                       plot_copy_number,
+                       plot_copy_number, plot_segment_logistic_diagnostic,
                        list_experiments, load_experiment_config,
                        fit_hmm_sample_versioned, call_all_genes_versioned)
 from bokeh.embed import file_html
@@ -109,9 +109,37 @@ def page1():
                     self_transition   = cfg["hmm_self_transition"],
                     low_cov_threshold = cfg["hmm_low_cov_threshold"],
                 )
-        cn_layout = plot_copy_number(data, sample_segs)
+        cn_layout = plot_copy_number(data, sample_segs, gff=gff)
         components.html(file_html(cn_layout, CDN), height=520)
 
+    # --- Segment logistic diagnostic --------------------------------------------
+    selected_chrom = st.session_state.get("chrom_slider", data["chrom"].iloc[0])
+    amp_segs = sample_segs[
+        (sample_segs["chrom"] == selected_chrom) & (sample_segs["cn"] >= 2)
+    ] if sample_segs is not None and len(sample_segs) > 0 else pd.DataFrame()
+
+    if len(amp_segs) > 0:
+        seg_labels = [
+            f"CN={row.cn}  {int(row.x0):,}–{int(row.x1):,}  conf={row.confidence:.2f}"
+            for row in amp_segs.itertuples()
+        ]
+        selected_seg_label = st.selectbox(
+            "Segment logistic diagnostic — select a CN≥2 segment",
+            ["(select a segment…)"] + seg_labels, index=0,
+            key=f"seg_diag_{SAMPLE_ID}_{selected_chrom}",
+        )
+
+        if selected_seg_label != "(select a segment…)":
+            seg = amp_segs.iloc[seg_labels.index(selected_seg_label)]
+            chrom_data = data[data["chrom"] == selected_chrom].reset_index(drop=True)
+            fig = plot_segment_logistic_diagnostic(
+                chrom_data,
+                float(seg["x0"]), float(seg["x1"]), int(seg["cn"]),
+            )
+            st.pyplot(fig)
+            plt.close(fig)
+
+    # --- Reference gene calls ---------------------------------------------------
     precomputed_calls = results["gene_calls"]
     if precomputed_calls is not None and SAMPLE_ID in precomputed_calls.index:
         gene_calls = precomputed_calls.loc[[SAMPLE_ID]].to_dict(orient="records")

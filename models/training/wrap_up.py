@@ -20,6 +20,7 @@ Imported by train.py:
 """
 
 import argparse
+import inspect
 import os
 import shutil
 import sys
@@ -118,13 +119,17 @@ def main():
         device = torch.device("cpu")
     print(f"Device: {device}", flush=True)
 
-    # ── load model ──────────────────────────────────────────────────────────
-    model = ConvVAE(latent_dim=cfg["latent_dim"]).to(device)
-    model.load_state_dict(torch.load(checkpoint_path, map_location=device, weights_only=True))
-    print(f"Loaded checkpoint: {checkpoint_path}", flush=True)
-
     # ── inference ───────────────────────────────────────────────────────────
     ds = ReadCountDataset(store_path, normalise=cfg["normalise"])
+
+    # ── load model ──────────────────────────────────────────────────────────
+    # Architectures >= 06 accept n_bins; older ones take only latent_dim.
+    if 'n_bins' in inspect.signature(ConvVAE.__init__).parameters:
+        model = ConvVAE(n_bins=ds.n_bins_raw, latent_dim=cfg["latent_dim"]).to(device)
+    else:
+        model = ConvVAE(latent_dim=cfg["latent_dim"]).to(device)
+    model.load_state_dict(torch.load(checkpoint_path, map_location=device, weights_only=True))
+    print(f"Loaded checkpoint: {checkpoint_path}", flush=True)
     run_inference(model, ds, device, out_dir, batch_size=cfg["batch_size"])
 
     # ── HMM segmentation ────────────────────────────────────────────────────

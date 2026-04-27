@@ -6,12 +6,14 @@ evaluation:   "03_pf9_evaluation"
 
 # Data
 store_path: "../../../data/inputs/Pf9-53973-samples-1000bp-core-npy"
-out_dir:    "../../../data/results/20_skip_st0.80_sin_curriculum_wsampler"
+out_dir:    "../../../data/results/21_skip_st0.80_sin_curriculum_r0.30"
 normalise:  true
 
 # Model — fine-tune from exp 18 checkpoint with curriculum-weighted sampling.
-# Curriculum ramps cnv_downsample_ratio from 0.05 → 0.40 over 40 epochs so
-# the VAE first consolidates normal profiles, then gains better CNV exposure.
+# Curriculum ramps cnv_downsample_ratio from 0.05 → 0.30 over 40 epochs.
+# Exp 20 used 0.40 as the final ratio and over-inflated CRR for normal samples
+# (GCH1 PPV 0.91→0.71, 759 FPs). 0.30 is between the 0.25 static used in
+# exp 18/19 and the 0.40 that caused the inflation, aiming for a better tradeoff.
 pretrained_checkpoint: "../../../data/results/18_skip_st0.80_sin_finetune/checkpoint.pth"
 latent_dim:    10
 batch_size:    128
@@ -23,29 +25,28 @@ warmup_epochs: 0
 patience:      20
 
 # Curriculum-weighted sampler (replaces fixed cnv_downsample_ratio).
-cnv_downsample_ratio_initial:  0.05   # start: very few CNVs so normal profiles dominate
-cnv_downsample_ratio_final:    0.40   # end: substantially more CNV exposure than exp 18 (0.25)
-cnv_downsample_warmup_epochs:  40     # linear ramp over 40 epochs
+cnv_downsample_ratio_initial:  0.05   # start: normal profiles dominate early (unchanged)
+cnv_downsample_ratio_final:    0.30   # dialled back from 0.40; still above static 0.25
+cnv_downsample_warmup_epochs:  40     # linear ramp over 40 epochs (unchanged)
 
-# Sin loss — unchanged from exp 18/19 (checkpoint already trained with these).
+# Sin loss — unchanged from exp 18/19/20 (checkpoint already trained with these).
 sin_loss_max_weight:    1.0
 sin_loss_warmup_epochs: 30
 
-# HMM segmentation — same params as exp 18/19.
+# HMM segmentation — same params as exp 18/19/20.
 hmm_n_states:          6
 hmm_self_transition:   0.80
 hmm_low_cov_threshold: 10
 hmm_n_jobs:            -1
 
-# CNV calling — threshold unchanged from exp 19 baseline.
-# Primary bet: improved VAE signal will push CRR above 1.30 without threshold changes.
+# CNV calling — unchanged from exp 20. Threshold stays at baseline; VAE improvement tested in isolation.
 cnv_min_cn1_proportion:         0.55
 cnv_min_confidence:             0.50
 cnv_flank_padding:              100000
 cnv_crr_amp_threshold:          1.30   # baseline — not changing; let the VAE do the work
 cnv_crr_gate_threshold:         1.35   # unchanged; only affects long-gene fractional path
 cnv_crr_min_bins_fallback:      3
-cnv_min_gene_coverage_fraction: 0.50   # unchanged from exp 19
+cnv_min_gene_coverage_fraction: 0.50   # unchanged from exp 19/20
 
 # Evaluation
 pf9_gt_path:   "../../../assets/20260313_full_cnv_data_pf9.tsv"

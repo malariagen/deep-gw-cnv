@@ -78,8 +78,8 @@ All FNs sit just below the fallback threshold of 1.30. AF-E is the main driver
 
 **CRT / MDR1**: Near-perfect and stable as predicted (FNR≤0.03, PPV≥0.95).
 
-**Next**: Experiment 20 — lower `cnv_crr_amp_threshold` from 1.30 to 1.25 to recover
-GCH1 FNs in the [1.25, 1.30] CRR band. Reuses exp 19 artifacts.
+**Next**: Experiment 20 — curriculum-weighted VAE fine-tuning (cnv ramp 0.05→0.40) to boost
+GCH1 CRR signal at the VAE level, rather than adjusting the threshold.
 
 ## What we could do instead
 

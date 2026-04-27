@@ -13,6 +13,7 @@ from scipy.spatial import cKDTree
 from sklearn.decomposition import PCA
 import umap
 from matplotlib.lines import Line2D
+from scipy.optimize import curve_fit as _curve_fit
 from bokeh.plotting import figure
 from bokeh.layouts import column, row as bk_row
 from bokeh.models import (ColumnDataSource, HoverTool, ColorBar,
@@ -484,6 +485,109 @@ document.getElementById('scatter').on('plotly_hover', function(ev) {{
 # CN 0 → 5: deep blue, light blue, grey, orange, red, dark red
 _CN_COLORS = ["#313695", "#74add1", "#888888", "#fdae61", "#d73027", "#a50026"]
 
+_SEGMENT_EXTRA_FLANK = 20_000  # fixed extra bp added beyond one segment-width on each side
+
+
+def _segment_logistic_diag(crr_bins, n_flank, n_total):
+    """Fit 3-parameter logistic to raw (unnormalized) sorted copy ratios.
+
+    Model: y = L + A / (1 + exp(-slope * (x - center)))
+      - x     : sorted rank in [0, 1]
+      - center : fixed at n_flank / n_total (expected rank of the flank→segment boundary)
+      - L     : baseline copy ratio (flank level, free)
+      - A     : amplitude (copy ratio uplift inside segment, free, ≥ 0)
+      - slope : sharpness of the step (free, ≥ 0)
+
+    Keeping CR unnormalized means a noisy-but-flat segment (e.g. 0→0.1) will show
+    a small A and cannot masquerade as a sharp step.
+
+    Returns a dict with fit results, or None if too few bins.
+    """
+    n = len(crr_bins)
+    if n < 6:
+        return None
+
+    sorted_v = np.sort(crr_bins)
+    x_data   = np.linspace(0.0, 1.0, n)
+    center   = n_flank / n_total
+
+    def _model(x, L, A, slope):
+        return L + A / (1.0 + np.exp(-np.clip(slope * (x - center), -50.0, 50.0)))
+
+    # Sensible initial guesses from the data distribution.
+    L0     = float(np.median(sorted_v[:max(1, n // 4)]))
+    A0     = float(sorted_v[-1] - sorted_v[0])
+    slope0 = 5.0
+
+    try:
+        popt, _ = _curve_fit(
+            _model, x_data, sorted_v,
+            p0=[L0, A0, slope0],
+            bounds=([0.0, 0.0, 0.0], [10.0, 10.0, 500.0]),
+            maxfev=1000,
+        )
+        L, A, slope = float(popt[0]), float(popt[1]), float(popt[2])
+        x_fit = np.linspace(0.0, 1.0, 200)
+        y_fit = _model(x_fit, L, A, slope)
+    except Exception:
+        L, A, slope = np.nan, np.nan, np.nan
+        x_fit, y_fit = None, None
+
+    return dict(slope=slope, L=L, A=A,
+                x_data=x_data, y_data=sorted_v,
+                x_fit=x_fit, y_fit=y_fit,
+                center=center)
+
+
+def plot_segment_logistic_diagnostic(chrom_data, seg_x0, seg_x1, seg_cn):
+    """Logistic sharpness diagnostic for one HMM segment.
+
+    Window = [x0 - width - 20kb, x1 + width + 20kb], so the flank on each side
+    equals the segment width plus a fixed 20 kb buffer.  Fits a 3-parameter logistic
+    to raw (unnormalized) sorted copy ratios; center fixed at n_flank/n_total.
+    """
+    width   = seg_x1 - seg_x0
+    padding = width + _SEGMENT_EXTRA_FLANK
+
+    window   = chrom_data[
+        (chrom_data["start"] >= seg_x0 - padding) &
+        (chrom_data["start"] <= seg_x1 + padding)
+    ]
+    n_inside = int(((window["start"] >= seg_x0) & (window["start"] <= seg_x1)).sum())
+    n_total  = len(window)
+    n_flank  = n_total - n_inside
+
+    crr    = window["copy_ratio"].values
+    finite = crr[np.isfinite(crr)]
+    res    = _segment_logistic_diag(finite, n_flank, n_total)
+
+    fig, ax = plt.subplots(figsize=(5, 3.5))
+
+    if res is not None:
+        ax.scatter(res["x_data"], res["y_data"], s=5, alpha=0.45, color="#555555", zorder=2)
+        if res["x_fit"] is not None:
+            ax.plot(res["x_fit"], res["y_fit"], color="crimson", linewidth=1.5, zorder=3)
+        ax.axvline(res["center"], color="#2196F3", linestyle="--", linewidth=1.0, alpha=0.7)
+
+        slope_str = f"{res['slope']:.2f}" if np.isfinite(res["slope"]) else "N/A"
+        amp_str   = f"{res['A']:.3f}"     if np.isfinite(res["A"])     else "N/A"
+        pad_kb    = padding / 1_000
+        ax.set_title(
+            f"pad={pad_kb:.0f}kb (={width/1000:.0f}kb + 20kb)  slope={slope_str}  amp={amp_str}",
+            fontsize=9,
+        )
+    else:
+        ax.set_title("too few bins", fontsize=9)
+
+    ax.set_xlabel("sorted rank", fontsize=8)
+    ax.set_ylabel("copy ratio", fontsize=8)
+    ax.tick_params(labelsize=7)
+    ax.set_xlim(-0.02, 1.02)
+
+    fig.suptitle(f"CN={seg_cn}  {int(seg_x0):,}–{int(seg_x1):,}", fontsize=10)
+    fig.tight_layout()
+    return fig
+
 
 # ---------------------------------------------------------------------------
 # Versioned model loading
@@ -557,7 +661,7 @@ def _render_segments(segs):
     return segs
 
 
-def plot_copy_number(data, segments=None):
+def plot_copy_number(data, segments=None, gff=None):
     chrom_options = data["chrom"].unique().tolist()
 
     if st.session_state.get("lucky_chrom") == "__random__":
@@ -648,5 +752,34 @@ def plot_copy_number(data, segments=None):
     p2.line('x', 'reconstruction', source=s2, line_width=2, color="red",
             legend_label="reconstruction")
     p2.xaxis.formatter = NumeralTickFormatter(format="0,0")
+
+    # Overlay gene positions from GFF as inverted triangles near the top of p1.
+    if gff is not None:
+        chrom_genes = gff[gff["seqid"] == selected_chrom]
+        if len(chrom_genes) > 0:
+            has_name = "Name" in chrom_genes.columns
+            mid = ((chrom_genes["start"].values + chrom_genes["end"].values) / 2).astype(float)
+            names  = (chrom_genes["Name"].fillna(chrom_genes["ID"]).values
+                      if has_name else chrom_genes["ID"].values)
+            ids    = chrom_genes["ID"].values if "ID" in chrom_genes.columns else names
+            g_src  = ColumnDataSource(dict(
+                x=mid.tolist(),
+                y=[4.88] * len(chrom_genes),
+                name=names.tolist(),
+                gene_id=ids.tolist(),
+                g_start=chrom_genes["start"].values.astype(float).tolist(),
+                g_end=chrom_genes["end"].values.astype(float).tolist(),
+            ))
+            g_renderer = p1.scatter(
+                "x", "y", source=g_src, marker='inverted_triangle',
+                size=7, color="#9b59b6", alpha=0.65, line_color=None,
+            )
+            p1.add_tools(HoverTool(
+                renderers=[g_renderer],
+                tooltips=[
+                    ("Gene", "@name"),
+                    ("ID", "@gene_id"),
+                ],
+            ))
 
     return column([p1, p2], sizing_mode="stretch_width")

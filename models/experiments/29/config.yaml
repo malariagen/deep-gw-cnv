@@ -1,0 +1,68 @@
+# Versioned components
+architecture: "06_conv_vae"   # dynamic n_bins — auto-computed from dataset shape at runtime
+hmm:          "02_gaussian_hmm"
+cnv:          "11_genome_cnv_caller"   # two-tier band filter (same as proposed exp 28)
+evaluation:   "03_pf9_evaluation"
+
+# Data — 400 bp core genome (51986 bins vs 20814 bins at 1000 bp)
+# Switch from 1000 bp to 400 bp for ~2.5× higher positional resolution.
+# counts.npy is ~11 GB; dataset.py loads it with mmap_mode='r' to avoid
+# blocking at startup and to reduce peak RAM pressure.
+store_path: "../../../data/inputs/Pf9-53973-samples-400bp-core-npy"
+out_dir:    "../../../data/results/29_06convvae_400bp_core_st0.90_sin_curriculum_r0.30"
+normalise:  true
+
+# Gene annotation — unchanged.
+gff_path: "../../../assets/PlasmoDB-54_Pfalciparum3D7.gff"
+
+# Model — full training from scratch; no checkpoint to reuse from a different
+# bin resolution (the linear layers change dimensionality: flat_dim goes from
+# 256 x 651 = 166656 at 1000 bp to 256 x 1625 = 416000 at 400 bp).
+# n_bins is not set here — train.py derives it from ds.n_bins_raw at runtime.
+latent_dim:    10
+batch_size:    64    # halved from 128 — the wider input increases per-batch memory
+epochs:        100
+lr:            1.0e-4
+weight_decay:  1.0e-5
+max_beta:      1.0
+warmup_epochs: 0
+patience:      20
+
+# Curriculum-weighted sampler — same schedule as exp 21–28.
+cnv_downsample_ratio_initial:  0.05
+cnv_downsample_ratio_final:    0.30
+cnv_downsample_warmup_epochs:  40
+
+# Sin loss — same as exp 21–28.
+sin_loss_max_weight:    1.0
+sin_loss_warmup_epochs: 30
+
+# HMM segmentation — keep self_transition=0.90 (proven in exp 25–28).
+# With 400 bp bins the HMM sees ~2.5× more positions per chromosome; the
+# self-transition probability is resolution-agnostic (it is the per-step
+# staying probability, not a time constant), so 0.90 is a safe starting point.
+# Tune if transitions are too sparse or too jumpy in evaluation.
+hmm_n_states:          6
+hmm_self_transition:   0.90
+hmm_low_cov_threshold: 10
+hmm_n_jobs:            -1
+
+# CNV calling — two-tier band filter (v11), same thresholds as proposed exp 28.
+# CRR is a gene/flank ratio, not tied to bin resolution, so these thresholds
+# carry over unchanged from the 1000 bp experiments.
+cnv_min_cn1_proportion:         0.55
+cnv_min_confidence:             0.50
+cnv_flank_padding:              100000
+cnv_crr_amp_threshold:          1.20
+cnv_crr_band_core_upper:        1.25   # boundary between core (strict) and extended (lenient) zones
+cnv_crr_band_upper:             1.35   # outer boundary; calls above pass unconditionally
+cnv_crr_band_cn2_threshold:     0.50   # core zone [1.20, 1.25): strict threshold (proven in exp 26)
+cnv_crr_band_ext_cn2_threshold: 0.20   # extended zone [1.25, 1.35): lenient to recover weak-signal TPs
+cnv_crr_gate_threshold:         1.35   # retained for compatibility with v11
+cnv_crr_min_bins_fallback:      3
+cnv_min_gene_coverage_fraction: 0.50   # retained for compatibility with v11
+
+# Evaluation — same reference genes and ground truth.
+pf9_gt_path:   "../../../assets/20260313_full_cnv_data_pf9.tsv"
+pf9_meta_path: "../../../assets/Pf_9_samples_20260227.txt"
+eval_min_group_n: 10

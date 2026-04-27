@@ -6,14 +6,13 @@ import tempfile
 import torch
 import torch.nn.functional as F
 
-from architectures import N_BINS_RAW
-
 
 def compute_loss(x, outputs, beta, sin_loss_weight=0.0):
     recon      = outputs["recon"]
     mu, logvar = outputs["z"]
 
-    recon_loss = F.mse_loss(recon, x[:, :N_BINS_RAW], reduction="sum") / x.size(0)
+    # recon is already cropped to n_bins by the decoder; slice x to match.
+    recon_loss = F.mse_loss(recon, x[:, :recon.size(1)], reduction="sum") / x.size(0)
     kl         = (-0.5 * (1 + logvar - mu.pow(2) - logvar.exp())).sum(1).mean()
 
     # Encourage recon values to be near integers in log2(count+1) space.
@@ -38,7 +37,8 @@ def _write_json(path, data):
 def train_vae(model, dataloader, optimiser,
               epochs, max_beta, warmup_epochs,
               patience, device, model_save_path=None, log_path=None,
-              sin_loss_max_weight=0.0, sin_loss_warmup_epochs=0):
+              sin_loss_max_weight=0.0, sin_loss_warmup_epochs=0,
+              make_loader_fn=None):
     """
     sin_loss_max_weight: peak weight for the integer-regularisation term.
     sin_loss_warmup_epochs: epochs (counted from epoch 0) over which the
@@ -52,6 +52,8 @@ def train_vae(model, dataloader, optimiser,
 
     try:
         for epoch in range(epochs):
+            if make_loader_fn is not None:
+                dataloader = make_loader_fn(epoch)
             model.train()
             beta     = max_beta * min(1.0, epoch / max(warmup_epochs, 1))
             sin_w    = sin_loss_max_weight * min(1.0, epoch / max(sin_loss_warmup_epochs, 1)) if sin_loss_max_weight > 0 else 0.0
