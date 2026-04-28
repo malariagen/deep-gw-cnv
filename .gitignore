@@ -67,3 +67,11 @@ coverage.xml
 *.nextflow*
 */work
 */readcounts
+
+# ── Daemon state & generated files (never commit) ─────────────────────────────
+tools/daemon.log
+tools/.proposal_body.txt
+tools/pending_feedback.txt
+tools/.last_proposal_msgid
+tools/.last_proposal_experiment
+tools/.proposal_thread_msgid

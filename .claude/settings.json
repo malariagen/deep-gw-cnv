@@ -1,0 +1,21 @@
+{
+  "permissions": {
+    "allow": [
+      "Read(/Users/jiayichiyun/Code/deep-gw-cnv/**)",
+      "Edit(/Users/jiayichiyun/Code/deep-gw-cnv/**)",
+      "Write(/Users/jiayichiyun/Code/deep-gw-cnv/**)",
+      "Bash(.venv/bin/python tools/send_email.py *)",
+      "Bash(.venv/bin/python tools/check_reply.py *)",
+      "Bash(.venv/bin/python -m training.wrap_up *)",
+      "Bash(bash models/experiments/*/run.sh*)",
+      "Bash(bash tools/install_daemon.sh*)",
+      "Bash(touch tools/pending_feedback.txt)",
+      "Bash(rm tools/.last_proposal_msgid)",
+      "Bash(rm tools/.last_proposal_experiment)",
+      "Bash(rm tools/pending_feedback.txt)",
+      "Bash(rm -f tools/.proposal_body.txt)",
+      "Bash(launchctl list *)"
+    ],
+    "defaultMode": "dontAsk"
+  }
+}

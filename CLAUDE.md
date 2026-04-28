@@ -1,3 +1,5 @@
 - Always run Python via `.venv/bin/python` — never use system `python3` or `python`.
 - Write simple code. Add comments at non-obvious logic to aid future readability. When editing existing code, update any comments that no longer reflect the current logic.
 - Explicitly free large objects (e.g. `del df; gc.collect()`) once they are no longer needed.
+- Never edit versioned files (numeric prefix like `01_`, `02_`, …) in-place. Always create a new numbered file (e.g. `03_gaussian_hmm.py`) with the changes. The numbering scheme is the project's audit trail — editing in-place destroys the record of what each version was.
+- When an experiment `run.sh` reuses a large artifact from a parent experiment unchanged (e.g. `segments.parquet`, `reconstructions.npy`), create a symlink (`ln -sf`) instead of copying. `cp` wastes disk and obscures which directory is authoritative.

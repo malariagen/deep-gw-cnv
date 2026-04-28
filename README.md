@@ -29,29 +29,6 @@ models/
 diagnostics/    Streamlit app for interactive sample inspection
 ```
 
-## Running an experiment
-
-```bash
-cd models/experiments/01
-bash run.sh
-```
-
-Or directly:
-```bash
-.venv/bin/python models/train.py models/experiments/01/config.yaml
-```
-
-## Adding a new experiment
-
-```bash
-cp -r models/experiments/01 models/experiments/02
-# edit models/experiments/02/config.yaml
-```
-
-A new experiment can reuse any existing versioned component — just point `architecture`, `hmm`, `cnv`, and `evaluation` in `config.yaml` at the same numbered files and adjust the parameters. Only create a new versioned file (e.g. `02_gaussian_hmm.py`) when the algorithm itself changes, not just the parameters.
-
-Outputs are written to the `out_dir` defined in the config: `checkpoint.pth`, `latents.npy`, `reconstructions.npy`, `sample_ids.npy`, `segments.parquet`, `gene_calls.tsv`, `evaluation.txt`.
-
 ## How it works
 
 ```mermaid

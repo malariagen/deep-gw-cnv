@@ -1,6 +1,6 @@
 # Versioned components
 architecture: "06_conv_vae"   # dynamic n_bins — auto-computed from dataset shape at runtime
-hmm:          "02_gaussian_hmm"
+hmm:          "03_gaussian_hmm"
 cnv:          "11_genome_cnv_caller"   # two-tier band filter (same as proposed exp 28)
 evaluation:   "03_pf9_evaluation"
 

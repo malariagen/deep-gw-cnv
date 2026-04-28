@@ -136,7 +136,7 @@ def page1():
                 chrom_data,
                 float(seg["x0"]), float(seg["x1"]), int(seg["cn"]),
             )
-            st.pyplot(fig)
+            st.pyplot(fig, width = "content")
             plt.close(fig)
 
     # --- Reference gene calls ---------------------------------------------------

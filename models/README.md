@@ -18,6 +18,22 @@ CRR distributions overlap, the problem is upstream (VAE reconstruction quality),
 a calling-layer problem. Address reconstruction quality first; tune the calling layer
 after the signal is clean.
 
+### Experiment design rules
+
+**FN CRR p50 decision tree** — check this before proposing any experiment targeting FNs:
+- p50 < 1.10 → genuinely weak signal; investigate data quality, not calling parameters.
+- 1.10 ≤ p50 ≤ 1.40 → signal exists but soft; propose a **signal-boost training** experiment (see below). Do not lower the gate threshold — that trades FPs for FNs without fixing the root cause.
+- p50 > 1.40 AND PPV has headroom → gate/threshold adjustment is valid.
+
+**Signal-boosting strategies** (in priority order when FN CRR p50 is in 1.10–1.40):
+1. Synthetic normal augmentation — Poisson-resample non-CNV samples during training so the VAE learns a tighter normal prior; true CNVs deviate more at inference.
+2. Masked reconstruction loss — zero the loss on CNV gene regions so the VAE is not penalised for failing to reconstruct amplifications.
+3. Architecture changes — more capacity or dropout for regularisation.
+
+**HMM self-transition** is a cheap lever (no retraining). When PM2_PM3 FP=0 (precision headroom exists), try aggressive drops (e.g. 0.80→0.65) before retraining. Small steps (0.80→0.75) have historically been ineffective.
+
+**`cnv_downsample_ratio`** — do not increase this to improve recall. Exposing the model to more CNV-positive samples shifts the learned normal baseline; the VAE starts reconstructing amplifications accurately, which kills the anomaly signal the HMM relies on. Only touch this parameter if you have a specific mechanistic reason it will help without shifting the baseline.
+
 Architecture improvement directions (in rough priority order):
 1. **Dropout** in encoder — prevents per-sample CNV memorisation (simplest, tried in exp 09)
 2. **Masked training** — exclude CNV gene loci from reconstruction loss during training
@@ -37,13 +53,13 @@ Loads the config, dynamically imports the versioned components named in it, trai
 | Path | What it does |
 |---|---|
 | `train.py` | Reads `config.yaml`, loads versioned components, runs full pipeline |
-| `architectures/01_conv_vae.py` | `ConvVAE` — 1-D convolutional encoder/decoder |
-| `hmm/01_gaussian_hmm.py` | `run_hmm_all_samples`, `fit_hmm_sample` — Gaussian HMM segmentation |
-| `cnv/01_gene_cnv_caller.py` | `run_cnv_calls`, `call_all_genes` — gene-level CNV calls from segments |
-| `evaluation/01_pf9_evaluation.py` | `run_evaluation` — metrics vs Pf8 GATK ground truth |
+| `architectures/` | `ConvVAE` — 1-D convolutional encoder/decoder (v01–v06) |
+| `hmm/` | `run_hmm_all_samples`, `fit_hmm_sample` — Gaussian HMM segmentation (v01–v03) |
+| `cnv/` | `run_cnv_calls`, `call_all_genes` — gene-level CNV calls from segments (v01–v11) |
+| `evaluation/` | `run_evaluation` — metrics vs Pf9 GATK ground truth (v01–v03) |
 | `training/dataset.py` | `ReadCountDataset` — reads NPY store, log2-normalises |
 | `training/trainer.py` | `train_vae` — training loop with KL annealing + early stopping |
-| `training/wrap_up.py` | `run_inference` — encodes all samples, saves latents + reconstructions |
+| `training/wrap_up.py` | Post-training pipeline: inference → HMM → CNV calling → evaluation |
 | `experiments/` | One folder per experiment, each with a `config.yaml` and `run.sh` |
 
 ## Versioning
