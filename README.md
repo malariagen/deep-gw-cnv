@@ -32,52 +32,40 @@ diagnostics/    Streamlit app for interactive sample inspection
 ## How it works
 
 ```mermaid
-flowchart TD
-    subgraph exp["models/experiments/N/"]
-        cfg["config.yaml\narchitecture · hmm · cnv · evaluation\nhyperparameters · data paths"]
+flowchart LR
+    subgraph Experiment["models/experiments/N/"]
+        direction TB
+        cfg["config.yaml<br/>arch · hmm · cnv · eval · paths"]
+        vc["Versioned components"]
+        cfg -->|"selects versions & params"| vc
+    end
+
+    subgraph Pipeline["Execution"]
+        direction TB
         runsh["run.sh"]
+        out["data/results/N/"]
+        runsh -->|"inference → HMM → CNV → eval"| out
     end
 
-    subgraph vc["Versioned components"]
-        arch["architectures/\n01_conv_vae.py …"]
-        hmm["hmm/\n01_gaussian_hmm.py …"]
-        cnv["cnv/\n01_gene_cnv_caller.py …"]
-        ev["evaluation/\n01_pf9_evaluation.py …"]
-    end
-
-    subgraph out["data/results/N/"]
-        o1["latents.npy\nreconstructions.npy"]
-        o2["segments.parquet"]
-        o3["gene_calls.tsv"]
-        o4["evaluation.txt"]
-    end
-
-    subgraph loop["Autonomous proposal loop"]
-        claude["Claude Code\n/propose-experiment"]
+    subgraph Loop["Autonomous proposal loop"]
+        direction TB
+        claude["Claude Code<br/>/propose-experiment"]
         mail["📧 Proposal email"]
         you(["You"])
-        daemon["Daemon\nlaunchd · 60 s"]
+        daemon["Daemon · launchd · 60 s"]
+        claude --> mail --> you
+        you -->|"AUTHORISE"| daemon
+        you -->|"feedback"| claude
     end
 
-    subgraph diag["Diagnostics"]
-        app["Streamlit app\ndiagnostics/app.py"]
-    end
+    diag["Streamlit app<br/>diagnostics/app.py"]
 
-    cfg -->|"selects component\nversions & params"| vc
-    cfg --> runsh
-    runsh -->|"wrap_up.py\ninference → HMM → CNV → eval"| out
-
+    vc --> runsh
     out -->|"evaluation.txt"| claude
-    claude -->|"creates N+1 folder\n& config.yaml"| exp
-    claude --> mail
-    mail --> you
-    you -->|"AUTHORISE"| daemon
-    you -->|"feedback"| daemon
+    claude -->|"creates N+1 config"| cfg
     daemon -->|"runs experiment"| runsh
-    daemon -->|"on feedback: flags\nfor Claude to revise"| claude
-
-    cfg -->|"resolves all paths\n& versions"| app
-    out --> app
+    cfg -. "resolves paths & versions" .-> diag
+    out -.-> diag
 ```
 
 ## Experiment proposal workflow
