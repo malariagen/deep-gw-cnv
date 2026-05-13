@@ -1,0 +1,60 @@
+# Versioned components — reuse exp 32 checkpoint/HMM; new caller with noise filter + CRR rescue
+architecture: "06_conv_vae"
+hmm:          "03_gaussian_hmm"
+cnv:          "16_genome_cnv_caller"  # v16: noise filter (max_transitions) + CRR rescue
+evaluation:   "04_pf9_evaluation"    # v04: near-miss / blindspot diagnostics
+
+# Data — same 400 bp core genome as all prior experiments
+store_path: "../../../data/inputs/Pf9-53973-samples-400bp-core-npy"
+out_dir:    "../../../data/results/34_06convvae_400bp_core_st0.90_noise_filter_crr_rescue"
+normalise:  true
+
+# Gene annotation — unchanged
+gff_path: "../../../assets/PlasmoDB-54_Pfalciparum3D7.gff"
+
+# Model — reuse exp 32 checkpoint (100-epoch, same as exp 29/30/31/32)
+# Exp 33 showed 200-epoch training does not improve reconstruction quality.
+# Reverting to exp 32 artifacts which had better HMM segmentation (transitions p50=270
+# vs 406 in exp 33) and higher PPV baseline (0.53–0.70 vs 0.23–0.48).
+latent_dim:    10
+batch_size:    64
+epochs:        100
+lr:            1.0e-4
+weight_decay:  1.0e-5
+max_beta:      1.0
+warmup_epochs: 0
+patience:      20
+
+# Curriculum-weighted sampler — unchanged
+cnv_downsample_ratio_initial:  0.05
+cnv_downsample_ratio_final:    0.30
+cnv_downsample_warmup_epochs:  40
+
+# Sin loss — unchanged
+sin_loss_max_weight:    1.0
+sin_loss_warmup_epochs: 30
+
+# HMM segmentation — reused from exp 32 via symlink (st=0.90)
+hmm_n_states:          6
+hmm_self_transition:   0.90
+hmm_low_cov_threshold: 10
+hmm_n_jobs:            -1
+
+# CNV calling — v16 adds per-sample noise filter + CRR rescue on top of HMM-primary criterion
+# Noise filter: exp 32 segment transitions p50=270, p90=1796 per sample. A haploid organism
+# with a few CNVs should have O(10) CN state changes — hundreds of transitions indicate the
+# HMM is fitting noise, not signal. Filtering at 50 keeps ~15% of samples (roughly p15 of
+# exp 32 distribution), retaining only those where the HMM produced a coherent segmentation.
+# CRR rescue then applies only to these cleaner samples (lower TN CRR background), making
+# the 1.60 threshold safer: FP CRR p90=1.50–1.53 vs FN CRR p25=1.67–2.23.
+cnv_min_cn1_proportion:         0.55
+cnv_min_confidence:             0.25
+cnv_min_gene_coverage_fraction: 0.50   # HMM-primary threshold (unchanged)
+cnv_flank_padding:            100000
+cnv_max_transitions:             50    # samples with > 50 total CN transitions → CN=-1 (noise)
+cnv_crr_rescue_threshold:       1.60   # rescue if HMM misses but gene/flank CRR >= 1.60
+
+# Evaluation — unchanged
+pf9_gt_path:   "../../../assets/20260313_full_cnv_data_pf9.tsv"
+pf9_meta_path: "../../../assets/Pf_9_samples_20260227.txt"
+eval_min_group_n: 10

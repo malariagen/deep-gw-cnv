@@ -1,0 +1,55 @@
+# Versioned components — same as exp 37; no retrain, no HMM re-run
+architecture: "06_conv_vae"
+hmm:          "03_gaussian_hmm"
+cnv:          "16_genome_cnv_caller"  # v16: noise filter + global CRR rescue threshold
+evaluation:   "05_pf9_evaluation"    # v05: adds masked CNV rate (gt positives called -1)
+
+# Data — same 400bp core genome as exp 37
+store_path: "../../../data/inputs/Pf9-53973-samples-400bp-core-npy"
+out_dir:    "../../../data/results/38_06convvae_400bp_sinloss2.0_warmup80_eval05"
+normalise:  true
+
+# Gene annotation — unchanged
+gff_path: "../../../assets/PlasmoDB-54_Pfalciparum3D7.gff"
+
+# Model — reuse exp 37 checkpoint (no retrain; only CNV calling threshold changes)
+latent_dim:    10
+batch_size:    64
+epochs:        100
+lr:            1.0e-4
+weight_decay:  1.0e-5
+max_beta:      1.0
+warmup_epochs: 0
+patience:      20
+
+# Curriculum-weighted sampler — unchanged from exp 37
+cnv_downsample_ratio_initial:  0.05
+cnv_downsample_ratio_final:    0.30
+cnv_downsample_warmup_epochs:  80
+
+# Sin loss — unchanged from exp 37
+sin_loss_max_weight:    2.0
+sin_loss_warmup_epochs: 30
+
+# HMM segmentation — unchanged from exp 37 (reused via symlink)
+hmm_n_states:          6
+hmm_self_transition:   0.90
+hmm_low_cov_threshold: 10
+hmm_n_jobs:            -1
+
+# CNV calling — lower rescue threshold 1.55 → 1.35.
+# Exp 37 VAE produces TN CRR p90 ≤ 1.18 across all genes (vs old-VAE p90 up to 1.52 for CRT),
+# giving a 17bp buffer below 1.35. The 19 remaining GCH1 FNs have CRR p10=1.30, p50=1.48,
+# all below the current rescue threshold of 1.55. Lowering to 1.35 should rescue ~14–17 of
+# those 19 FNs without introducing CRT/MDR1/PM2_PM3 FPs (TNs top out at 1.18).
+cnv_min_cn1_proportion:         0.55
+cnv_min_confidence:             0.25
+cnv_min_gene_coverage_fraction: 0.50
+cnv_flank_padding:            100000
+cnv_max_transitions:             50
+cnv_crr_rescue_threshold:       1.55   # unchanged from exp 37 — no threshold change this experiment
+
+# Evaluation — unchanged
+pf9_gt_path:   "../../../assets/20260313_full_cnv_data_pf9.tsv"
+pf9_meta_path: "../../../assets/Pf_9_samples_20260227.txt"
+eval_min_group_n: 10

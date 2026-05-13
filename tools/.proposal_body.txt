@@ -1,67 +1,46 @@
 Hi Chiyun,
 
-Experiment 27 results summary (last completed):
+Experiment 40 results summary:
+- HMM transitions p50 dropped only 18%: 1189 → 970. Expected O(10–100); actual still too high.
+- Sanity check (≥55% CN=1) continues to mask 40–67% of GT CNV positives; total_fnr=0.41–0.71.
+- Evaluable-subset FNR remains excellent: GCH1=0.09, MDR1=0.02, PM2_PM3=0.04, CRT=0.11.
 
-- GCH1: FNR 0.11, PPV 0.96, MCC 0.91 — PPV far exceeded prediction; FNR regressed (0.04 → 0.11)
-- MDR1: FNR 0.01, PPV 0.91, MCC 0.95 — both better than predicted
-- PM2_PM3: FNR 0.06, PPV 0.73, MCC 0.82 — PPV exceeded prediction
-- CRT: FNR 0.00, PPV 0.42, MCC 0.65 — PPV exceeded prediction
+My diagnosis:
+The 0.90 → 0.96 change moved (1-p) from 0.10 to 0.04 — a 4× reduction in transition
+probability — yet transitions dropped only 18%. The 06_conv_vae residuals are fundamentally
+noisier than the VAE used in exp 30/31 where 0.96 produced p50=270. With the new model,
+the HMM emission variance is large enough that the state-transition prior barely constrains
+oscillation at 0.96. The sanity check keeps firing on the same majority of samples because
+p50=970 is still far above the threshold at which ≥55% CN=1 coverage is achievable. All
+blocked samples still have strong CRR signal (p25=1.75–2.00), confirming the issue is
+purely in the HMM calibration, not in the coverage data.
 
-Clarification — what is the band filter?
-
-CRR (Copy Read Ratio) is the ratio of read depth inside a gene to the depth in the
-surrounding 100 kb flanking region. Amplified genes should have CRR > 1.0. The problem
-is that systematic biases (GC content, mappability, sample noise) can inflate CRR to
-1.20–1.35 without any real copy gain. These false positives have no sustained copy
-elevation in the genomic neighbourhood — the HMM does not assign them to a CN≥2 segment.
-
-So calls in the range CRR [1.20, 1.35) are held for an extra check: what fraction of
-the gene's bins fall inside a CN≥2 HMM segment? If the fraction is below a threshold
-the call is demoted to CN=1 (not a real amplification). The "band" is this intermediate
-CRR zone where the signal is ambiguous and needs HMM confirmation.
-
-The "two-tier" part: exp 27 found that a single 50% threshold is too strict in the
-upper sub-range [1.25, 1.35). Real GCH1 amplifications in that range have partial HMM
-segment coverage — enough to confirm a real copy gain exists, but not 50% of gene bins.
-So we split the band into two zones with different thresholds:
-
-  Core zone   [1.20, 1.25):  ≥ 50% of gene bins in CN≥2 segments (artefacts here
-                              are easily separated from TPs — the 0.50 threshold is clean)
-  Extended zone [1.25, 1.35): ≥ 20% of gene bins in CN≥2 segments (lenient, to
-                              recover weak-signal TPs while still blocking pure artefacts)
-  Above 1.35:                unconditional pass (strong signal; no HMM check needed)
-
-No data augmentation: confirmed. The codebase has an AugmentedNormalDataset class
-that does Poisson resampling of normal samples, but it is only activated by
-aug_normal_poisson: true in the config. Exp 29's config does not set that key, so
-training runs on the raw read count data with log2 normalisation only.
-
-Proposed experiment 29: 06_conv_vae trained on 400 bp core genome (dynamic n_bins)
-Changes from exp 27 (last completed):
-- architecture: 05_conv_vae → 06_conv_vae (same topology; n_bins auto-derived from data shape)
-- store_path: 1000 bp core → 400 bp core (51986 bins vs 20814 bins; ~2.5× resolution)
-- batch_size: 128 → 64 (wider inputs increase per-batch memory)
-- Full retraining from scratch (linear layer dims change with bin count)
-- Two-tier band caller (v11) already included — same thresholds as exp 28 proposal
+Proposed experiment 41: raise hmm_self_transition 0.96 → 0.99
+Changes from exp 40:
+- hmm_self_transition: 0.96 → 0.99 (1-p drops 4×: 0.04 → 0.01)
+- HMM segmentation re-run (segments.parquet not symlinked); VAE artifacts reused from exp 37
 
 What I expect:
-GCH1 FNR should drop from 0.11 toward 0.04–0.08. At 400 bp, GCH1 spans ~5 bins
-instead of ~2, giving the HMM a longer consecutive elevated run to commit to.
-Combined with the lenient 20% threshold in the extended zone, marginal-CRR TPs in
-[1.25, 1.35) should be reliably recovered. MDR1 and CRT are already well-resolved
-at 1000 bp; no regression expected. PM2_PM3 FNs have CRR≈0 (coverage failures, not
-resolution failures) — no improvement expected there.
+At (1-p)=0.01, empirical extrapolation from the 0.90→0.96 ratio puts transitions p50 at
+~240 — close to exp 30's 270, where sanity checks passed and masked_cnv_rate was low. Once
+sanity passes, the stickier HMM will leave segment_cn2_fraction=0 for many FNs, but CRR
+rescue at 1.55 catches them directly (masked CRR p25=1.75–2.00 across all genes). Total_fnr
+should then converge toward the evaluable FNR (0.02–0.11). PPV may shift as the evaluable
+pool expands, but TN CRR p90=1.07–1.24 is well below 1.55 — few new FPs expected.
 
 What we could do instead:
-- Run exp 28 (two-tier band only, 1000 bp model) first to isolate the threshold
-  effect before committing to a full retrain on 400 bp data — cleaner attribution
-  but slower path to a better GCH1 FNR.
-- Increase HMM self_transition above 0.90 to reduce partial-coverage GCH1 FNs
-  at 1000 bp before adding resolution, avoiding the full retrain cost.
+1. Apply CRR rescue before the sanity check in a v17 CNV caller — no HMM re-run, runs in
+   15 min. Directly bypasses the sanity gate for any sample with CRR ≥ 1.55. Risk: MDR1
+   and PM2_PM3 failed-pool CRR p90=1.62–1.82, so ~10–15% of the large masked pool (mostly
+   GT negatives) would be called amplified, introducing a batch of FPs and hurting PPV.
+   Better to fix HMM calibration cleanly if 0.99 works.
+2. If 0.99 still fails to drop transitions enough, the next step would be to smooth the
+   HMM emission input (rolling average over reconstruction residuals) rather than relying
+   solely on the transition prior.
 
-Run time estimate: ~6–10 hours (full training + HMM + evaluation).
+Run time estimate: ~2–3 hours (HMM re-run ~2h + CNV calling ~30 min + evaluation ~5 min;
+no training or inference).
 
-Reply AUTHORISE to run this on the Mac mini, or reply with feedback and I'll revise
-the proposal.
+Reply AUTHORISE to run this on the Mac mini, or reply with feedback and I'll revise the proposal.
 
 Claude

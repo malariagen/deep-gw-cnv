@@ -1,0 +1,57 @@
+# Versioned components — VAE and CNV/eval unchanged from exp 31
+architecture: "06_conv_vae"
+hmm:          "03_gaussian_hmm"
+cnv:          "14_genome_cnv_caller"  # v14: HMM-primary + conf 0.25 + explicit CN>=3 handling
+evaluation:   "04_pf9_evaluation"    # v04: near-miss / blindspot diagnostics
+
+# Data — same 400 bp core genome as exp 29/30/31
+store_path: "../../../data/inputs/Pf9-53973-samples-400bp-core-npy"
+out_dir:    "../../../data/results/32_06convvae_400bp_core_st0.90_hmm_primary_conf0.25"
+normalise:  true
+
+# Gene annotation — unchanged
+gff_path: "../../../assets/PlasmoDB-54_Pfalciparum3D7.gff"
+
+# Model — reuse exp 29 checkpoint (same as exp 30/31)
+latent_dim:    10
+batch_size:    64
+epochs:        100
+lr:            1.0e-4
+weight_decay:  1.0e-5
+max_beta:      1.0
+warmup_epochs: 0
+patience:      20
+
+# Curriculum-weighted sampler — unchanged
+cnv_downsample_ratio_initial:  0.05
+cnv_downsample_ratio_final:    0.30
+cnv_downsample_warmup_epochs:  40
+
+# Sin loss — unchanged
+sin_loss_max_weight:    1.0
+sin_loss_warmup_epochs: 30
+
+# HMM segmentation — KEY CHANGE: self_transition 0.96 → 0.90
+# Exp 31 near-miss diagnostics: 87–95% of FNs have segment_cn2_fraction=0 even at
+# confidence 0.25.  FN CRR p50 values are 1.87–2.73 — the signal is present in raw
+# coverage but the HMM does not produce CN>=2 segments at these gene loci.
+# At st=0.96 the expected segment duration is ~25 bins × 400bp = ~10kb; gene-scale
+# amplifications may span only 7–15 bins and the HMM stays in CN=1 because the
+# elevated signal doesn't persist long enough.  Lowering to st=0.90 reduces expected
+# duration to ~10 bins × 400bp = ~4kb, appropriate for gene-scale events.
+# HMM must be re-run; exp 31 segments (st=0.96) cannot be reused.
+hmm_n_states:          6
+hmm_self_transition:   0.90   # was 0.96 in exp 30/31; reverted to recover gene-scale FNs
+hmm_low_cov_threshold: 10
+hmm_n_jobs:            -1
+
+# CNV calling — unchanged from exp 31 (v14, HMM-primary, conf 0.25)
+cnv_min_cn1_proportion:       0.55   # chromosome-level sanity: >= 55% CN=1 background required
+cnv_min_confidence:           0.25   # same as exp 31
+cnv_min_gene_coverage_fraction: 0.50 # primary call criterion: >= 50% of gene bins covered by CN>=2
+cnv_flank_padding:            100000 # flank window for CRR diagnostic computation (unchanged)
+
+# Evaluation — unchanged
+pf9_gt_path:   "../../../assets/20260313_full_cnv_data_pf9.tsv"
+pf9_meta_path: "../../../assets/Pf_9_samples_20260227.txt"
+eval_min_group_n: 10

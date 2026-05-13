@@ -21,17 +21,17 @@ from bokeh.models import (ColumnDataSource, HoverTool, ColorBar,
 from bokeh.models import NumeralTickFormatter, PanTool, WheelZoomTool, LabelSet
 from bokeh.palettes import Plasma256
 
-@st.cache_data
-@st.cache_data
+@st.cache_resource
 def load_results(results_dir):
-    latents         = np.load(os.path.join(results_dir, "latents.npy"))
-    reconstructions = np.load(os.path.join(results_dir, "reconstructions.npy"))
-    sample_ids      = np.load(os.path.join(results_dir, "sample_ids.npy"), allow_pickle=True)
+    latents_raw = np.load(os.path.join(results_dir, "latents.npy"))
+    # mmap_mode='r': file-backed, no RAM copy until a row is accessed
+    recons_raw  = np.load(os.path.join(results_dir, "reconstructions.npy"), mmap_mode='r')
+    sample_ids  = np.load(os.path.join(results_dir, "sample_ids.npy"), allow_pickle=True)
 
-    latents_df = pd.DataFrame(latents, index=sample_ids)
+    latents_df = pd.DataFrame(latents_raw, index=sample_ids)
     latents_df.columns = [f"latent_{i+1}" for i in range(latents_df.shape[1])]
 
-    reconstructions_df = pd.DataFrame(reconstructions, index=sample_ids)
+    sid_to_idx = {sid: i for i, sid in enumerate(sample_ids)}
 
     segs_path = os.path.join(results_dir, "segments.parquet")
     segments  = pd.read_parquet(segs_path) if os.path.exists(segs_path) else None
@@ -40,10 +40,11 @@ def load_results(results_dir):
     gene_calls = pd.read_csv(gene_calls_path, sep="\t", index_col=0) if os.path.exists(gene_calls_path) else None
 
     return {
-        "latents": latents_df,
-        "reconstructions": reconstructions_df,
-        "segments": segments,
-        "gene_calls": gene_calls,
+        "latents":         latents_df,
+        "reconstructions": recons_raw,   # memmap array — index via recon_idx
+        "recon_idx":       sid_to_idx,
+        "segments":        segments,
+        "gene_calls":      gene_calls,
     }
 
 @st.cache_data
@@ -90,29 +91,29 @@ def load_meta():
 
     return meta_df.merge(cnv_calls, left_index=True, right_index=True, how="left"), gff
 
-@st.cache_data
+@st.cache_resource
 def load_inputs(inputs_path):
     contigs    = np.load(os.path.join(inputs_path, "contigs.npy"), allow_pickle=True)
-    counts     = np.load(os.path.join(inputs_path, "counts.npy"))
+    # mmap_mode='r': file-backed, no RAM copy until a row is accessed
+    counts_raw = np.load(os.path.join(inputs_path, "counts.npy"), mmap_mode='r')
     sample_ids = np.load(os.path.join(inputs_path, "sample_ids.npy"), allow_pickle=True)
 
-    counts_df = pd.DataFrame(counts, index=sample_ids)
-    contigs_df = pd.DataFrame(contigs)
+    sid_to_idx = {sid: i for i, sid in enumerate(sample_ids)}
 
     return {
-        "contigs": contigs_df,
-        "counts": counts_df
+        "contigs":    pd.DataFrame(contigs),
+        "counts":     counts_raw,   # memmap array — index via counts_idx
+        "counts_idx": sid_to_idx,
     }
 
 @st.cache_data
 def process_sample(contigs, sample_inputs, sample_reconstruction):
     copy_ratio = pd.DataFrame({
-        "input": sample_inputs.values.flatten(),
-        "reconstruction": sample_reconstruction.values.flatten()
-    }, index=sample_inputs.index)
+        "input": np.asarray(sample_inputs).flatten(),
+        "reconstruction": np.asarray(sample_reconstruction).flatten()
+    })
     copy_ratio["copy_ratio"] = copy_ratio["input"] / (copy_ratio["reconstruction"] + 1e-6)
-    
-    return pd.concat([contigs, copy_ratio], axis=1)
+    return pd.concat([contigs.reset_index(drop=True), copy_ratio], axis=1)
 
 @st.cache_data
 def compute_pca(latents_df):

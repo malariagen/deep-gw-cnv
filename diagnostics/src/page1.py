@@ -1,17 +1,28 @@
-import streamlit as st
-import streamlit.components.v1 as components
-import pandas as pd
 import random
 
 import matplotlib.pyplot as plt
-
-from src.utils import (load_meta, load_results, load_inputs, process_sample,
-                       compute_pca, compute_pca_contours, plot_latents, plot_pca,
-                       plot_copy_number, plot_segment_logistic_diagnostic,
-                       list_experiments, load_experiment_config,
-                       fit_hmm_sample_versioned, call_all_genes_versioned)
+import pandas as pd
+import streamlit as st
+import streamlit.components.v1 as components
 from bokeh.embed import file_html
 from bokeh.resources import CDN
+from src.utils import (
+    call_all_genes_versioned,
+    compute_pca,
+    compute_pca_contours,
+    fit_hmm_sample_versioned,
+    list_experiments,
+    load_experiment_config,
+    load_inputs,
+    load_meta,
+    load_results,
+    plot_copy_number,
+    plot_latents,
+    plot_pca,
+    plot_segment_logistic_diagnostic,
+    process_sample,
+)
+
 
 def page1():
     st.title("First page")
@@ -84,8 +95,9 @@ def page1():
     contours = compute_pca_contours(pca_df, meta)
 
     data = process_sample(
-        inputs["contigs"], inputs["counts"].loc[SAMPLE_ID],
-        results["reconstructions"].loc[SAMPLE_ID]
+        inputs["contigs"],
+        inputs["counts"][inputs["counts_idx"][SAMPLE_ID]],
+        results["reconstructions"][results["recon_idx"][SAMPLE_ID]],
     )
 
     col_pca, col_cn = st.columns([1, 3])

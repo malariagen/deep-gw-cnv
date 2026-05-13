@@ -1,0 +1,54 @@
+# Versioned components — VAE and HMM unchanged from exp 30
+architecture: "06_conv_vae"
+hmm:          "03_gaussian_hmm"
+cnv:          "14_genome_cnv_caller"  # v14: lower confidence threshold + explicit CN>=3 handling
+evaluation:   "04_pf9_evaluation"    # v04: adds near-miss blindspot diagnostics
+
+# Data — same 400 bp core genome as exp 29/30
+store_path: "../../../data/inputs/Pf9-53973-samples-400bp-core-npy"
+out_dir:    "../../../data/results/31_06convvae_400bp_core_st0.96_hmm_primary_conf0.25"
+normalise:  true
+
+# Gene annotation — unchanged
+gff_path: "../../../assets/PlasmoDB-54_Pfalciparum3D7.gff"
+
+# Model — reuse exp 29 checkpoint (same as exp 30)
+latent_dim:    10
+batch_size:    64
+epochs:        100
+lr:            1.0e-4
+weight_decay:  1.0e-5
+max_beta:      1.0
+warmup_epochs: 0
+patience:      20
+
+# Curriculum-weighted sampler — unchanged
+cnv_downsample_ratio_initial:  0.05
+cnv_downsample_ratio_final:    0.30
+cnv_downsample_warmup_epochs:  40
+
+# Sin loss — unchanged
+sin_loss_max_weight:    1.0
+sin_loss_warmup_epochs: 30
+
+# HMM segmentation — unchanged from exp 30; reuse exp 30 segments.parquet via symlink
+hmm_n_states:          6
+hmm_self_transition:   0.96
+hmm_low_cov_threshold: 10
+hmm_n_jobs:            -1
+
+# CNV calling — v13: HMM-segment-primary; CRR not used for calling.
+# A sample is called amplified if >= cnv_min_gene_coverage_fraction of the gene's bins
+# are covered by high-confidence (>= cnv_min_confidence) CN>=2 HMM segments.
+# Threshold 0.50: majority of gene body must be in CN>=2 — scientifically defensible.
+# CRR is still computed (low-cov filter from v12 applies) and stored in output as a
+# diagnostic column; it does not gate or modify the call decision.
+cnv_min_cn1_proportion:       0.55   # chromosome-level sanity: >= 55% CN=1 background required
+cnv_min_confidence:           0.25   # lowered from 0.50: include lower-confidence segments to recover FNs
+cnv_min_gene_coverage_fraction: 0.50 # primary call criterion: >= 50% of gene bins covered by CN>=2
+cnv_flank_padding:            100000 # flank window for CRR diagnostic computation (unchanged)
+
+# Evaluation — unchanged
+pf9_gt_path:   "../../../assets/20260313_full_cnv_data_pf9.tsv"
+pf9_meta_path: "../../../assets/Pf_9_samples_20260227.txt"
+eval_min_group_n: 10

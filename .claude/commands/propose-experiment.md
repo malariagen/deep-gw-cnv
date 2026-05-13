@@ -19,7 +19,7 @@ Analyse the latest experiment results and propose the next experiment. Set up th
      This returns the reply body once and nowhere else — it is not stored on disk.
 
 2. **Analyse results**
-   Interpret the last completed experiment's evaluation using the GUIDANCE section at the top of evaluation.txt:
+   Interpret all completed experiments' evaluation using the GUIDANCE section at the top of evaluation.txt -- You must use agents efficiently to load the context of every experiment in, otherwise you will blow up your context window:
    - Which genes have the worst FNR?
    - What do the FN p50 CRR values tell you? (>> 1.0 = HMM issue, ≈ 1.0 = weak signal)
    - Are there patterns by population?

@@ -1,0 +1,60 @@
+# Versioned components — same as exp 38/39; no retrain, no inference re-run.
+# HMM must be re-run because hmm_self_transition changes.
+architecture: "06_conv_vae"
+hmm:          "03_gaussian_hmm"
+cnv:          "16_genome_cnv_caller"  # v16: noise filter disabled + global CRR rescue
+evaluation:   "05_pf9_evaluation"    # v05: masked CNV rate diagnostic
+
+# Data — same 400bp core genome as exp 37/38/39
+store_path: "../../../data/inputs/Pf9-53973-samples-400bp-core-npy"
+out_dir:    "../../../data/results/40_06convvae_400bp_sinloss2.0_warmup80_st096"
+normalise:  true
+
+# Gene annotation — unchanged
+gff_path: "../../../assets/PlasmoDB-54_Pfalciparum3D7.gff"
+
+# Model — reuse exp 37 checkpoint (no retrain)
+latent_dim:    10
+batch_size:    64
+epochs:        100
+lr:            1.0e-4
+weight_decay:  1.0e-5
+max_beta:      1.0
+warmup_epochs: 0
+patience:      20
+
+# Curriculum-weighted sampler — unchanged from exp 37
+cnv_downsample_ratio_initial:  0.05
+cnv_downsample_ratio_final:    0.30
+cnv_downsample_warmup_epochs:  80
+
+# Sin loss — unchanged from exp 37
+sin_loss_max_weight:    2.0
+sin_loss_warmup_epochs: 30
+
+# HMM segmentation — self_transition raised from 0.90 to 0.96.
+# Exp 39 has transitions p50=1189 per sample (over-segmented), causing the sanity check
+# (>=55% chromosome CN=1) to fail for 47-67% of GT CNV positives. Those masked samples
+# have CRR p50=1.76-2.44 — signal is present; the sanity gate is blocking it.
+# 0.96 was used in exp 30/31; FNR was 0.00-0.03 on the evaluable subset at that time.
+# The reason 0.96 was abandoned was high evaluable FNR in exp 31 — but that experiment
+# used HMM-only calling with no CRR rescue. Now CRR rescue at 1.55 provides a safety net:
+# even if the stickier HMM fails to segment an amplification, CRR rescues it
+# (masked CRR p25=1.61-2.00 across all genes in exp 39).
+hmm_n_states:          6
+hmm_self_transition:   0.96   # raised from 0.90; targets sanity-check mass failure
+hmm_low_cov_threshold: 10
+hmm_n_jobs:            -1
+
+# CNV calling — noise filter disabled (exp 39 finding); CRR rescue unchanged.
+cnv_min_cn1_proportion:         0.55
+cnv_min_confidence:             0.25
+cnv_min_gene_coverage_fraction: 0.50
+cnv_flank_padding:            100000
+cnv_max_transitions:            ~      # null: noise filter remains disabled
+cnv_crr_rescue_threshold:       1.55   # unchanged
+
+# Evaluation — unchanged
+pf9_gt_path:   "../../../assets/20260313_full_cnv_data_pf9.tsv"
+pf9_meta_path: "../../../assets/Pf_9_samples_20260227.txt"
+eval_min_group_n: 10

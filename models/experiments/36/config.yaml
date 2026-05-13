@@ -1,0 +1,59 @@
+# Versioned components — reuse exp 32/35 artifacts; v16 caller with global CRR threshold 1.55
+architecture: "06_conv_vae"
+hmm:          "03_gaussian_hmm"
+cnv:          "16_genome_cnv_caller"  # v16: noise filter + global CRR rescue threshold
+evaluation:   "04_pf9_evaluation"    # v04: near-miss / blindspot diagnostics
+
+# Data — same 400 bp core genome as all prior experiments
+store_path: "../../../data/inputs/Pf9-53973-samples-400bp-core-npy"
+out_dir:    "../../../data/results/36_06convvae_400bp_core_st0.90_noise_filter_crr1.55"
+normalise:  true
+
+# Gene annotation — unchanged
+gff_path: "../../../assets/PlasmoDB-54_Pfalciparum3D7.gff"
+
+# Model — reuse exp 32 checkpoint (100-epoch, same as exp 29/30/31/32/34/35)
+latent_dim:    10
+batch_size:    64
+epochs:        100
+lr:            1.0e-4
+weight_decay:  1.0e-5
+max_beta:      1.0
+warmup_epochs: 0
+patience:      20
+
+# Curriculum-weighted sampler — unchanged
+cnv_downsample_ratio_initial:  0.05
+cnv_downsample_ratio_final:    0.30
+cnv_downsample_warmup_epochs:  40
+
+# Sin loss — unchanged
+sin_loss_max_weight:    1.0
+sin_loss_warmup_epochs: 30
+
+# HMM segmentation — reused from exp 32 via symlink (st=0.90)
+hmm_n_states:          6
+hmm_self_transition:   0.90
+hmm_low_cov_threshold: 10
+hmm_n_jobs:            -1
+
+# CNV calling — v16 with noise filter unchanged; CRR rescue threshold 1.45 → 1.55.
+# Exp 35 (threshold 1.45) introduced 16 CRT FPs (CRR 1.45–1.52) and ~30 PM2_PM3 FPs
+# (CRR 1.46–1.63). CRT FP ceiling is 1.52; raising to 1.55 eliminates all 16 CRT FPs
+# (buffer: 3 basis points above ceiling). Per-gene thresholds are not used — the caller
+# is genome-wide and a gene-keyed dict would not generalise beyond the four reference genes.
+# GCH1 FNR will regress from 0.09: all 66 remaining FNs have CRR ≤ 1.43 (unaffected), and
+# the 81 FNs rescued at 1.45 with CRR in [1.45, 1.54) become FN again. Only those with
+# CRR ≥ 1.55 remain rescued — roughly the top 15–20% of the original 147, so expect
+# ~25–30 rescued, leaving GCH1 FNR ≈ 0.16–0.17.
+cnv_min_cn1_proportion:         0.55
+cnv_min_confidence:             0.25
+cnv_min_gene_coverage_fraction: 0.50   # HMM-primary threshold (unchanged)
+cnv_flank_padding:            100000
+cnv_max_transitions:             50    # samples with > 50 total CN transitions → CN=-1 (noise)
+cnv_crr_rescue_threshold:       1.55   # raised from 1.45; eliminates all CRT FPs (ceiling 1.52)
+
+# Evaluation — unchanged
+pf9_gt_path:   "../../../assets/20260313_full_cnv_data_pf9.tsv"
+pf9_meta_path: "../../../assets/Pf_9_samples_20260227.txt"
+eval_min_group_n: 10

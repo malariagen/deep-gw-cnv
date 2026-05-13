@@ -1,6 +1,6 @@
 # Experiment 29 — 06_conv_vae on 400 bp core genome (dynamic n_bins)
 
-**Status:** Proposed 2026-04-27
+**Status:** Complete 2026-04-28
 
 **Full training from scratch.** Architecture 06_conv_vae with 400 bp bin resolution
 (51986 bins). No checkpoint reuse — the linear layer dimensions change with bin count.
@@ -54,6 +54,41 @@ The topology (5× ResConvBlock encoder + 5× ConvTranspose1d decoder) is unchang
 ~6–10 hours (full training: 100 epochs × 53973 samples × 51986 bins at batch=64,
 plus HMM + CNV calling + evaluation). HMM with n_jobs=-1 will be ~2.5× slower than
 1000 bp due to more positions per chromosome.
+
+## Actual outcome
+
+| Gene    | MCC  | FNR  | PPV  |
+|---------|------|------|------|
+| CRT     | 0.30 | 0.22 | 0.12 |
+| GCH1    | 0.75 | 0.08 | 0.66 |
+| MDR1    | 0.16 | 0.88 | 0.26 |
+| PM2_PM3 | 0.63 | 0.14 | 0.48 |
+
+**Where predictions were right:** GCH1 FNR improved to 0.08 (predicted 0.04–0.08) ✓.
+Higher resolution gave the HMM more consecutive elevated bins to commit on short
+amplifications. PM2_PM3 held steady.
+
+**Where predictions diverged:** MDR1 catastrophically regressed from FNR=0.01 to
+FNR=0.88 (predicted ~0.01). CRT also deteriorated (FNR=0.00 → 0.22, PPV 0.42 →
+0.12).
+
+**Root cause (corrected):** The initial diagnosis (VAE absorbed MDR1 amplification as
+normal) was wrong.  The actual cause is a numerical bug in `11_genome_cnv_caller.py`:
+~2% of bins per sample have reconstruction near zero while carrying non-zero read
+counts.  Because the CRR denominator uses `recons + 1e-6`, each such bin produces a
+copy_ratio on the order of millions.  With 2689 flank bins on chr5 and even 2–5 of
+these pathological bins, the `nanmean` of the flank collapses to thousands, making
+CRR ≈ 0 for almost every sample.  Visual inspection of individual samples in the
+Streamlit app confirmed the reconstruction does track the input well at the MDR1
+locus — the signal is present.  Corrected CRR (filtering bins where counts < 10 OR
+recons < 10) gives MDR1 GT-amplified p50 = 2.14, which clears the 1.20 threshold.
+
+**HMM over-segmentation:** Segment diagnostics show p50=270 transitions per sample
+vs p50=62 in exp 27. With 2.5× more bins at 400bp and self_transition=0.90 unchanged,
+the HMM fragments gene-spanning segments. This independently hurts CRT and PM2_PM3.
+
+**Next experiment:** Exp 30 — fix CNV caller (12_genome_cnv_caller, low-cov filter)
++ increase self_transition to 0.96, reuse exp 29 checkpoint, re-run HMM → CNV → eval.
 
 ## Proposal history
 

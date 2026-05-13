@@ -199,30 +199,43 @@ def main():
     checkpoint_path = os.path.join(out_dir, "checkpoint.pth")
     log_path        = os.path.join(out_dir, "training_log.json")
 
-    train_vae(
-        model, dl, optimiser,
-        epochs                 = cfg["epochs"],
-        max_beta               = cfg["max_beta"],
-        warmup_epochs          = cfg["warmup_epochs"],
-        patience               = cfg["patience"],
-        device                 = device,
-        model_save_path        = checkpoint_path,
-        log_path               = log_path,
-        sin_loss_max_weight    = cfg.get("sin_loss_max_weight", 0.0),
-        sin_loss_warmup_epochs = cfg.get("sin_loss_warmup_epochs", 0),
-        make_loader_fn         = make_loader_fn,
-    )
+    recons_path   = os.path.join(out_dir, "reconstructions.npy")
+    segments_path = os.path.join(out_dir, "segments.parquet")
 
-    if os.path.exists(checkpoint_path):
-        model.load_state_dict(torch.load(checkpoint_path, map_location=device, weights_only=True))
-        print("Loaded best checkpoint for inference.", flush=True)
+    if os.path.exists(recons_path):
+        print("Skipping training+inference: reconstructions.npy already exists.", flush=True)
+        if os.path.exists(checkpoint_path):
+            model.load_state_dict(torch.load(checkpoint_path, map_location=device, weights_only=True))
+    else:
+        train_vae(
+            model, dl, optimiser,
+            epochs                 = cfg["epochs"],
+            max_beta               = cfg["max_beta"],
+            warmup_epochs          = cfg["warmup_epochs"],
+            patience               = cfg["patience"],
+            device                 = device,
+            model_save_path        = checkpoint_path,
+            log_path               = log_path,
+            sin_loss_max_weight    = cfg.get("sin_loss_max_weight", 0.0),
+            sin_loss_warmup_epochs = cfg.get("sin_loss_warmup_epochs", 0),
+            make_loader_fn         = make_loader_fn,
+        )
 
-    run_inference(model, ds, device, out_dir, batch_size=cfg["batch_size"])
+        if os.path.exists(checkpoint_path):
+            model.load_state_dict(torch.load(checkpoint_path, map_location=device, weights_only=True))
+            print("Loaded best checkpoint for inference.", flush=True)
 
-    print("Fitting HMM segments...", flush=True)
-    run_hmm_all_samples(store_path, out_dir, cfg)
+        run_inference(model, ds, device, out_dir, batch_size=cfg["batch_size"])
+
+    if os.path.exists(segments_path):
+        print("Skipping HMM segmentation: segments.parquet already exists.", flush=True)
+    else:
+        print("Fitting HMM segments...", flush=True)
+        run_hmm_all_samples(store_path, out_dir, cfg)
 
     print("Calling gene CNVs...", flush=True)
+    if cfg.get("gff_path"):
+        cfg["gff_path"] = resolve(cfg["gff_path"])
     run_cnv_calls(store_path, out_dir, cfg)
 
     if cfg.get("pf9_gt_path"):

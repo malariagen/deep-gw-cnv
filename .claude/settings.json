@@ -15,7 +15,6 @@
       "Bash(rm tools/pending_feedback.txt)",
       "Bash(rm -f tools/.proposal_body.txt)",
       "Bash(launchctl list *)"
-    ],
-    "defaultMode": "dontAsk"
+    ]
   }
 }

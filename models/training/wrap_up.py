@@ -138,7 +138,9 @@ def main():
 
     # ── CNV calling ─────────────────────────────────────────────────────────
     print("Calling gene CNVs...", flush=True)
-    run_cnv_calls(store_path, out_dir, cfg)
+    cfg_cnv = dict(cfg)
+    cfg_cnv["gff_path"] = resolve(cfg["gff_path"])
+    run_cnv_calls(store_path, out_dir, cfg_cnv)
 
     # ── Evaluation (optional — requires pf9_gt_path in config) ──────────────
     if cfg.get("pf9_gt_path"):
