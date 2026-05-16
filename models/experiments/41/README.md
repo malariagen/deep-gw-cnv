@@ -1,6 +1,6 @@
 # Experiment 41 — Raise HMM self_transition 0.96 → 0.99 to fix sanity-check failure
 
-**Status:** Proposed 2026-05-13
+**Status:** Complete 2026-05-13
 
 **No retrain, no inference re-run.** Reuses exp 37 checkpoint, latents, and reconstructions
 via symlinks. HMM segmentation is re-run with the new self_transition. CNV calling and
@@ -51,3 +51,30 @@ All other parameters unchanged. Noise filter remains disabled (`cnv_max_transiti
 
 ~2–3 hours: HMM re-segmentation (~2h with n_jobs=-1 across 50k samples) +
 CNV calling (~30 min) + evaluation (~5 min). No training or inference.
+
+## Actual outcome
+
+| Gene    | FNR  | PPV  | MCC  |
+|---------|------|------|------|
+| CRT     | 0.06 | 0.02 | 0.12 |
+| GCH1    | 0.10 | 0.62 | 0.71 |
+| MDR1    | 0.02 | 0.59 | 0.75 |
+| PM2_PM3 | 0.04 | 0.39 | 0.59 |
+
+Masked CNV rate: CRT=0.71, GCH1=0.47, MDR1=0.40, PM2_PM3=0.52.
+Total FNR: CRT=0.72, GCH1=0.53, MDR1=0.42, PM2_PM3=0.54.
+HMM transitions p50=769 (expected ~240; actual only 21% reduction from exp 40's 970).
+
+**Where predictions matched:** Evaluable FNR remains excellent (0.02–0.10). Masked CRR
+confirms signal is present (p10 ≥ 1.48 across all genes), and near-miss diagnostics
+confirm nearly all FNs have segment_cn2_fraction=0 — HMM not segmenting them at all.
+
+**Where predictions diverged:** The expected 4× reduction in (1-p) (0.04 → 0.01) did not
+translate into a 4× reduction in transitions — only 21%, continuing the pattern from exp 40.
+The masked_cnv_rate barely changed vs exp 40 (CRT actually worsened: 0.67 → 0.71). This
+confirms the issue is not the transition prior but the emission noise: the 06_conv_vae
+residuals have intrinsically high bin-to-bin variance that the self_transition prior cannot
+suppress. Raising self_transition further has hit diminishing returns.
+
+**Next:** Experiment 42 — smooth HMM emission input (rolling mean, 5-bin window) to reduce
+bin-to-bin copy ratio variance before the HMM sees it.

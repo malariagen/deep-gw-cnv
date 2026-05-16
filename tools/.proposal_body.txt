@@ -1,45 +1,47 @@
 Hi Chiyun,
 
-Experiment 40 results summary:
-- HMM transitions p50 dropped only 18%: 1189 → 970. Expected O(10–100); actual still too high.
-- Sanity check (≥55% CN=1) continues to mask 40–67% of GT CNV positives; total_fnr=0.41–0.71.
-- Evaluable-subset FNR remains excellent: GCH1=0.09, MDR1=0.02, PM2_PM3=0.04, CRT=0.11.
+Experiment 43 results summary:
+- 18_genome_cnv_caller eliminated the masked CNV pool: masked rate dropped from 12–33% to
+  ≈0% across all genes; total FNR converged to evaluable FNR (CRT=0.02, GCH1=0.15, MDR1=0.00,
+  PM2_PM3=0.02).
+- β=4 improved HMM stability substantially (transitions p50: 306 → 127, 57% further reduction)
+  with no posterior collapse (callability 0.995). But β=4 did NOT improve CRR contrast for
+  GCH1 FNs: p50 moved 1.43 → 1.42, essentially unchanged.
+- 306 GCH1 FNs remain (FNR=0.15): all have frac=0 (HMM gives no CN>=2 coverage) and CRR p50=1.42
+  — below the 1.55 rescue threshold and unreachable by parameter tuning alone.
 
 My diagnosis:
-The 0.90 → 0.96 change moved (1-p) from 0.10 to 0.04 — a 4× reduction in transition
-probability — yet transitions dropped only 18%. The 06_conv_vae residuals are fundamentally
-noisier than the VAE used in exp 30/31 where 0.96 produced p50=270. With the new model,
-the HMM emission variance is large enough that the state-transition prior barely constrains
-oscillation at 0.96. The sanity check keeps firing on the same majority of samples because
-p50=970 is still far above the threshold at which ≥55% CN=1 coverage is achievable. All
-blocked samples still have strong CRR signal (p25=1.75–2.00), confirming the issue is
-purely in the HMM calibration, not in the coverage data.
+The 306 GCH1 FNs are a training data composition problem. GCH1 amplification is extremely
+common in African Pf9 populations (AF-E FNR=0.39, AF-W FNR=0.34), which dominate the dataset.
+With cnv_downsample_ratio_final=0.30, the VAE still sees enough amplified GCH1 profiles in
+late training that it learns elevated GCH1 read counts as near-normal — keeping reconstruction
+residual low and the HMM uninformed. β=4 added KL regularisation but cannot fix the fact that
+the model has been shown too many amplified profiles: the normal-vs-amplified boundary remains
+blurry for GCH1. Lowering the steady-state CNV proportion forces the model to treat amplification
+as genuinely anomalous.
 
-Proposed experiment 41: raise hmm_self_transition 0.96 → 0.99
-Changes from exp 40:
-- hmm_self_transition: 0.96 → 0.99 (1-p drops 4×: 0.04 → 0.01)
-- HMM segmentation re-run (segments.parquet not symlinked); VAE artifacts reused from exp 37
+Proposed experiment 44: lower cnv_downsample_ratio_final 0.30 → 0.10
+Changes from exp 43:
+- cnv_downsample_ratio_final: 0.30 → 0.10 (full retrain required)
+  At 10%, amplified profiles are rare enough in late training that the VAE reconstructs them
+  poorly, raising the reconstruction residual and giving the HMM a signal to segment them CN>=2.
+  All other parameters unchanged (β=4, 18_genome_cnv_caller, rescue threshold 1.55).
 
 What I expect:
-At (1-p)=0.01, empirical extrapolation from the 0.90→0.96 ratio puts transitions p50 at
-~240 — close to exp 30's 270, where sanity checks passed and masked_cnv_rate was low. Once
-sanity passes, the stickier HMM will leave segment_cn2_fraction=0 for many FNs, but CRR
-rescue at 1.55 catches them directly (masked CRR p25=1.75–2.00 across all genes). Total_fnr
-should then converge toward the evaluable FNR (0.02–0.11). PPV may shift as the evaluable
-pool expands, but TN CRR p90=1.07–1.24 is well below 1.55 — few new FPs expected.
+GCH1 frac=0 FNs should gain non-zero frac as the HMM starts seeing real reconstruction residual.
+If enough cross the 0.50 gene-coverage threshold, GCH1 FNR could drop toward 0.05–0.10.
+The main risk is that 10% is too low and the VAE becomes noisy for all samples, raising
+transitions p50 back above 200+. Key diagnostic: if transitions p50 climbs above 250 without
+a corresponding GCH1 FNR improvement, the ratio is too aggressive (next step: 0.15 or 0.20).
 
 What we could do instead:
-1. Apply CRR rescue before the sanity check in a v17 CNV caller — no HMM re-run, runs in
-   15 min. Directly bypasses the sanity gate for any sample with CRR ≥ 1.55. Risk: MDR1
-   and PM2_PM3 failed-pool CRR p90=1.62–1.82, so ~10–15% of the large masked pool (mostly
-   GT negatives) would be called amplified, introducing a batch of FPs and hurting PPV.
-   Better to fix HMM calibration cleanly if 0.99 works.
-2. If 0.99 still fails to drop transitions enough, the next step would be to smooth the
-   HMM emission input (rolling average over reconstruction residuals) rather than relying
-   solely on the transition prior.
+1. Intermediate ratio (0.15 or 0.20): more conservative step between 0.30 and 0.10; safer but
+   likely insufficient if African GCH1 prevalence is ~40-60% (same composition problem persists).
+2. Exclude known-CNV samples from the normal training pool entirely: train only on samples called
+   normal in a prior experiment, so the VAE never sees amplified profiles as normal. Harder to
+   implement but addresses the root cause more directly.
 
-Run time estimate: ~2–3 hours (HMM re-run ~2h + CNV calling ~30 min + evaluation ~5 min;
-no training or inference).
+Run time estimate: ~7–8 hours (VAE training ~5–6h + HMM ~2h + CNV calling ~30 min + evaluation ~5 min).
 
 Reply AUTHORISE to run this on the Mac mini, or reply with feedback and I'll revise the proposal.
 

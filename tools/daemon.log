@@ -1,1076 +1,1357 @@
-  epoch 84 | batch 0/844 | loss 77905.0156
-  epoch 84 | batch 50/844 | loss 80275.0156
-  epoch 84 | batch 100/844 | loss 76860.3828
-  epoch 84 | batch 150/844 | loss 93616.4062
-  epoch 84 | batch 200/844 | loss 72725.3281
-  epoch 84 | batch 250/844 | loss 87432.4219
-  epoch 84 | batch 300/844 | loss 91945.6562
-  epoch 84 | batch 350/844 | loss 72599.6016
-  epoch 84 | batch 400/844 | loss 74815.4062
-  epoch 84 | batch 450/844 | loss 80021.7266
-  epoch 84 | batch 500/844 | loss 75738.2969
-  epoch 84 | batch 550/844 | loss 95978.8125
-  epoch 84 | batch 600/844 | loss 91047.9219
-  epoch 84 | batch 650/844 | loss 91496.6250
-  epoch 84 | batch 700/844 | loss 74857.4688
-  epoch 84 | batch 750/844 | loss 76591.3203
-  epoch 84 | batch 800/844 | loss 80781.3281
-0084 | loss 72613650.02 | recon 46763906.69 | kl 753648.22 | sin 12548047.58 | beta 1.000 | sin_w 2.0000
-  epoch 85 | batch 0/844 | loss 94523.4922
-  epoch 85 | batch 50/844 | loss 80071.4141
-  epoch 85 | batch 100/844 | loss 72597.6719
-  epoch 85 | batch 150/844 | loss 72305.6328
-  epoch 85 | batch 200/844 | loss 89284.5703
-  epoch 85 | batch 250/844 | loss 76689.7656
-  epoch 85 | batch 300/844 | loss 92674.7734
-  epoch 85 | batch 350/844 | loss 93854.0312
-  epoch 85 | batch 400/844 | loss 78247.7891
-  epoch 85 | batch 450/844 | loss 67953.8906
-  epoch 85 | batch 500/844 | loss 96499.1016
-  epoch 85 | batch 550/844 | loss 67389.3125
-  epoch 85 | batch 600/844 | loss 75968.0156
-  epoch 85 | batch 650/844 | loss 77998.2344
-  epoch 85 | batch 700/844 | loss 81607.0156
-  epoch 85 | batch 750/844 | loss 89523.4922
-  epoch 85 | batch 800/844 | loss 88569.6875
-0085 | loss 71498205.68 | recon 45856539.29 | kl 747421.87 | sin 12447122.26 | beta 1.000 | sin_w 2.0000
-  epoch 86 | batch 0/844 | loss 92442.2188
-  epoch 86 | batch 50/844 | loss 73875.2031
-  epoch 86 | batch 100/844 | loss 81765.2734
-  epoch 86 | batch 150/844 | loss 79283.3438
-  epoch 86 | batch 200/844 | loss 77048.3281
-  epoch 86 | batch 250/844 | loss 87138.5781
-  epoch 86 | batch 300/844 | loss 77207.3594
-  epoch 86 | batch 350/844 | loss 82884.0703
-  epoch 86 | batch 400/844 | loss 87198.0625
-  epoch 86 | batch 450/844 | loss 76077.7891
-  epoch 86 | batch 500/844 | loss 80140.8828
-  epoch 86 | batch 550/844 | loss 75893.5547
-  epoch 86 | batch 600/844 | loss 77431.3125
-  epoch 86 | batch 650/844 | loss 88374.0312
-  epoch 86 | batch 700/844 | loss 71807.7891
-  epoch 86 | batch 750/844 | loss 85594.9219
-  epoch 86 | batch 800/844 | loss 84905.1094
-0086 | loss 71415118.47 | recon 45932275.95 | kl 746388.95 | sin 12368226.78 | beta 1.000 | sin_w 2.0000
-  epoch 87 | batch 0/844 | loss 87243.0781
-  epoch 87 | batch 50/844 | loss 80449.2188
-  epoch 87 | batch 100/844 | loss 79674.3281
-  epoch 87 | batch 150/844 | loss 91944.1094
-  epoch 87 | batch 200/844 | loss 78139.0469
-  epoch 87 | batch 250/844 | loss 71915.8750
-  epoch 87 | batch 300/844 | loss 92518.2656
-  epoch 87 | batch 350/844 | loss 75718.6797
-  epoch 87 | batch 400/844 | loss 93067.8750
-  epoch 87 | batch 450/844 | loss 71292.6719
-  epoch 87 | batch 500/844 | loss 86788.1094
-  epoch 87 | batch 550/844 | loss 81821.5625
-  epoch 87 | batch 600/844 | loss 98209.5625
-  epoch 87 | batch 650/844 | loss 71172.2812
-  epoch 87 | batch 700/844 | loss 80417.6094
-  epoch 87 | batch 750/844 | loss 79055.5234
-  epoch 87 | batch 800/844 | loss 114098.3359
-0087 | loss 71342679.57 | recon 45989765.62 | kl 723215.41 | sin 12314849.22 | beta 1.000 | sin_w 2.0000
-  epoch 88 | batch 0/844 | loss 81913.7656
-  epoch 88 | batch 50/844 | loss 84478.9375
-  epoch 88 | batch 100/844 | loss 105309.8906
-  epoch 88 | batch 150/844 | loss 86084.1250
-  epoch 88 | batch 200/844 | loss 90656.1094
-  epoch 88 | batch 250/844 | loss 98896.3125
-  epoch 88 | batch 300/844 | loss 78055.8516
-  epoch 88 | batch 350/844 | loss 97223.7969
-  epoch 88 | batch 400/844 | loss 76717.8203
-  epoch 88 | batch 450/844 | loss 73800.9453
-  epoch 88 | batch 500/844 | loss 88235.1719
-  epoch 88 | batch 550/844 | loss 88452.3906
-  epoch 88 | batch 600/844 | loss 86568.6719
-  epoch 88 | batch 650/844 | loss 84239.5938
-  epoch 88 | batch 700/844 | loss 90454.2969
-  epoch 88 | batch 750/844 | loss 85089.4531
-  epoch 88 | batch 800/844 | loss 81211.0469
-0088 | loss 70908347.12 | recon 45592808.32 | kl 737617.82 | sin 12288960.54 | beta 1.000 | sin_w 2.0000
-  epoch 89 | batch 0/844 | loss 77643.4531
-  epoch 89 | batch 50/844 | loss 72484.1641
-  epoch 89 | batch 100/844 | loss 75085.4922
-  epoch 89 | batch 150/844 | loss 73408.6250
-  epoch 89 | batch 200/844 | loss 84208.9609
-  epoch 89 | batch 250/844 | loss 84144.0703
-  epoch 89 | batch 300/844 | loss 82653.2500
-  epoch 89 | batch 350/844 | loss 86631.0078
-  epoch 89 | batch 400/844 | loss 83031.8203
-  epoch 89 | batch 450/844 | loss 82312.1875
-  epoch 89 | batch 500/844 | loss 76332.5078
-  epoch 89 | batch 550/844 | loss 70958.4531
-  epoch 89 | batch 600/844 | loss 94774.1250
-  epoch 89 | batch 650/844 | loss 99579.0469
-  epoch 89 | batch 700/844 | loss 84476.9375
-  epoch 89 | batch 750/844 | loss 85846.8047
-  epoch 89 | batch 800/844 | loss 88056.2500
-0089 | loss 70641071.13 | recon 45494520.91 | kl 736291.76 | sin 12205129.25 | beta 1.000 | sin_w 2.0000
-  epoch 90 | batch 0/844 | loss 94419.8750
-  epoch 90 | batch 50/844 | loss 72477.1094
-  epoch 90 | batch 100/844 | loss 86546.7656
-  epoch 90 | batch 150/844 | loss 74291.5469
-  epoch 90 | batch 200/844 | loss 68762.0000
-  epoch 90 | batch 250/844 | loss 90199.9062
-  epoch 90 | batch 300/844 | loss 79581.2109
-  epoch 90 | batch 350/844 | loss 79289.3594
-  epoch 90 | batch 400/844 | loss 90417.7500
-  epoch 90 | batch 450/844 | loss 90803.2812
-  epoch 90 | batch 500/844 | loss 96443.5391
-  epoch 90 | batch 550/844 | loss 86379.7734
-  epoch 90 | batch 600/844 | loss 91188.6484
-  epoch 90 | batch 650/844 | loss 77055.5156
-  epoch 90 | batch 700/844 | loss 86960.9531
-  epoch 90 | batch 750/844 | loss 97464.8281
-  epoch 90 | batch 800/844 | loss 96178.5625
-0090 | loss 71329854.23 | recon 45848076.51 | kl 825642.10 | sin 12328067.83 | beta 1.000 | sin_w 2.0000
+0083 | loss 35027291.99 | recon 34113034.83 | kl 228564.29 | sin 0.00 | beta 4.000 | sin_w 0.0000
+  epoch 84 | batch 0/844 | loss 40925.2383
+  epoch 84 | batch 50/844 | loss 40992.4102
+  epoch 84 | batch 100/844 | loss 40946.9609
+  epoch 84 | batch 150/844 | loss 60062.6523
+  epoch 84 | batch 200/844 | loss 32143.3691
+  epoch 84 | batch 250/844 | loss 37444.9297
+  epoch 84 | batch 300/844 | loss 35956.4531
+  epoch 84 | batch 350/844 | loss 37841.9531
+  epoch 84 | batch 400/844 | loss 37326.1797
+  epoch 84 | batch 450/844 | loss 48734.0859
+  epoch 84 | batch 500/844 | loss 50412.6250
+  epoch 84 | batch 550/844 | loss 34709.8984
+  epoch 84 | batch 600/844 | loss 29743.5293
+  epoch 84 | batch 650/844 | loss 40533.7812
+  epoch 84 | batch 700/844 | loss 45917.8125
+  epoch 84 | batch 750/844 | loss 41786.5039
+  epoch 84 | batch 800/844 | loss 44726.5117
+0084 | loss 34921888.46 | recon 34020202.88 | kl 225421.40 | sin 0.00 | beta 4.000 | sin_w 0.0000
+  epoch 85 | batch 0/844 | loss 43197.6992
+  epoch 85 | batch 50/844 | loss 33584.1836
+  epoch 85 | batch 100/844 | loss 42079.3750
+  epoch 85 | batch 150/844 | loss 44029.5156
+  epoch 85 | batch 200/844 | loss 31211.7910
+  epoch 85 | batch 250/844 | loss 31731.0391
+  epoch 85 | batch 300/844 | loss 51640.1758
+  epoch 85 | batch 350/844 | loss 44699.7266
+  epoch 85 | batch 400/844 | loss 32605.4629
+  epoch 85 | batch 450/844 | loss 37048.7734
+  epoch 85 | batch 500/844 | loss 31772.1465
+  epoch 85 | batch 550/844 | loss 40502.8828
+  epoch 85 | batch 600/844 | loss 44556.7344
+  epoch 85 | batch 650/844 | loss 45234.8359
+  epoch 85 | batch 700/844 | loss 51500.0273
+  epoch 85 | batch 750/844 | loss 34501.0938
+  epoch 85 | batch 800/844 | loss 36001.7773
+0085 | loss 34435234.27 | recon 33524016.37 | kl 227804.48 | sin 0.00 | beta 4.000 | sin_w 0.0000
+  epoch 86 | batch 0/844 | loss 45889.6523
+  epoch 86 | batch 50/844 | loss 57795.3086
+  epoch 86 | batch 100/844 | loss 54961.4141
+  epoch 86 | batch 150/844 | loss 35222.8047
+  epoch 86 | batch 200/844 | loss 46041.8477
+  epoch 86 | batch 250/844 | loss 36760.6758
+  epoch 86 | batch 300/844 | loss 38478.7344
+  epoch 86 | batch 350/844 | loss 51202.8828
+  epoch 86 | batch 400/844 | loss 49372.8945
+  epoch 86 | batch 450/844 | loss 36383.8945
+  epoch 86 | batch 500/844 | loss 50906.5391
+  epoch 86 | batch 550/844 | loss 42180.0312
+  epoch 86 | batch 600/844 | loss 31593.5508
+  epoch 86 | batch 650/844 | loss 30124.1895
+  epoch 86 | batch 700/844 | loss 41394.3086
+  epoch 86 | batch 750/844 | loss 41996.7344
+  epoch 86 | batch 800/844 | loss 39685.1328
+0086 | loss 34679265.86 | recon 33806683.35 | kl 218145.63 | sin 0.00 | beta 4.000 | sin_w 0.0000
+  epoch 87 | batch 0/844 | loss 41947.7422
+  epoch 87 | batch 50/844 | loss 42538.7734
+  epoch 87 | batch 100/844 | loss 38795.2852
+  epoch 87 | batch 150/844 | loss 41170.1172
+  epoch 87 | batch 200/844 | loss 46428.2422
+  epoch 87 | batch 250/844 | loss 41749.1914
+  epoch 87 | batch 300/844 | loss 48202.1445
+  epoch 87 | batch 350/844 | loss 46692.7344
+  epoch 87 | batch 400/844 | loss 52519.2969
+  epoch 87 | batch 450/844 | loss 34517.1133
+  epoch 87 | batch 500/844 | loss 31693.0273
+  epoch 87 | batch 550/844 | loss 42894.8633
+  epoch 87 | batch 600/844 | loss 32859.4883
+  epoch 87 | batch 650/844 | loss 46194.7773
+  epoch 87 | batch 700/844 | loss 50350.9219
+  epoch 87 | batch 750/844 | loss 34762.6953
+  epoch 87 | batch 800/844 | loss 51272.3203
+0087 | loss 34828547.79 | recon 33945826.57 | kl 220680.30 | sin 0.00 | beta 4.000 | sin_w 0.0000
+  epoch 88 | batch 0/844 | loss 30124.6992
+  epoch 88 | batch 50/844 | loss 37352.8711
+  epoch 88 | batch 100/844 | loss 31356.0586
+  epoch 88 | batch 150/844 | loss 34493.0117
+  epoch 88 | batch 200/844 | loss 39562.6797
+  epoch 88 | batch 250/844 | loss 40938.1055
+  epoch 88 | batch 300/844 | loss 39545.0977
+  epoch 88 | batch 350/844 | loss 37591.1758
+  epoch 88 | batch 400/844 | loss 31997.1152
+  epoch 88 | batch 450/844 | loss 41778.7344
+  epoch 88 | batch 500/844 | loss 78687.2344
+  epoch 88 | batch 550/844 | loss 38240.1211
+  epoch 88 | batch 600/844 | loss 57003.1602
+  epoch 88 | batch 650/844 | loss 46130.5664
+  epoch 88 | batch 700/844 | loss 32496.4922
+  epoch 88 | batch 750/844 | loss 38943.7930
+  epoch 88 | batch 800/844 | loss 53163.0469
+0088 | loss 34602080.01 | recon 33724417.66 | kl 219415.60 | sin 0.00 | beta 4.000 | sin_w 0.0000
+  epoch 89 | batch 0/844 | loss 37153.9336
+  epoch 89 | batch 50/844 | loss 43813.1484
+  epoch 89 | batch 100/844 | loss 37434.1562
+  epoch 89 | batch 150/844 | loss 49196.6914
+  epoch 89 | batch 200/844 | loss 39234.2891
+  epoch 89 | batch 250/844 | loss 38213.9492
+  epoch 89 | batch 300/844 | loss 33281.0625
+  epoch 89 | batch 350/844 | loss 47557.6680
+  epoch 89 | batch 400/844 | loss 52327.4961
+  epoch 89 | batch 450/844 | loss 34366.3203
+  epoch 89 | batch 500/844 | loss 44374.2109
+  epoch 89 | batch 550/844 | loss 36438.5312
+  epoch 89 | batch 600/844 | loss 38033.3828
+  epoch 89 | batch 650/844 | loss 38680.2188
+  epoch 89 | batch 700/844 | loss 33443.1484
+  epoch 89 | batch 750/844 | loss 33420.9688
+  epoch 89 | batch 800/844 | loss 51971.7734
+0089 | loss 34518834.85 | recon 33639702.68 | kl 219783.05 | sin 0.00 | beta 4.000 | sin_w 0.0000
+  epoch 90 | batch 0/844 | loss 31995.6426
+  epoch 90 | batch 50/844 | loss 44244.6680
+  epoch 90 | batch 100/844 | loss 44197.6875
+  epoch 90 | batch 150/844 | loss 37659.0703
+  epoch 90 | batch 200/844 | loss 48550.3398
+  epoch 90 | batch 250/844 | loss 27528.8516
+  epoch 90 | batch 300/844 | loss 44516.2891
+  epoch 90 | batch 350/844 | loss 36475.1250
+  epoch 90 | batch 400/844 | loss 35528.8750
+  epoch 90 | batch 450/844 | loss 35575.0508
+  epoch 90 | batch 500/844 | loss 39735.2930
+  epoch 90 | batch 550/844 | loss 39256.2500
+  epoch 90 | batch 600/844 | loss 39478.4961
+  epoch 90 | batch 650/844 | loss 32709.7695
+  epoch 90 | batch 700/844 | loss 44809.6797
+  epoch 90 | batch 750/844 | loss 55979.3672
+  epoch 90 | batch 800/844 | loss 47733.0859
+0090 | loss 34172181.65 | recon 33320818.61 | kl 212840.77 | sin 0.00 | beta 4.000 | sin_w 0.0000
   [curriculum] epoch 90: cnv_ratio=0.300
-  epoch 91 | batch 0/844 | loss 76485.9062
-  epoch 91 | batch 50/844 | loss 80636.1172
-  epoch 91 | batch 100/844 | loss 81392.0078
-  epoch 91 | batch 150/844 | loss 87109.6562
-  epoch 91 | batch 200/844 | loss 87086.7500
-  epoch 91 | batch 250/844 | loss 70291.4062
-  epoch 91 | batch 300/844 | loss 81792.5156
-  epoch 91 | batch 350/844 | loss 80802.2266
-  epoch 91 | batch 400/844 | loss 81382.2734
-  epoch 91 | batch 450/844 | loss 92956.5312
-  epoch 91 | batch 500/844 | loss 90685.0703
-  epoch 91 | batch 550/844 | loss 84830.2812
-  epoch 91 | batch 600/844 | loss 76562.2109
-  epoch 91 | batch 650/844 | loss 87517.9453
-  epoch 91 | batch 700/844 | loss 81330.2891
-  epoch 91 | batch 750/844 | loss 86945.1172
-  epoch 91 | batch 800/844 | loss 79657.1562
-0091 | loss 70757598.85 | recon 45627288.02 | kl 741089.23 | sin 12194610.76 | beta 1.000 | sin_w 2.0000
-  epoch 92 | batch 0/844 | loss 78913.5625
-  epoch 92 | batch 50/844 | loss 88419.4219
-  epoch 92 | batch 100/844 | loss 86517.4453
-  epoch 92 | batch 150/844 | loss 78760.1953
-  epoch 92 | batch 200/844 | loss 79901.7422
-  epoch 92 | batch 250/844 | loss 76157.8281
-  epoch 92 | batch 300/844 | loss 73888.3281
-  epoch 92 | batch 350/844 | loss 80984.2969
-  epoch 92 | batch 400/844 | loss 86168.2031
-  epoch 92 | batch 450/844 | loss 82461.9219
-  epoch 92 | batch 500/844 | loss 73196.3906
-  epoch 92 | batch 550/844 | loss 88856.4766
-  epoch 92 | batch 600/844 | loss 93733.6250
-  epoch 92 | batch 650/844 | loss 79827.1562
-  epoch 92 | batch 700/844 | loss 84764.7891
-  epoch 92 | batch 750/844 | loss 70945.1797
-  epoch 92 | batch 800/844 | loss 87337.6719
-0092 | loss 70066742.75 | recon 45318670.23 | kl 714659.52 | sin 12016706.48 | beta 1.000 | sin_w 2.0000
-  epoch 93 | batch 0/844 | loss 96620.2969
-  epoch 93 | batch 50/844 | loss 77466.0469
-  epoch 93 | batch 100/844 | loss 83703.3125
-  epoch 93 | batch 150/844 | loss 88055.1875
-  epoch 93 | batch 200/844 | loss 84126.5938
-  epoch 93 | batch 250/844 | loss 93861.3203
-  epoch 93 | batch 300/844 | loss 86959.7109
-  epoch 93 | batch 350/844 | loss 82248.6641
-  epoch 93 | batch 400/844 | loss 94343.3594
-  epoch 93 | batch 450/844 | loss 77571.3281
-  epoch 93 | batch 500/844 | loss 85873.6719
-  epoch 93 | batch 550/844 | loss 81758.9688
-  epoch 93 | batch 600/844 | loss 73819.3906
-  epoch 93 | batch 650/844 | loss 80523.1172
-  epoch 93 | batch 700/844 | loss 92087.9219
-  epoch 93 | batch 750/844 | loss 72843.7188
-  epoch 93 | batch 800/844 | loss 88374.0312
-0093 | loss 70456778.68 | recon 45636143.15 | kl 734569.43 | sin 12043033.07 | beta 1.000 | sin_w 2.0000
-  epoch 94 | batch 0/844 | loss 99091.5078
-  epoch 94 | batch 50/844 | loss 102984.1406
-  epoch 94 | batch 100/844 | loss 79299.9219
-  epoch 94 | batch 150/844 | loss 90964.8672
-  epoch 94 | batch 200/844 | loss 78451.7969
-  epoch 94 | batch 250/844 | loss 71520.5859
-  epoch 94 | batch 300/844 | loss 79076.4062
-  epoch 94 | batch 350/844 | loss 83972.8438
-  epoch 94 | batch 400/844 | loss 84699.5156
-  epoch 94 | batch 450/844 | loss 80152.1641
-  epoch 94 | batch 500/844 | loss 76283.5938
-  epoch 94 | batch 550/844 | loss 73034.8906
-  epoch 94 | batch 600/844 | loss 76298.0312
-  epoch 94 | batch 650/844 | loss 75959.2422
-  epoch 94 | batch 700/844 | loss 77270.2266
-  epoch 94 | batch 750/844 | loss 77485.1953
-  epoch 94 | batch 800/844 | loss 100302.6562
-0094 | loss 70706585.36 | recon 45779658.89 | kl 736627.60 | sin 12095149.41 | beta 1.000 | sin_w 2.0000
-  epoch 95 | batch 0/844 | loss 86815.4062
-  epoch 95 | batch 50/844 | loss 82013.1094
-  epoch 95 | batch 100/844 | loss 69889.6797
-  epoch 95 | batch 150/844 | loss 75694.3594
-  epoch 95 | batch 200/844 | loss 83521.5781
-  epoch 95 | batch 250/844 | loss 108735.8438
-  epoch 95 | batch 300/844 | loss 81879.6719
-  epoch 95 | batch 350/844 | loss 89601.5859
-  epoch 95 | batch 400/844 | loss 67210.2969
-  epoch 95 | batch 450/844 | loss 76392.9531
-  epoch 95 | batch 500/844 | loss 110111.5234
-  epoch 95 | batch 550/844 | loss 79969.2656
-  epoch 95 | batch 600/844 | loss 79271.1406
-  epoch 95 | batch 650/844 | loss 73143.6406
-  epoch 95 | batch 700/844 | loss 87400.0391
-  epoch 95 | batch 750/844 | loss 82177.4375
-  epoch 95 | batch 800/844 | loss 84187.5000
-0095 | loss 70270383.55 | recon 45516511.08 | kl 726464.80 | sin 12013703.83 | beta 1.000 | sin_w 2.0000
-  epoch 96 | batch 0/844 | loss 90305.1719
-  epoch 96 | batch 50/844 | loss 78597.2812
-  epoch 96 | batch 100/844 | loss 83359.5078
-  epoch 96 | batch 150/844 | loss 90529.0547
-  epoch 96 | batch 200/844 | loss 81127.8281
-  epoch 96 | batch 250/844 | loss 91704.5781
-  epoch 96 | batch 300/844 | loss 69759.7578
-  epoch 96 | batch 350/844 | loss 92645.3828
-  epoch 96 | batch 400/844 | loss 89745.0938
-  epoch 96 | batch 450/844 | loss 82410.3359
-  epoch 96 | batch 500/844 | loss 106071.2578
-  epoch 96 | batch 550/844 | loss 73700.8516
-  epoch 96 | batch 600/844 | loss 80729.0391
-  epoch 96 | batch 650/844 | loss 80678.7109
-  epoch 96 | batch 700/844 | loss 83818.8438
-  epoch 96 | batch 750/844 | loss 77561.0938
-  epoch 96 | batch 800/844 | loss 86610.7656
-0096 | loss 69887930.89 | recon 45418937.82 | kl 723097.88 | sin 11872947.57 | beta 1.000 | sin_w 2.0000
-  epoch 97 | batch 0/844 | loss 86209.3281
-  epoch 97 | batch 50/844 | loss 89200.5234
-  epoch 97 | batch 100/844 | loss 87985.2656
-  epoch 97 | batch 150/844 | loss 86047.5781
-  epoch 97 | batch 200/844 | loss 84102.6172
-  epoch 97 | batch 250/844 | loss 81502.4297
-  epoch 97 | batch 300/844 | loss 73556.6016
-  epoch 97 | batch 350/844 | loss 94928.5312
-  epoch 97 | batch 400/844 | loss 86443.5391
-  epoch 97 | batch 450/844 | loss 91048.7344
-  epoch 97 | batch 500/844 | loss 102588.5703
-  epoch 97 | batch 550/844 | loss 73489.0781
-  epoch 97 | batch 600/844 | loss 102593.9844
-  epoch 97 | batch 650/844 | loss 89290.1719
-  epoch 97 | batch 700/844 | loss 86740.4062
-  epoch 97 | batch 750/844 | loss 106274.6562
-  epoch 97 | batch 800/844 | loss 96017.7031
-0097 | loss 69700844.74 | recon 45404357.56 | kl 720919.26 | sin 11787783.95 | beta 1.000 | sin_w 2.0000
-  epoch 98 | batch 0/844 | loss 78784.2812
-  epoch 98 | batch 50/844 | loss 65837.3047
-  epoch 98 | batch 100/844 | loss 75935.3672
-  epoch 98 | batch 150/844 | loss 74050.8438
-  epoch 98 | batch 200/844 | loss 78115.2109
-  epoch 98 | batch 250/844 | loss 83131.9766
-  epoch 98 | batch 300/844 | loss 80761.1641
-  epoch 98 | batch 350/844 | loss 76187.9375
-  epoch 98 | batch 400/844 | loss 90781.9531
-  epoch 98 | batch 450/844 | loss 74411.7344
-  epoch 98 | batch 500/844 | loss 71727.4688
-  epoch 98 | batch 550/844 | loss 82769.0469
-  epoch 98 | batch 600/844 | loss 75737.2031
-  epoch 98 | batch 650/844 | loss 81532.7969
-  epoch 98 | batch 700/844 | loss 90898.8594
-  epoch 98 | batch 750/844 | loss 77573.9531
-  epoch 98 | batch 800/844 | loss 81846.6250
-0098 | loss 69851765.70 | recon 45709663.84 | kl 714616.91 | sin 11713742.46 | beta 1.000 | sin_w 2.0000
-  epoch 99 | batch 0/844 | loss 95476.8906
-  epoch 99 | batch 50/844 | loss 86366.2266
-  epoch 99 | batch 100/844 | loss 89463.8906
-  epoch 99 | batch 150/844 | loss 79999.2578
-  epoch 99 | batch 200/844 | loss 81698.8672
-  epoch 99 | batch 250/844 | loss 73442.7812
-  epoch 99 | batch 300/844 | loss 77220.8750
-  epoch 99 | batch 350/844 | loss 63985.0039
-  epoch 99 | batch 400/844 | loss 87211.5781
-  epoch 99 | batch 450/844 | loss 90596.7578
-  epoch 99 | batch 500/844 | loss 76184.0391
-  epoch 99 | batch 550/844 | loss 73951.7969
-  epoch 99 | batch 600/844 | loss 86388.1406
-  epoch 99 | batch 650/844 | loss 72853.5312
-  epoch 99 | batch 700/844 | loss 80939.8438
-  epoch 99 | batch 750/844 | loss 74128.7344
-  epoch 99 | batch 800/844 | loss 100537.3359
-0099 | loss 69748946.64 | recon 45497076.06 | kl 711934.19 | sin 11769968.29 | beta 1.000 | sin_w 2.0000
-  epoch 100 | batch 0/844 | loss 84406.0938
-  epoch 100 | batch 50/844 | loss 81462.6953
-  epoch 100 | batch 100/844 | loss 77698.1406
-  epoch 100 | batch 150/844 | loss 83364.0078
-  epoch 100 | batch 200/844 | loss 92519.2031
-  epoch 100 | batch 250/844 | loss 84468.6406
-  epoch 100 | batch 300/844 | loss 78753.8594
-  epoch 100 | batch 350/844 | loss 87765.9688
-  epoch 100 | batch 400/844 | loss 87153.5625
-  epoch 100 | batch 450/844 | loss 71193.6641
-  epoch 100 | batch 500/844 | loss 80952.6016
-  epoch 100 | batch 550/844 | loss 88426.7188
-  epoch 100 | batch 600/844 | loss 82340.5781
-  epoch 100 | batch 650/844 | loss 80532.8750
-  epoch 100 | batch 700/844 | loss 76227.7500
-  epoch 100 | batch 750/844 | loss 84648.6797
-  epoch 100 | batch 800/844 | loss 83878.1016
-0100 | loss 69471301.46 | recon 45261543.05 | kl 713485.73 | sin 11748136.32 | beta 1.000 | sin_w 2.0000
+  epoch 91 | batch 0/844 | loss 42115.9609
+  epoch 91 | batch 50/844 | loss 36395.8789
+  epoch 91 | batch 100/844 | loss 36621.9844
+  epoch 91 | batch 150/844 | loss 33895.3477
+  epoch 91 | batch 200/844 | loss 32490.7559
+  epoch 91 | batch 250/844 | loss 34423.8945
+  epoch 91 | batch 300/844 | loss 48081.3008
+  epoch 91 | batch 350/844 | loss 60186.9453
+  epoch 91 | batch 400/844 | loss 47399.7891
+  epoch 91 | batch 450/844 | loss 38528.2734
+  epoch 91 | batch 500/844 | loss 41041.1328
+  epoch 91 | batch 550/844 | loss 34688.4297
+  epoch 91 | batch 600/844 | loss 40672.1836
+  epoch 91 | batch 650/844 | loss 34939.2773
+  epoch 91 | batch 700/844 | loss 46581.6797
+  epoch 91 | batch 750/844 | loss 43946.8047
+  epoch 91 | batch 800/844 | loss 48877.5547
+0091 | loss 34170776.65 | recon 33316210.60 | kl 213641.52 | sin 0.00 | beta 4.000 | sin_w 0.0000
+  epoch 92 | batch 0/844 | loss 31081.7109
+  epoch 92 | batch 50/844 | loss 48303.8242
+  epoch 92 | batch 100/844 | loss 38666.2266
+  epoch 92 | batch 150/844 | loss 31569.0078
+  epoch 92 | batch 200/844 | loss 37480.7891
+  epoch 92 | batch 250/844 | loss 40347.5312
+  epoch 92 | batch 300/844 | loss 64843.7539
+  epoch 92 | batch 350/844 | loss 30854.5352
+  epoch 92 | batch 400/844 | loss 36998.0625
+  epoch 92 | batch 450/844 | loss 37689.8281
+  epoch 92 | batch 500/844 | loss 45975.2227
+  epoch 92 | batch 550/844 | loss 57103.1406
+  epoch 92 | batch 600/844 | loss 42215.8828
+  epoch 92 | batch 650/844 | loss 34451.2148
+  epoch 92 | batch 700/844 | loss 33294.8711
+  epoch 92 | batch 750/844 | loss 45702.4688
+  epoch 92 | batch 800/844 | loss 39362.5039
+0092 | loss 34166014.28 | recon 33332448.94 | kl 208391.34 | sin 0.00 | beta 4.000 | sin_w 0.0000
+  epoch 93 | batch 0/844 | loss 33816.4336
+  epoch 93 | batch 50/844 | loss 52956.5156
+  epoch 93 | batch 100/844 | loss 30419.8691
+  epoch 93 | batch 150/844 | loss 45027.3672
+  epoch 93 | batch 200/844 | loss 32632.3516
+  epoch 93 | batch 250/844 | loss 49003.8711
+  epoch 93 | batch 300/844 | loss 30070.4414
+  epoch 93 | batch 350/844 | loss 58315.2930
+  epoch 93 | batch 400/844 | loss 40104.1836
+  epoch 93 | batch 450/844 | loss 43819.9102
+  epoch 93 | batch 500/844 | loss 36696.1055
+  epoch 93 | batch 550/844 | loss 39790.2734
+  epoch 93 | batch 600/844 | loss 34550.6328
+  epoch 93 | batch 650/844 | loss 42243.5938
+  epoch 93 | batch 700/844 | loss 41231.5586
+  epoch 93 | batch 750/844 | loss 41229.9375
+  epoch 93 | batch 800/844 | loss 39283.0586
+0093 | loss 33916750.78 | recon 33099658.31 | kl 204273.13 | sin 0.00 | beta 4.000 | sin_w 0.0000
+  epoch 94 | batch 0/844 | loss 52793.1719
+  epoch 94 | batch 50/844 | loss 38983.5430
+  epoch 94 | batch 100/844 | loss 36475.5039
+  epoch 94 | batch 150/844 | loss 35482.4062
+  epoch 94 | batch 200/844 | loss 34585.1445
+  epoch 94 | batch 250/844 | loss 41956.6641
+  epoch 94 | batch 300/844 | loss 46673.0977
+  epoch 94 | batch 350/844 | loss 46402.4844
+  epoch 94 | batch 400/844 | loss 49720.8164
+  epoch 94 | batch 450/844 | loss 33749.5273
+  epoch 94 | batch 500/844 | loss 35257.6328
+  epoch 94 | batch 550/844 | loss 43105.9375
+  epoch 94 | batch 600/844 | loss 46631.7031
+  epoch 94 | batch 650/844 | loss 42072.5078
+  epoch 94 | batch 700/844 | loss 39762.9258
+  epoch 94 | batch 750/844 | loss 52419.0273
+  epoch 94 | batch 800/844 | loss 35249.9648
+0094 | loss 34094161.22 | recon 33273202.17 | kl 205239.76 | sin 0.00 | beta 4.000 | sin_w 0.0000
+  epoch 95 | batch 0/844 | loss 31439.4668
+  epoch 95 | batch 50/844 | loss 35926.8984
+  epoch 95 | batch 100/844 | loss 44315.1562
+  epoch 95 | batch 150/844 | loss 44541.4688
+  epoch 95 | batch 200/844 | loss 50773.3867
+  epoch 95 | batch 250/844 | loss 36837.8711
+  epoch 95 | batch 300/844 | loss 38140.6953
+  epoch 95 | batch 350/844 | loss 55796.9258
+  epoch 95 | batch 400/844 | loss 42076.5703
+  epoch 95 | batch 450/844 | loss 59201.9062
+  epoch 95 | batch 500/844 | loss 31791.0156
+  epoch 95 | batch 550/844 | loss 40578.0898
+  epoch 95 | batch 600/844 | loss 30277.4355
+  epoch 95 | batch 650/844 | loss 44471.7695
+  epoch 95 | batch 700/844 | loss 45717.3828
+  epoch 95 | batch 750/844 | loss 46953.9883
+  epoch 95 | batch 800/844 | loss 39943.8242
+0095 | loss 34443148.02 | recon 33596169.97 | kl 211744.50 | sin 0.00 | beta 4.000 | sin_w 0.0000
+  epoch 96 | batch 0/844 | loss 51824.2930
+  epoch 96 | batch 50/844 | loss 38466.5469
+  epoch 96 | batch 100/844 | loss 41009.9805
+  epoch 96 | batch 150/844 | loss 33272.6406
+  epoch 96 | batch 200/844 | loss 41288.1875
+  epoch 96 | batch 250/844 | loss 30753.4102
+  epoch 96 | batch 300/844 | loss 30443.3750
+  epoch 96 | batch 350/844 | loss 31880.7148
+  epoch 96 | batch 400/844 | loss 39603.7031
+  epoch 96 | batch 450/844 | loss 36835.9180
+  epoch 96 | batch 500/844 | loss 58641.7266
+  epoch 96 | batch 550/844 | loss 36793.7383
+  epoch 96 | batch 600/844 | loss 39747.4570
+  epoch 96 | batch 650/844 | loss 31986.0898
+  epoch 96 | batch 700/844 | loss 41231.2852
+  epoch 96 | batch 750/844 | loss 28973.2422
+  epoch 96 | batch 800/844 | loss 42778.6797
+0096 | loss 33715524.39 | recon 32889352.77 | kl 206542.89 | sin 0.00 | beta 4.000 | sin_w 0.0000
+  epoch 97 | batch 0/844 | loss 33992.7656
+  epoch 97 | batch 50/844 | loss 28776.3770
+  epoch 97 | batch 100/844 | loss 37054.8750
+  epoch 97 | batch 150/844 | loss 44096.1055
+  epoch 97 | batch 200/844 | loss 38165.9922
+  epoch 97 | batch 250/844 | loss 43628.7305
+  epoch 97 | batch 300/844 | loss 45734.4102
+  epoch 97 | batch 350/844 | loss 41942.9375
+  epoch 97 | batch 400/844 | loss 36275.3008
+  epoch 97 | batch 450/844 | loss 43234.1914
+  epoch 97 | batch 500/844 | loss 47560.4453
+  epoch 97 | batch 550/844 | loss 32282.5332
+  epoch 97 | batch 600/844 | loss 40650.0273
+  epoch 97 | batch 650/844 | loss 41037.7227
+  epoch 97 | batch 700/844 | loss 43291.4609
+  epoch 97 | batch 750/844 | loss 40232.7188
+  epoch 97 | batch 800/844 | loss 32884.8008
+0097 | loss 34102618.41 | recon 33275659.28 | kl 206739.79 | sin 0.00 | beta 4.000 | sin_w 0.0000
+  epoch 98 | batch 0/844 | loss 34598.9531
+  epoch 98 | batch 50/844 | loss 44393.7891
+  epoch 98 | batch 100/844 | loss 43466.9609
+  epoch 98 | batch 150/844 | loss 35996.2656
+  epoch 98 | batch 200/844 | loss 49767.9180
+  epoch 98 | batch 250/844 | loss 50749.3320
+  epoch 98 | batch 300/844 | loss 44174.4648
+  epoch 98 | batch 350/844 | loss 37226.1875
+  epoch 98 | batch 400/844 | loss 51795.5781
+  epoch 98 | batch 450/844 | loss 53412.4844
+  epoch 98 | batch 500/844 | loss 31727.7695
+  epoch 98 | batch 550/844 | loss 25125.3027
+  epoch 98 | batch 600/844 | loss 28617.1113
+  epoch 98 | batch 650/844 | loss 32995.7070
+  epoch 98 | batch 700/844 | loss 56056.7539
+  epoch 98 | batch 750/844 | loss 55597.7969
+  epoch 98 | batch 800/844 | loss 35738.7500
+0098 | loss 34169695.78 | recon 33352806.53 | kl 204222.31 | sin 0.00 | beta 4.000 | sin_w 0.0000
+  epoch 99 | batch 0/844 | loss 33229.4766
+  epoch 99 | batch 50/844 | loss 34783.6562
+  epoch 99 | batch 100/844 | loss 33793.0117
+  epoch 99 | batch 150/844 | loss 32104.0195
+  epoch 99 | batch 200/844 | loss 44540.7031
+  epoch 99 | batch 250/844 | loss 41549.4102
+  epoch 99 | batch 300/844 | loss 29513.2617
+  epoch 99 | batch 350/844 | loss 28970.9414
+  epoch 99 | batch 400/844 | loss 38913.4883
+  epoch 99 | batch 450/844 | loss 28257.2930
+  epoch 99 | batch 500/844 | loss 37390.1406
+  epoch 99 | batch 550/844 | loss 34623.5078
+  epoch 99 | batch 600/844 | loss 46827.1289
+  epoch 99 | batch 650/844 | loss 38956.7383
+  epoch 99 | batch 700/844 | loss 41494.8906
+  epoch 99 | batch 750/844 | loss 26673.0547
+  epoch 99 | batch 800/844 | loss 35725.6055
+0099 | loss 33682228.35 | recon 32903829.02 | kl 194599.84 | sin 0.00 | beta 4.000 | sin_w 0.0000
+  epoch 100 | batch 0/844 | loss 49632.4688
+  epoch 100 | batch 50/844 | loss 50944.6211
+  epoch 100 | batch 100/844 | loss 37020.3672
+  epoch 100 | batch 150/844 | loss 28160.1465
+  epoch 100 | batch 200/844 | loss 46623.5742
+  epoch 100 | batch 250/844 | loss 37008.4336
+  epoch 100 | batch 300/844 | loss 47880.0195
+  epoch 100 | batch 350/844 | loss 41035.4609
+  epoch 100 | batch 400/844 | loss 34013.3398
+  epoch 100 | batch 450/844 | loss 27469.1484
+  epoch 100 | batch 500/844 | loss 36369.4375
+  epoch 100 | batch 550/844 | loss 41321.1133
+  epoch 100 | batch 600/844 | loss 44156.7422
+  epoch 100 | batch 650/844 | loss 52039.5547
+  epoch 100 | batch 700/844 | loss 42539.7969
+  epoch 100 | batch 750/844 | loss 45930.0078
+  epoch 100 | batch 800/844 | loss 42483.0586
+0100 | loss 33581198.38 | recon 32805018.37 | kl 194045.00 | sin 0.00 | beta 4.000 | sin_w 0.0000
 Loaded best checkpoint for inference.
-Saved latents         (53973, 10) → /Users/jiayichiyun/Code/deep-gw-cnv/models/experiments/37/../../../data/results/37_06convvae_400bp_sinloss2.0_warmup80/latents.npy
-Saved reconstructions (53973, 51986)  → /Users/jiayichiyun/Code/deep-gw-cnv/models/experiments/37/../../../data/results/37_06convvae_400bp_sinloss2.0_warmup80/reconstructions.npy
-Saved sample_ids      (53973,) → /Users/jiayichiyun/Code/deep-gw-cnv/models/experiments/37/../../../data/results/37_06convvae_400bp_sinloss2.0_warmup80/sample_ids.npy
+Saved latents         (53973, 10) → /Users/jiayichiyun/Code/deep-gw-cnv/models/experiments/43/../../../data/results/43_06convvae_beta4_18cnvcaller/latents.npy
+Saved reconstructions (53973, 51986)  → /Users/jiayichiyun/Code/deep-gw-cnv/models/experiments/43/../../../data/results/43_06convvae_beta4_18cnvcaller/reconstructions.npy
+Saved sample_ids      (53973,) → /Users/jiayichiyun/Code/deep-gw-cnv/models/experiments/43/../../../data/results/43_06convvae_beta4_18cnvcaller/sample_ids.npy
 Fitting HMM segments...
 Fitting HMM for 53973 samples (n_jobs=-1)...
-  HMM 500/53973 | elapsed 44s | eta 4702s
-  HMM 1000/53973 | elapsed 85s | eta 4529s
-  HMM 1500/53973 | elapsed 126s | eta 4390s
-  HMM 2000/53973 | elapsed 168s | eta 4376s
-  HMM 2500/53973 | elapsed 207s | eta 4269s
-  HMM 3000/53973 | elapsed 238s | eta 4045s
-  HMM 3500/53973 | elapsed 277s | eta 3991s
-  HMM 4000/53973 | elapsed 311s | eta 3889s
-  HMM 4500/53973 | elapsed 351s | eta 3854s
-  HMM 5000/53973 | elapsed 397s | eta 3889s
-  HMM 5500/53973 | elapsed 438s | eta 3856s
-  HMM 6000/53973 | elapsed 476s | eta 3808s
-  HMM 6500/53973 | elapsed 508s | eta 3713s
-  HMM 7000/53973 | elapsed 554s | eta 3720s
-  HMM 7500/53973 | elapsed 594s | eta 3681s
-  HMM 8000/53973 | elapsed 637s | eta 3658s
-  HMM 8500/53973 | elapsed 668s | eta 3571s
-  HMM 9000/53973 | elapsed 690s | eta 3449s
-  HMM 9500/53973 | elapsed 719s | eta 3366s
-  HMM 10000/53973 | elapsed 752s | eta 3306s
-  HMM 10500/53973 | elapsed 800s | eta 3313s
-  HMM 11000/53973 | elapsed 838s | eta 3274s
-  HMM 11500/53973 | elapsed 871s | eta 3215s
-  HMM 12000/53973 | elapsed 906s | eta 3168s
-  HMM 12500/53973 | elapsed 937s | eta 3108s
-  HMM 13000/53973 | elapsed 973s | eta 3066s
-  HMM 13500/53973 | elapsed 1015s | eta 3042s
-  HMM 14000/53973 | elapsed 1058s | eta 3020s
-  HMM 14500/53973 | elapsed 1093s | eta 2977s
-  HMM 15000/53973 | elapsed 1148s | eta 2982s
-  HMM 15500/53973 | elapsed 1210s | eta 3003s
-  HMM 16000/53973 | elapsed 1260s | eta 2991s
-  HMM 16500/53973 | elapsed 1296s | eta 2943s
-  HMM 17000/53973 | elapsed 1342s | eta 2920s
-  HMM 17500/53973 | elapsed 1382s | eta 2881s
-  HMM 18000/53973 | elapsed 1419s | eta 2835s
-  HMM 18500/53973 | elapsed 1457s | eta 2794s
-  HMM 19000/53973 | elapsed 1492s | eta 2747s
-  HMM 19500/53973 | elapsed 1531s | eta 2707s
-  HMM 20000/53973 | elapsed 1563s | eta 2655s
-  HMM 20500/53973 | elapsed 1599s | eta 2612s
-  HMM 21000/53973 | elapsed 1636s | eta 2569s
-  HMM 21500/53973 | elapsed 1681s | eta 2539s
-  HMM 22000/53973 | elapsed 1722s | eta 2503s
-  HMM 22500/53973 | elapsed 1764s | eta 2467s
-  HMM 23000/53973 | elapsed 1812s | eta 2441s
-  HMM 23500/53973 | elapsed 1846s | eta 2394s
-  HMM 24000/53973 | elapsed 1882s | eta 2350s
-  HMM 24500/53973 | elapsed 1924s | eta 2314s
-  HMM 25000/53973 | elapsed 1968s | eta 2281s
-  HMM 25500/53973 | elapsed 2012s | eta 2246s
-  HMM 26000/53973 | elapsed 2048s | eta 2204s
-  HMM 26500/53973 | elapsed 2089s | eta 2166s
-  HMM 27000/53973 | elapsed 2134s | eta 2132s
-  HMM 27500/53973 | elapsed 2173s | eta 2092s
-  HMM 28000/53973 | elapsed 2229s | eta 2068s
-  HMM 28500/53973 | elapsed 2273s | eta 2032s
-  HMM 29000/53973 | elapsed 2320s | eta 1998s
-  HMM 29500/53973 | elapsed 2370s | eta 1966s
-  HMM 30000/53973 | elapsed 2407s | eta 1924s
-  HMM 30500/53973 | elapsed 2458s | eta 1892s
-  HMM 31000/53973 | elapsed 2512s | eta 1861s
-  HMM 31500/53973 | elapsed 2558s | eta 1825s
-  HMM 32000/53973 | elapsed 2599s | eta 1785s
-  HMM 32500/53973 | elapsed 2654s | eta 1754s
-  HMM 33000/53973 | elapsed 2691s | eta 1710s
-  HMM 33500/53973 | elapsed 2726s | eta 1666s
-  HMM 34000/53973 | elapsed 2771s | eta 1628s
-  HMM 34500/53973 | elapsed 2829s | eta 1597s
-  HMM 35000/53973 | elapsed 2882s | eta 1562s
-  HMM 35500/53973 | elapsed 2915s | eta 1517s
-  HMM 36000/53973 | elapsed 2956s | eta 1476s
-  HMM 36500/53973 | elapsed 3007s | eta 1439s
-  HMM 37000/53973 | elapsed 3049s | eta 1399s
-  HMM 37500/53973 | elapsed 3097s | eta 1361s
-  HMM 38000/53973 | elapsed 3127s | eta 1314s
-  HMM 38500/53973 | elapsed 3167s | eta 1273s
-  HMM 39000/53973 | elapsed 3207s | eta 1231s
-  HMM 39500/53973 | elapsed 3242s | eta 1188s
-  HMM 40000/53973 | elapsed 3287s | eta 1148s
-  HMM 40500/53973 | elapsed 3329s | eta 1107s
-  HMM 41000/53973 | elapsed 3375s | eta 1068s
-  HMM 41500/53973 | elapsed 3417s | eta 1027s
-  HMM 42000/53973 | elapsed 3455s | eta 985s
-  HMM 42500/53973 | elapsed 3483s | eta 940s
-  HMM 43000/53973 | elapsed 3525s | eta 899s
-  HMM 43500/53973 | elapsed 3583s | eta 863s
-  HMM 44000/53973 | elapsed 3624s | eta 821s
-  HMM 44500/53973 | elapsed 3674s | eta 782s
-  HMM 45000/53973 | elapsed 3710s | eta 740s
-  HMM 45500/53973 | elapsed 3742s | eta 697s
-  HMM 46000/53973 | elapsed 3780s | eta 655s
-  HMM 46500/53973 | elapsed 3799s | eta 611s
-  HMM 47000/53973 | elapsed 3827s | eta 568s
-  HMM 47500/53973 | elapsed 3880s | eta 529s
-  HMM 48000/53973 | elapsed 3923s | eta 488s
-  HMM 48500/53973 | elapsed 3971s | eta 448s
-  HMM 49000/53973 | elapsed 4025s | eta 408s
-  HMM 49500/53973 | elapsed 4077s | eta 368s
-  HMM 50000/53973 | elapsed 4133s | eta 328s
-  HMM 50500/53973 | elapsed 4184s | eta 288s
-  HMM 51000/53973 | elapsed 4219s | eta 246s
-  HMM 51500/53973 | elapsed 4241s | eta 204s
-  HMM 52000/53973 | elapsed 4271s | eta 162s
-  HMM 52500/53973 | elapsed 4316s | eta 121s
-  HMM 53000/53973 | elapsed 4364s | eta 80s
-  HMM 53500/53973 | elapsed 4392s | eta 39s
-  HMM 53973/53973 | elapsed 4422s | eta 0s
-Saved segments (80,145,533 rows) → /Users/jiayichiyun/Code/deep-gw-cnv/models/experiments/37/../../../data/results/37_06convvae_400bp_sinloss2.0_warmup80/segments.parquet
+  HMM 500/53973 | elapsed 30s | eta 3209s
+  HMM 1000/53973 | elapsed 60s | eta 3181s
+  HMM 1500/53973 | elapsed 90s | eta 3135s
+  HMM 2000/53973 | elapsed 123s | eta 3196s
+  HMM 2500/53973 | elapsed 150s | eta 3094s
+  HMM 3000/53973 | elapsed 173s | eta 2940s
+  HMM 3500/53973 | elapsed 201s | eta 2897s
+  HMM 4000/53973 | elapsed 226s | eta 2823s
+  HMM 4500/53973 | elapsed 252s | eta 2767s
+  HMM 5000/53973 | elapsed 284s | eta 2782s
+  HMM 5500/53973 | elapsed 310s | eta 2733s
+  HMM 6000/53973 | elapsed 337s | eta 2694s
+  HMM 6500/53973 | elapsed 359s | eta 2622s
+  HMM 7000/53973 | elapsed 391s | eta 2621s
+  HMM 7500/53973 | elapsed 417s | eta 2586s
+  HMM 8000/53973 | elapsed 448s | eta 2572s
+  HMM 8500/53973 | elapsed 469s | eta 2509s
+  HMM 9000/53973 | elapsed 486s | eta 2428s
+  HMM 9500/53973 | elapsed 508s | eta 2379s
+  HMM 10000/53973 | elapsed 533s | eta 2345s
+  HMM 10500/53973 | elapsed 570s | eta 2358s
+  HMM 11000/53973 | elapsed 597s | eta 2333s
+  HMM 11500/53973 | elapsed 621s | eta 2292s
+  HMM 12000/53973 | elapsed 646s | eta 2261s
+  HMM 12500/53973 | elapsed 670s | eta 2223s
+  HMM 13000/53973 | elapsed 697s | eta 2195s
+  HMM 13500/53973 | elapsed 727s | eta 2180s
+  HMM 14000/53973 | elapsed 755s | eta 2156s
+  HMM 14500/53973 | elapsed 783s | eta 2130s
+  HMM 15000/53973 | elapsed 820s | eta 2132s
+  HMM 15500/53973 | elapsed 862s | eta 2139s
+  HMM 16000/53973 | elapsed 896s | eta 2126s
+  HMM 16500/53973 | elapsed 920s | eta 2090s
+  HMM 17000/53973 | elapsed 954s | eta 2075s
+  HMM 17500/53973 | elapsed 982s | eta 2047s
+  HMM 18000/53973 | elapsed 1009s | eta 2017s
+  HMM 18500/53973 | elapsed 1036s | eta 1987s
+  HMM 19000/53973 | elapsed 1061s | eta 1953s
+  HMM 19500/53973 | elapsed 1090s | eta 1927s
+  HMM 20000/53973 | elapsed 1114s | eta 1893s
+  HMM 20500/53973 | elapsed 1143s | eta 1866s
+  HMM 21000/53973 | elapsed 1170s | eta 1837s
+  HMM 21500/53973 | elapsed 1203s | eta 1817s
+  HMM 22000/53973 | elapsed 1234s | eta 1793s
+  HMM 22500/53973 | elapsed 1265s | eta 1769s
+  HMM 23000/53973 | elapsed 1304s | eta 1756s
+  HMM 23500/53973 | elapsed 1329s | eta 1723s
+  HMM 24000/53973 | elapsed 1355s | eta 1693s
+  HMM 24500/53973 | elapsed 1386s | eta 1668s
+  HMM 25000/53973 | elapsed 1418s | eta 1643s
+  HMM 25500/53973 | elapsed 1450s | eta 1619s
+  HMM 26000/53973 | elapsed 1477s | eta 1589s
+  HMM 26500/53973 | elapsed 1507s | eta 1563s
+  HMM 27000/53973 | elapsed 1542s | eta 1541s
+  HMM 27500/53973 | elapsed 1572s | eta 1513s
+  HMM 28000/53973 | elapsed 1610s | eta 1493s
+  HMM 28500/53973 | elapsed 1643s | eta 1469s
+  HMM 29000/53973 | elapsed 1679s | eta 1446s
+  HMM 29500/53973 | elapsed 1714s | eta 1422s
+  HMM 30000/53973 | elapsed 1741s | eta 1391s
+  HMM 30500/53973 | elapsed 1775s | eta 1366s
+  HMM 31000/53973 | elapsed 1812s | eta 1343s
+  HMM 31500/53973 | elapsed 1845s | eta 1317s
+  HMM 32000/53973 | elapsed 1876s | eta 1288s
+  HMM 32500/53973 | elapsed 1915s | eta 1265s
+  HMM 33000/53973 | elapsed 1941s | eta 1234s
+  HMM 33500/53973 | elapsed 1967s | eta 1202s
+  HMM 34000/53973 | elapsed 2002s | eta 1176s
+  HMM 34500/53973 | elapsed 2043s | eta 1153s
+  HMM 35000/53973 | elapsed 2081s | eta 1128s
+  HMM 35500/53973 | elapsed 2106s | eta 1096s
+  HMM 36000/53973 | elapsed 2135s | eta 1066s
+  HMM 36500/53973 | elapsed 2173s | eta 1040s
+  HMM 37000/53973 | elapsed 2205s | eta 1011s
+  HMM 37500/53973 | elapsed 2238s | eta 983s
+  HMM 38000/53973 | elapsed 2262s | eta 951s
+  HMM 38500/53973 | elapsed 2290s | eta 920s
+  HMM 39000/53973 | elapsed 2319s | eta 890s
+  HMM 39500/53973 | elapsed 2344s | eta 859s
+  HMM 40000/53973 | elapsed 2376s | eta 830s
+  HMM 40500/53973 | elapsed 2408s | eta 801s
+  HMM 41000/53973 | elapsed 2440s | eta 772s
+  HMM 41500/53973 | elapsed 2470s | eta 742s
+  HMM 42000/53973 | elapsed 2499s | eta 712s
+  HMM 42500/53973 | elapsed 2520s | eta 680s
+  HMM 43000/53973 | elapsed 2549s | eta 651s
+  HMM 43500/53973 | elapsed 2591s | eta 624s
+  HMM 44000/53973 | elapsed 2621s | eta 594s
+  HMM 44500/53973 | elapsed 2655s | eta 565s
+  HMM 45000/53973 | elapsed 2682s | eta 535s
+  HMM 45500/53973 | elapsed 2706s | eta 504s
+  HMM 46000/53973 | elapsed 2733s | eta 474s
+  HMM 46500/53973 | elapsed 2747s | eta 441s
+  HMM 47000/53973 | elapsed 2768s | eta 411s
+  HMM 47500/53973 | elapsed 2807s | eta 383s
+  HMM 48000/53973 | elapsed 2839s | eta 353s
+  HMM 48500/53973 | elapsed 2876s | eta 325s
+  HMM 49000/53973 | elapsed 2912s | eta 296s
+  HMM 49500/53973 | elapsed 2948s | eta 266s
+  HMM 50000/53973 | elapsed 2989s | eta 238s
+  HMM 50500/53973 | elapsed 3029s | eta 208s
+  HMM 51000/53973 | elapsed 3054s | eta 178s
+  HMM 51500/53973 | elapsed 3069s | eta 147s
+  HMM 52000/53973 | elapsed 3090s | eta 117s
+  HMM 52500/53973 | elapsed 3124s | eta 88s
+  HMM 53000/53973 | elapsed 3158s | eta 58s
+  HMM 53500/53973 | elapsed 3180s | eta 28s
+  HMM 53973/53973 | elapsed 3201s | eta 0s
+Saved segments (32,418,025 rows) → /Users/jiayichiyun/Code/deep-gw-cnv/models/experiments/43/../../../data/results/43_06convvae_beta4_18cnvcaller/segments.parquet
 Calling gene CNVs...
-Noise filter (max_transitions=50): 46,393/50,200 samples marked noisy (92.4%)
 Precomputing per-chromosome sanity checks...
-Parsing genes from /Users/jiayichiyun/Code/deep-gw-cnv/models/experiments/37/../../../assets/PlasmoDB-54_Pfalciparum3D7.gff...
+Parsing genes from /Users/jiayichiyun/Code/deep-gw-cnv/models/experiments/43/../../../assets/PlasmoDB-54_Pfalciparum3D7.gff...
   5,285 protein-coding genes on nuclear chromosomes
-HMM-primary calling: CN>=2 gene-body coverage >= 0.50 (confidence >= 0.25); CRR rescue >= 1.55 for reference genes; noise filter max_transitions=50.
+HMM-primary calling: CN>=2 gene-body coverage >= 0.50 (confidence >= 0.25); CRR rescue >= 1.55 (applies before sanity check) (no noise filter).
 Calling genome-wide CNVs for 53,973 samples...
-/Users/jiayichiyun/Code/deep-gw-cnv/models/cnv/16_genome_cnv_caller.py:290: RuntimeWarning: Mean of empty slice
+/Users/jiayichiyun/Code/deep-gw-cnv/models/cnv/18_genome_cnv_caller.py:289: RuntimeWarning: Mean of empty slice
   mean_gene  = np.nanmean(cr_chrom[:, gene_mask_l],  axis=1)
-/Users/jiayichiyun/Code/deep-gw-cnv/models/cnv/16_genome_cnv_caller.py:291: RuntimeWarning: Mean of empty slice
+/Users/jiayichiyun/Code/deep-gw-cnv/models/cnv/18_genome_cnv_caller.py:290: RuntimeWarning: Mean of empty slice
   mean_flank = np.nanmean(cr_chrom[:, flank_mask_l], axis=1)
-/Users/jiayichiyun/Code/deep-gw-cnv/models/cnv/16_genome_cnv_caller.py:290: RuntimeWarning: Mean of empty slice
+/Users/jiayichiyun/Code/deep-gw-cnv/models/cnv/18_genome_cnv_caller.py:289: RuntimeWarning: Mean of empty slice
   mean_gene  = np.nanmean(cr_chrom[:, gene_mask_l],  axis=1)
-/Users/jiayichiyun/Code/deep-gw-cnv/models/cnv/16_genome_cnv_caller.py:291: RuntimeWarning: Mean of empty slice
+/Users/jiayichiyun/Code/deep-gw-cnv/models/cnv/18_genome_cnv_caller.py:290: RuntimeWarning: Mean of empty slice
   mean_flank = np.nanmean(cr_chrom[:, flank_mask_l], axis=1)
-/Users/jiayichiyun/Code/deep-gw-cnv/models/cnv/16_genome_cnv_caller.py:290: RuntimeWarning: Mean of empty slice
+/Users/jiayichiyun/Code/deep-gw-cnv/models/cnv/18_genome_cnv_caller.py:289: RuntimeWarning: Mean of empty slice
   mean_gene  = np.nanmean(cr_chrom[:, gene_mask_l],  axis=1)
-/Users/jiayichiyun/Code/deep-gw-cnv/models/cnv/16_genome_cnv_caller.py:291: RuntimeWarning: Mean of empty slice
+/Users/jiayichiyun/Code/deep-gw-cnv/models/cnv/18_genome_cnv_caller.py:290: RuntimeWarning: Mean of empty slice
   mean_flank = np.nanmean(cr_chrom[:, flank_mask_l], axis=1)
-  500/5285 genes | elapsed 86s
-/Users/jiayichiyun/Code/deep-gw-cnv/models/cnv/16_genome_cnv_caller.py:290: RuntimeWarning: Mean of empty slice
+  500/5285 genes | elapsed 181s
+/Users/jiayichiyun/Code/deep-gw-cnv/models/cnv/18_genome_cnv_caller.py:289: RuntimeWarning: Mean of empty slice
   mean_gene  = np.nanmean(cr_chrom[:, gene_mask_l],  axis=1)
-/Users/jiayichiyun/Code/deep-gw-cnv/models/cnv/16_genome_cnv_caller.py:291: RuntimeWarning: Mean of empty slice
+/Users/jiayichiyun/Code/deep-gw-cnv/models/cnv/18_genome_cnv_caller.py:290: RuntimeWarning: Mean of empty slice
   mean_flank = np.nanmean(cr_chrom[:, flank_mask_l], axis=1)
-/Users/jiayichiyun/Code/deep-gw-cnv/models/cnv/16_genome_cnv_caller.py:290: RuntimeWarning: Mean of empty slice
+/Users/jiayichiyun/Code/deep-gw-cnv/models/cnv/18_genome_cnv_caller.py:289: RuntimeWarning: Mean of empty slice
   mean_gene  = np.nanmean(cr_chrom[:, gene_mask_l],  axis=1)
-/Users/jiayichiyun/Code/deep-gw-cnv/models/cnv/16_genome_cnv_caller.py:291: RuntimeWarning: Mean of empty slice
+/Users/jiayichiyun/Code/deep-gw-cnv/models/cnv/18_genome_cnv_caller.py:290: RuntimeWarning: Mean of empty slice
   mean_flank = np.nanmean(cr_chrom[:, flank_mask_l], axis=1)
-  1000/5285 genes | elapsed 217s
-/Users/jiayichiyun/Code/deep-gw-cnv/models/cnv/16_genome_cnv_caller.py:290: RuntimeWarning: Mean of empty slice
+  1000/5285 genes | elapsed 439s
+/Users/jiayichiyun/Code/deep-gw-cnv/models/cnv/18_genome_cnv_caller.py:289: RuntimeWarning: Mean of empty slice
   mean_gene  = np.nanmean(cr_chrom[:, gene_mask_l],  axis=1)
-/Users/jiayichiyun/Code/deep-gw-cnv/models/cnv/16_genome_cnv_caller.py:291: RuntimeWarning: Mean of empty slice
+/Users/jiayichiyun/Code/deep-gw-cnv/models/cnv/18_genome_cnv_caller.py:290: RuntimeWarning: Mean of empty slice
   mean_flank = np.nanmean(cr_chrom[:, flank_mask_l], axis=1)
-/Users/jiayichiyun/Code/deep-gw-cnv/models/cnv/16_genome_cnv_caller.py:290: RuntimeWarning: Mean of empty slice
+/Users/jiayichiyun/Code/deep-gw-cnv/models/cnv/18_genome_cnv_caller.py:289: RuntimeWarning: Mean of empty slice
   mean_gene  = np.nanmean(cr_chrom[:, gene_mask_l],  axis=1)
-/Users/jiayichiyun/Code/deep-gw-cnv/models/cnv/16_genome_cnv_caller.py:291: RuntimeWarning: Mean of empty slice
+/Users/jiayichiyun/Code/deep-gw-cnv/models/cnv/18_genome_cnv_caller.py:290: RuntimeWarning: Mean of empty slice
   mean_flank = np.nanmean(cr_chrom[:, flank_mask_l], axis=1)
-  1500/5285 genes | elapsed 349s
-/Users/jiayichiyun/Code/deep-gw-cnv/models/cnv/16_genome_cnv_caller.py:290: RuntimeWarning: Mean of empty slice
+  1500/5285 genes | elapsed 709s
+/Users/jiayichiyun/Code/deep-gw-cnv/models/cnv/18_genome_cnv_caller.py:289: RuntimeWarning: Mean of empty slice
   mean_gene  = np.nanmean(cr_chrom[:, gene_mask_l],  axis=1)
-/Users/jiayichiyun/Code/deep-gw-cnv/models/cnv/16_genome_cnv_caller.py:291: RuntimeWarning: Mean of empty slice
+/Users/jiayichiyun/Code/deep-gw-cnv/models/cnv/18_genome_cnv_caller.py:290: RuntimeWarning: Mean of empty slice
   mean_flank = np.nanmean(cr_chrom[:, flank_mask_l], axis=1)
-/Users/jiayichiyun/Code/deep-gw-cnv/models/cnv/16_genome_cnv_caller.py:290: RuntimeWarning: Mean of empty slice
+/Users/jiayichiyun/Code/deep-gw-cnv/models/cnv/18_genome_cnv_caller.py:289: RuntimeWarning: Mean of empty slice
   mean_gene  = np.nanmean(cr_chrom[:, gene_mask_l],  axis=1)
-/Users/jiayichiyun/Code/deep-gw-cnv/models/cnv/16_genome_cnv_caller.py:291: RuntimeWarning: Mean of empty slice
+/Users/jiayichiyun/Code/deep-gw-cnv/models/cnv/18_genome_cnv_caller.py:290: RuntimeWarning: Mean of empty slice
   mean_flank = np.nanmean(cr_chrom[:, flank_mask_l], axis=1)
-  2000/5285 genes | elapsed 494s
-/Users/jiayichiyun/Code/deep-gw-cnv/models/cnv/16_genome_cnv_caller.py:290: RuntimeWarning: Mean of empty slice
+  2000/5285 genes | elapsed 1001s
+/Users/jiayichiyun/Code/deep-gw-cnv/models/cnv/18_genome_cnv_caller.py:289: RuntimeWarning: Mean of empty slice
   mean_gene  = np.nanmean(cr_chrom[:, gene_mask_l],  axis=1)
-/Users/jiayichiyun/Code/deep-gw-cnv/models/cnv/16_genome_cnv_caller.py:291: RuntimeWarning: Mean of empty slice
+/Users/jiayichiyun/Code/deep-gw-cnv/models/cnv/18_genome_cnv_caller.py:290: RuntimeWarning: Mean of empty slice
   mean_flank = np.nanmean(cr_chrom[:, flank_mask_l], axis=1)
-  2500/5285 genes | elapsed 655s
-/Users/jiayichiyun/Code/deep-gw-cnv/models/cnv/16_genome_cnv_caller.py:290: RuntimeWarning: Mean of empty slice
+  2500/5285 genes | elapsed 1329s
+/Users/jiayichiyun/Code/deep-gw-cnv/models/cnv/18_genome_cnv_caller.py:289: RuntimeWarning: Mean of empty slice
   mean_gene  = np.nanmean(cr_chrom[:, gene_mask_l],  axis=1)
-/Users/jiayichiyun/Code/deep-gw-cnv/models/cnv/16_genome_cnv_caller.py:291: RuntimeWarning: Mean of empty slice
+/Users/jiayichiyun/Code/deep-gw-cnv/models/cnv/18_genome_cnv_caller.py:290: RuntimeWarning: Mean of empty slice
   mean_flank = np.nanmean(cr_chrom[:, flank_mask_l], axis=1)
-  3000/5285 genes | elapsed 861s
-/Users/jiayichiyun/Code/deep-gw-cnv/models/cnv/16_genome_cnv_caller.py:290: RuntimeWarning: Mean of empty slice
+  3000/5285 genes | elapsed 1725s
+/Users/jiayichiyun/Code/deep-gw-cnv/models/cnv/18_genome_cnv_caller.py:289: RuntimeWarning: Mean of empty slice
   mean_gene  = np.nanmean(cr_chrom[:, gene_mask_l],  axis=1)
-/Users/jiayichiyun/Code/deep-gw-cnv/models/cnv/16_genome_cnv_caller.py:291: RuntimeWarning: Mean of empty slice
+/Users/jiayichiyun/Code/deep-gw-cnv/models/cnv/18_genome_cnv_caller.py:290: RuntimeWarning: Mean of empty slice
   mean_flank = np.nanmean(cr_chrom[:, flank_mask_l], axis=1)
-  3500/5285 genes | elapsed 1097s
-/Users/jiayichiyun/Code/deep-gw-cnv/models/cnv/16_genome_cnv_caller.py:290: RuntimeWarning: Mean of empty slice
+  3500/5285 genes | elapsed 2180s
+/Users/jiayichiyun/Code/deep-gw-cnv/models/cnv/18_genome_cnv_caller.py:289: RuntimeWarning: Mean of empty slice
   mean_gene  = np.nanmean(cr_chrom[:, gene_mask_l],  axis=1)
-/Users/jiayichiyun/Code/deep-gw-cnv/models/cnv/16_genome_cnv_caller.py:291: RuntimeWarning: Mean of empty slice
+/Users/jiayichiyun/Code/deep-gw-cnv/models/cnv/18_genome_cnv_caller.py:290: RuntimeWarning: Mean of empty slice
   mean_flank = np.nanmean(cr_chrom[:, flank_mask_l], axis=1)
-  4000/5285 genes | elapsed 1409s
-/Users/jiayichiyun/Code/deep-gw-cnv/models/cnv/16_genome_cnv_caller.py:290: RuntimeWarning: Mean of empty slice
+  4000/5285 genes | elapsed 2785s
+/Users/jiayichiyun/Code/deep-gw-cnv/models/cnv/18_genome_cnv_caller.py:289: RuntimeWarning: Mean of empty slice
   mean_gene  = np.nanmean(cr_chrom[:, gene_mask_l],  axis=1)
-/Users/jiayichiyun/Code/deep-gw-cnv/models/cnv/16_genome_cnv_caller.py:291: RuntimeWarning: Mean of empty slice
+/Users/jiayichiyun/Code/deep-gw-cnv/models/cnv/18_genome_cnv_caller.py:290: RuntimeWarning: Mean of empty slice
   mean_flank = np.nanmean(cr_chrom[:, flank_mask_l], axis=1)
-  4500/5285 genes | elapsed 1769s
-Done | 5,285 genes processed | elapsed 2103s
-Saved genome-wide amplifications: 3,495 calls | 793 samples | 645 genes → /Users/jiayichiyun/Code/deep-gw-cnv/models/experiments/37/../../../data/results/37_06convvae_400bp_sinloss2.0_warmup80/genome_wide_amplifications.tsv
-Saved reference gene calls (53,973 samples) → /Users/jiayichiyun/Code/deep-gw-cnv/models/experiments/37/../../../data/results/37_06convvae_400bp_sinloss2.0_warmup80/gene_calls.tsv
-Saved evaluation → /Users/jiayichiyun/Code/deep-gw-cnv/models/experiments/37/../../../data/results/37_06convvae_400bp_sinloss2.0_warmup80/evaluation.txt
-2026-05-13 10:25:47  Experiment 37 complete.
-2026-05-13 10:25:47  Invoking Claude to propose next experiment...
-2026-05-13 13:31:31  Feedback received (content not logged — invoking Claude to revise proposal).
-Sent. Message-ID: <177867549189.70770.3863418940107035235@deep-gw-cnv>
-2026-05-13 13:31:33  Invoking Claude to revise proposal based on feedback...
-Done. Here's what happened:
-
-**Feedback addressed:** Chiyun asked whether ground-truth CNV samples being called as -1 are tracked. Answer: no — v04 FNR only covers the evaluable subset, so -1 outputs on true positives are silently excluded before the metric is computed.
-
-**Changes made:**
-- Created `models/evaluation/05_pf9_evaluation.py` with three new metrics: `masked_cnv_rate` (fraction of gt-positives called -1), `total_fnr` (inclusive miss rate including -1 outputs), and a masked CRR distribution (to tell whether suppressed CNV samples have signal or not)
-- Updated exp 38 `config.yaml` to use `05_pf9_evaluation` 
-- Updated exp 38 `README.md` with explanation of the new metric and proposal history
-- Sent the revised proposal in the same email thread
-
-The threshold change (1.55 → 1.35) is unchanged — the evaluation upgrade is additive.
-/Users/jiayichiyun/Code/deep-gw-cnv/tools/check_and_run.sh: line 46: 70775 Terminated: 15          ( sleep 1800; kill -0 "$CLAUDE_PID" 2> /dev/null && kill "$CLAUDE_PID" )
-2026-05-13 13:37:55  Revised proposal sent successfully.
-2026-05-13 13:39:14  Feedback received (content not logged — invoking Claude to revise proposal).
-Sent. Message-ID: <177867595474.70952.14815161977293146472@deep-gw-cnv>
-2026-05-13 13:39:15  Invoking Claude to revise proposal based on feedback...
-Experiment 38 has been revised in-place. The threshold change (1.55 → 1.35) is dropped — the only change from exp 37 is the upgrade to `05_pf9_evaluation`. The revised proposal has been sent in the same email thread. Reply AUTHORISE to run.
-/Users/jiayichiyun/Code/deep-gw-cnv/tools/check_and_run.sh: line 46: 70957 Terminated: 15          ( sleep 1800; kill -0 "$CLAUDE_PID" 2> /dev/null && kill "$CLAUDE_PID" )
-2026-05-13 13:41:59  Revised proposal sent successfully.
-2026-05-13 13:43:16  AUTHORISE received. Running experiment.
-Sent. Message-ID: <177867619622.71114.1588338254349784984@deep-gw-cnv>
+  4500/5285 genes | elapsed 3471s
+Done | 5,285 genes processed | elapsed 4115s
+Saved genome-wide amplifications: 6,860,811 calls | 36,228 samples | 4,952 genes → /Users/jiayichiyun/Code/deep-gw-cnv/models/experiments/43/../../../data/results/43_06convvae_beta4_18cnvcaller/genome_wide_amplifications.tsv
+Saved reference gene calls (53,973 samples) → /Users/jiayichiyun/Code/deep-gw-cnv/models/experiments/43/../../../data/results/43_06convvae_beta4_18cnvcaller/gene_calls.tsv
+Saved evaluation → /Users/jiayichiyun/Code/deep-gw-cnv/models/experiments/43/../../../data/results/43_06convvae_beta4_18cnvcaller/evaluation.txt
+2026-05-16 10:15:08  Experiment 43 complete.
+2026-05-16 10:15:08  Invoking Claude to propose next experiment...
+2026-05-16 10:54:21  AUTHORISE received. Running experiment.
+Sent. Message-ID: <177892526143.12298.17318409266686886658@deep-gw-cnv>
 Device: mps
-Curriculum sampler: 6944 CNV-positive, 47029 normal | ratio 0.05→0.30 over 80 epochs
+Curriculum sampler: 6944 CNV-positive, 47029 normal | ratio 0.05→0.10 over 80 epochs
   [curriculum] epoch 0: cnv_ratio=0.050
 samples=53973 | latent_dim=10
-Skipping training+inference: reconstructions.npy already exists.
-Skipping HMM segmentation: segments.parquet already exists.
-Calling gene CNVs...
-Noise filter (max_transitions=50): 46,393/50,200 samples marked noisy (92.4%)
-Precomputing per-chromosome sanity checks...
-Parsing genes from /Users/jiayichiyun/Code/deep-gw-cnv/models/experiments/38/../../../assets/PlasmoDB-54_Pfalciparum3D7.gff...
-  5,285 protein-coding genes on nuclear chromosomes
-HMM-primary calling: CN>=2 gene-body coverage >= 0.50 (confidence >= 0.25); CRR rescue >= 1.55 for reference genes; noise filter max_transitions=50.
-Calling genome-wide CNVs for 53,973 samples...
-/Users/jiayichiyun/Code/deep-gw-cnv/models/cnv/16_genome_cnv_caller.py:290: RuntimeWarning: Mean of empty slice
-  mean_gene  = np.nanmean(cr_chrom[:, gene_mask_l],  axis=1)
-/Users/jiayichiyun/Code/deep-gw-cnv/models/cnv/16_genome_cnv_caller.py:291: RuntimeWarning: Mean of empty slice
-  mean_flank = np.nanmean(cr_chrom[:, flank_mask_l], axis=1)
-/Users/jiayichiyun/Code/deep-gw-cnv/models/cnv/16_genome_cnv_caller.py:290: RuntimeWarning: Mean of empty slice
-  mean_gene  = np.nanmean(cr_chrom[:, gene_mask_l],  axis=1)
-/Users/jiayichiyun/Code/deep-gw-cnv/models/cnv/16_genome_cnv_caller.py:291: RuntimeWarning: Mean of empty slice
-  mean_flank = np.nanmean(cr_chrom[:, flank_mask_l], axis=1)
-/Users/jiayichiyun/Code/deep-gw-cnv/models/cnv/16_genome_cnv_caller.py:290: RuntimeWarning: Mean of empty slice
-  mean_gene  = np.nanmean(cr_chrom[:, gene_mask_l],  axis=1)
-/Users/jiayichiyun/Code/deep-gw-cnv/models/cnv/16_genome_cnv_caller.py:291: RuntimeWarning: Mean of empty slice
-  mean_flank = np.nanmean(cr_chrom[:, flank_mask_l], axis=1)
-  500/5285 genes | elapsed 80s
-/Users/jiayichiyun/Code/deep-gw-cnv/models/cnv/16_genome_cnv_caller.py:290: RuntimeWarning: Mean of empty slice
-  mean_gene  = np.nanmean(cr_chrom[:, gene_mask_l],  axis=1)
-/Users/jiayichiyun/Code/deep-gw-cnv/models/cnv/16_genome_cnv_caller.py:291: RuntimeWarning: Mean of empty slice
-  mean_flank = np.nanmean(cr_chrom[:, flank_mask_l], axis=1)
-/Users/jiayichiyun/Code/deep-gw-cnv/models/cnv/16_genome_cnv_caller.py:290: RuntimeWarning: Mean of empty slice
-  mean_gene  = np.nanmean(cr_chrom[:, gene_mask_l],  axis=1)
-/Users/jiayichiyun/Code/deep-gw-cnv/models/cnv/16_genome_cnv_caller.py:291: RuntimeWarning: Mean of empty slice
-  mean_flank = np.nanmean(cr_chrom[:, flank_mask_l], axis=1)
-  1000/5285 genes | elapsed 203s
-/Users/jiayichiyun/Code/deep-gw-cnv/models/cnv/16_genome_cnv_caller.py:290: RuntimeWarning: Mean of empty slice
-  mean_gene  = np.nanmean(cr_chrom[:, gene_mask_l],  axis=1)
-/Users/jiayichiyun/Code/deep-gw-cnv/models/cnv/16_genome_cnv_caller.py:291: RuntimeWarning: Mean of empty slice
-  mean_flank = np.nanmean(cr_chrom[:, flank_mask_l], axis=1)
-/Users/jiayichiyun/Code/deep-gw-cnv/models/cnv/16_genome_cnv_caller.py:290: RuntimeWarning: Mean of empty slice
-  mean_gene  = np.nanmean(cr_chrom[:, gene_mask_l],  axis=1)
-/Users/jiayichiyun/Code/deep-gw-cnv/models/cnv/16_genome_cnv_caller.py:291: RuntimeWarning: Mean of empty slice
-  mean_flank = np.nanmean(cr_chrom[:, flank_mask_l], axis=1)
-  1500/5285 genes | elapsed 329s
-/Users/jiayichiyun/Code/deep-gw-cnv/models/cnv/16_genome_cnv_caller.py:290: RuntimeWarning: Mean of empty slice
-  mean_gene  = np.nanmean(cr_chrom[:, gene_mask_l],  axis=1)
-/Users/jiayichiyun/Code/deep-gw-cnv/models/cnv/16_genome_cnv_caller.py:291: RuntimeWarning: Mean of empty slice
-  mean_flank = np.nanmean(cr_chrom[:, flank_mask_l], axis=1)
-/Users/jiayichiyun/Code/deep-gw-cnv/models/cnv/16_genome_cnv_caller.py:290: RuntimeWarning: Mean of empty slice
-  mean_gene  = np.nanmean(cr_chrom[:, gene_mask_l],  axis=1)
-/Users/jiayichiyun/Code/deep-gw-cnv/models/cnv/16_genome_cnv_caller.py:291: RuntimeWarning: Mean of empty slice
-  mean_flank = np.nanmean(cr_chrom[:, flank_mask_l], axis=1)
-  2000/5285 genes | elapsed 469s
-/Users/jiayichiyun/Code/deep-gw-cnv/models/cnv/16_genome_cnv_caller.py:290: RuntimeWarning: Mean of empty slice
-  mean_gene  = np.nanmean(cr_chrom[:, gene_mask_l],  axis=1)
-/Users/jiayichiyun/Code/deep-gw-cnv/models/cnv/16_genome_cnv_caller.py:291: RuntimeWarning: Mean of empty slice
-  mean_flank = np.nanmean(cr_chrom[:, flank_mask_l], axis=1)
-  2500/5285 genes | elapsed 626s
-/Users/jiayichiyun/Code/deep-gw-cnv/models/cnv/16_genome_cnv_caller.py:290: RuntimeWarning: Mean of empty slice
-  mean_gene  = np.nanmean(cr_chrom[:, gene_mask_l],  axis=1)
-/Users/jiayichiyun/Code/deep-gw-cnv/models/cnv/16_genome_cnv_caller.py:291: RuntimeWarning: Mean of empty slice
-  mean_flank = np.nanmean(cr_chrom[:, flank_mask_l], axis=1)
-  3000/5285 genes | elapsed 831s
-/Users/jiayichiyun/Code/deep-gw-cnv/models/cnv/16_genome_cnv_caller.py:290: RuntimeWarning: Mean of empty slice
-  mean_gene  = np.nanmean(cr_chrom[:, gene_mask_l],  axis=1)
-/Users/jiayichiyun/Code/deep-gw-cnv/models/cnv/16_genome_cnv_caller.py:291: RuntimeWarning: Mean of empty slice
-  mean_flank = np.nanmean(cr_chrom[:, flank_mask_l], axis=1)
-  3500/5285 genes | elapsed 1063s
-/Users/jiayichiyun/Code/deep-gw-cnv/models/cnv/16_genome_cnv_caller.py:290: RuntimeWarning: Mean of empty slice
-  mean_gene  = np.nanmean(cr_chrom[:, gene_mask_l],  axis=1)
-/Users/jiayichiyun/Code/deep-gw-cnv/models/cnv/16_genome_cnv_caller.py:291: RuntimeWarning: Mean of empty slice
-  mean_flank = np.nanmean(cr_chrom[:, flank_mask_l], axis=1)
-  4000/5285 genes | elapsed 1370s
-/Users/jiayichiyun/Code/deep-gw-cnv/models/cnv/16_genome_cnv_caller.py:290: RuntimeWarning: Mean of empty slice
-  mean_gene  = np.nanmean(cr_chrom[:, gene_mask_l],  axis=1)
-/Users/jiayichiyun/Code/deep-gw-cnv/models/cnv/16_genome_cnv_caller.py:291: RuntimeWarning: Mean of empty slice
-  mean_flank = np.nanmean(cr_chrom[:, flank_mask_l], axis=1)
-  4500/5285 genes | elapsed 1732s
-Done | 5,285 genes processed | elapsed 2062s
-Saved genome-wide amplifications: 3,495 calls | 793 samples | 645 genes → /Users/jiayichiyun/Code/deep-gw-cnv/models/experiments/38/../../../data/results/38_06convvae_400bp_sinloss2.0_warmup80_eval05/genome_wide_amplifications.tsv
-Saved reference gene calls (53,973 samples) → /Users/jiayichiyun/Code/deep-gw-cnv/models/experiments/38/../../../data/results/38_06convvae_400bp_sinloss2.0_warmup80_eval05/gene_calls.tsv
-Saved evaluation → /Users/jiayichiyun/Code/deep-gw-cnv/models/experiments/38/../../../data/results/38_06convvae_400bp_sinloss2.0_warmup80_eval05/evaluation.txt
-2026-05-13 14:23:59  Experiment 38 complete.
-2026-05-13 14:23:59  Invoking Claude to propose next experiment...
-2026-05-13 14:50:24  AUTHORISE received. Running experiment.
-Sent. Message-ID: <177868022455.72426.18178473282914091404@deep-gw-cnv>
-Device: mps
-Curriculum sampler: 6944 CNV-positive, 47029 normal | ratio 0.05→0.30 over 80 epochs
   [curriculum] epoch 0: cnv_ratio=0.050
-samples=53973 | latent_dim=10
-Skipping training+inference: reconstructions.npy already exists.
-Skipping HMM segmentation: segments.parquet already exists.
-Calling gene CNVs...
-Precomputing per-chromosome sanity checks...
-Parsing genes from /Users/jiayichiyun/Code/deep-gw-cnv/models/experiments/39/../../../assets/PlasmoDB-54_Pfalciparum3D7.gff...
-  5,285 protein-coding genes on nuclear chromosomes
-HMM-primary calling: CN>=2 gene-body coverage >= 0.50 (confidence >= 0.25); CRR rescue >= 1.55 for reference genes (no noise filter).
-Calling genome-wide CNVs for 53,973 samples...
-/Users/jiayichiyun/Code/deep-gw-cnv/models/cnv/16_genome_cnv_caller.py:290: RuntimeWarning: Mean of empty slice
-  mean_gene  = np.nanmean(cr_chrom[:, gene_mask_l],  axis=1)
-/Users/jiayichiyun/Code/deep-gw-cnv/models/cnv/16_genome_cnv_caller.py:291: RuntimeWarning: Mean of empty slice
-  mean_flank = np.nanmean(cr_chrom[:, flank_mask_l], axis=1)
-/Users/jiayichiyun/Code/deep-gw-cnv/models/cnv/16_genome_cnv_caller.py:290: RuntimeWarning: Mean of empty slice
-  mean_gene  = np.nanmean(cr_chrom[:, gene_mask_l],  axis=1)
-/Users/jiayichiyun/Code/deep-gw-cnv/models/cnv/16_genome_cnv_caller.py:291: RuntimeWarning: Mean of empty slice
-  mean_flank = np.nanmean(cr_chrom[:, flank_mask_l], axis=1)
-/Users/jiayichiyun/Code/deep-gw-cnv/models/cnv/16_genome_cnv_caller.py:290: RuntimeWarning: Mean of empty slice
-  mean_gene  = np.nanmean(cr_chrom[:, gene_mask_l],  axis=1)
-/Users/jiayichiyun/Code/deep-gw-cnv/models/cnv/16_genome_cnv_caller.py:291: RuntimeWarning: Mean of empty slice
-  mean_flank = np.nanmean(cr_chrom[:, flank_mask_l], axis=1)
-  500/5285 genes | elapsed 278s
-/Users/jiayichiyun/Code/deep-gw-cnv/models/cnv/16_genome_cnv_caller.py:290: RuntimeWarning: Mean of empty slice
-  mean_gene  = np.nanmean(cr_chrom[:, gene_mask_l],  axis=1)
-/Users/jiayichiyun/Code/deep-gw-cnv/models/cnv/16_genome_cnv_caller.py:291: RuntimeWarning: Mean of empty slice
-  mean_flank = np.nanmean(cr_chrom[:, flank_mask_l], axis=1)
-/Users/jiayichiyun/Code/deep-gw-cnv/models/cnv/16_genome_cnv_caller.py:290: RuntimeWarning: Mean of empty slice
-  mean_gene  = np.nanmean(cr_chrom[:, gene_mask_l],  axis=1)
-/Users/jiayichiyun/Code/deep-gw-cnv/models/cnv/16_genome_cnv_caller.py:291: RuntimeWarning: Mean of empty slice
-  mean_flank = np.nanmean(cr_chrom[:, flank_mask_l], axis=1)
-  1000/5285 genes | elapsed 683s
-/Users/jiayichiyun/Code/deep-gw-cnv/models/cnv/16_genome_cnv_caller.py:290: RuntimeWarning: Mean of empty slice
-  mean_gene  = np.nanmean(cr_chrom[:, gene_mask_l],  axis=1)
-/Users/jiayichiyun/Code/deep-gw-cnv/models/cnv/16_genome_cnv_caller.py:291: RuntimeWarning: Mean of empty slice
-  mean_flank = np.nanmean(cr_chrom[:, flank_mask_l], axis=1)
-/Users/jiayichiyun/Code/deep-gw-cnv/models/cnv/16_genome_cnv_caller.py:290: RuntimeWarning: Mean of empty slice
-  mean_gene  = np.nanmean(cr_chrom[:, gene_mask_l],  axis=1)
-/Users/jiayichiyun/Code/deep-gw-cnv/models/cnv/16_genome_cnv_caller.py:291: RuntimeWarning: Mean of empty slice
-  mean_flank = np.nanmean(cr_chrom[:, flank_mask_l], axis=1)
-  1500/5285 genes | elapsed 1138s
-/Users/jiayichiyun/Code/deep-gw-cnv/models/cnv/16_genome_cnv_caller.py:290: RuntimeWarning: Mean of empty slice
-  mean_gene  = np.nanmean(cr_chrom[:, gene_mask_l],  axis=1)
-/Users/jiayichiyun/Code/deep-gw-cnv/models/cnv/16_genome_cnv_caller.py:291: RuntimeWarning: Mean of empty slice
-  mean_flank = np.nanmean(cr_chrom[:, flank_mask_l], axis=1)
-/Users/jiayichiyun/Code/deep-gw-cnv/models/cnv/16_genome_cnv_caller.py:290: RuntimeWarning: Mean of empty slice
-  mean_gene  = np.nanmean(cr_chrom[:, gene_mask_l],  axis=1)
-/Users/jiayichiyun/Code/deep-gw-cnv/models/cnv/16_genome_cnv_caller.py:291: RuntimeWarning: Mean of empty slice
-  mean_flank = np.nanmean(cr_chrom[:, flank_mask_l], axis=1)
-  2000/5285 genes | elapsed 1640s
-/Users/jiayichiyun/Code/deep-gw-cnv/models/cnv/16_genome_cnv_caller.py:290: RuntimeWarning: Mean of empty slice
-  mean_gene  = np.nanmean(cr_chrom[:, gene_mask_l],  axis=1)
-/Users/jiayichiyun/Code/deep-gw-cnv/models/cnv/16_genome_cnv_caller.py:291: RuntimeWarning: Mean of empty slice
-  mean_flank = np.nanmean(cr_chrom[:, flank_mask_l], axis=1)
-  2500/5285 genes | elapsed 2171s
-/Users/jiayichiyun/Code/deep-gw-cnv/models/cnv/16_genome_cnv_caller.py:290: RuntimeWarning: Mean of empty slice
-  mean_gene  = np.nanmean(cr_chrom[:, gene_mask_l],  axis=1)
-/Users/jiayichiyun/Code/deep-gw-cnv/models/cnv/16_genome_cnv_caller.py:291: RuntimeWarning: Mean of empty slice
-  mean_flank = np.nanmean(cr_chrom[:, flank_mask_l], axis=1)
-  3000/5285 genes | elapsed 2837s
-/Users/jiayichiyun/Code/deep-gw-cnv/models/cnv/16_genome_cnv_caller.py:290: RuntimeWarning: Mean of empty slice
-  mean_gene  = np.nanmean(cr_chrom[:, gene_mask_l],  axis=1)
-/Users/jiayichiyun/Code/deep-gw-cnv/models/cnv/16_genome_cnv_caller.py:291: RuntimeWarning: Mean of empty slice
-  mean_flank = np.nanmean(cr_chrom[:, flank_mask_l], axis=1)
-  3500/5285 genes | elapsed 3621s
-/Users/jiayichiyun/Code/deep-gw-cnv/models/cnv/16_genome_cnv_caller.py:290: RuntimeWarning: Mean of empty slice
-  mean_gene  = np.nanmean(cr_chrom[:, gene_mask_l],  axis=1)
-/Users/jiayichiyun/Code/deep-gw-cnv/models/cnv/16_genome_cnv_caller.py:291: RuntimeWarning: Mean of empty slice
-  mean_flank = np.nanmean(cr_chrom[:, flank_mask_l], axis=1)
-  4000/5285 genes | elapsed 4636s
-/Users/jiayichiyun/Code/deep-gw-cnv/models/cnv/16_genome_cnv_caller.py:290: RuntimeWarning: Mean of empty slice
-  mean_gene  = np.nanmean(cr_chrom[:, gene_mask_l],  axis=1)
-/Users/jiayichiyun/Code/deep-gw-cnv/models/cnv/16_genome_cnv_caller.py:291: RuntimeWarning: Mean of empty slice
-  mean_flank = np.nanmean(cr_chrom[:, flank_mask_l], axis=1)
-  4500/5285 genes | elapsed 5777s
-Done | 5,285 genes processed | elapsed 6860s
-Saved genome-wide amplifications: 15,023,084 calls | 25,990 samples | 4,952 genes → /Users/jiayichiyun/Code/deep-gw-cnv/models/experiments/39/../../../data/results/39_06convvae_400bp_sinloss2.0_warmup80_notransfilter/genome_wide_amplifications.tsv
-Saved reference gene calls (53,973 samples) → /Users/jiayichiyun/Code/deep-gw-cnv/models/experiments/39/../../../data/results/39_06convvae_400bp_sinloss2.0_warmup80_notransfilter/gene_calls.tsv
-Saved evaluation → /Users/jiayichiyun/Code/deep-gw-cnv/models/experiments/39/../../../data/results/39_06convvae_400bp_sinloss2.0_warmup80_notransfilter/evaluation.txt
-2026-05-13 16:51:12  Experiment 39 complete.
-2026-05-13 16:51:12  Invoking Claude to propose next experiment...
-2026-05-13 17:43:25  AUTHORISE received. Running experiment.
-Sent. Message-ID: <177869060559.74692.6226118698988870464@deep-gw-cnv>
-Device: mps
-Curriculum sampler: 6944 CNV-positive, 47029 normal | ratio 0.05→0.30 over 80 epochs
-  [curriculum] epoch 0: cnv_ratio=0.050
-samples=53973 | latent_dim=10
-Skipping training+inference: reconstructions.npy already exists.
-Fitting HMM segments...
-Fitting HMM for 53973 samples (n_jobs=-1)...
-  HMM 500/53973 | elapsed 22s | eta 2325s
-  HMM 1000/53973 | elapsed 42s | eta 2246s
-  HMM 1500/53973 | elapsed 64s | eta 2229s
-  HMM 2000/53973 | elapsed 87s | eta 2258s
-  HMM 2500/53973 | elapsed 108s | eta 2214s
-  HMM 3000/53973 | elapsed 124s | eta 2107s
-  HMM 3500/53973 | elapsed 144s | eta 2082s
-  HMM 4000/53973 | elapsed 163s | eta 2036s
-  HMM 4500/53973 | elapsed 184s | eta 2017s
-  HMM 5000/53973 | elapsed 208s | eta 2035s
-  HMM 5500/53973 | elapsed 229s | eta 2018s
-  HMM 6000/53973 | elapsed 250s | eta 1997s
-  HMM 6500/53973 | elapsed 267s | eta 1949s
-  HMM 7000/53973 | elapsed 291s | eta 1956s
-  HMM 7500/53973 | elapsed 312s | eta 1935s
-  HMM 8000/53973 | elapsed 335s | eta 1925s
-  HMM 8500/53973 | elapsed 351s | eta 1880s
-  HMM 9000/53973 | elapsed 364s | eta 1817s
-  HMM 9500/53973 | elapsed 379s | eta 1775s
-  HMM 10000/53973 | elapsed 396s | eta 1743s
-  HMM 10500/53973 | elapsed 422s | eta 1745s
-  HMM 11000/53973 | elapsed 442s | eta 1725s
-  HMM 11500/53973 | elapsed 459s | eta 1694s
-  HMM 12000/53973 | elapsed 477s | eta 1669s
-  HMM 12500/53973 | elapsed 494s | eta 1638s
-  HMM 13000/53973 | elapsed 513s | eta 1616s
-  HMM 13500/53973 | elapsed 535s | eta 1604s
-  HMM 14000/53973 | elapsed 557s | eta 1589s
-  HMM 14500/53973 | elapsed 576s | eta 1567s
-  HMM 15000/53973 | elapsed 604s | eta 1570s
-  HMM 15500/53973 | elapsed 636s | eta 1579s
-  HMM 16000/53973 | elapsed 661s | eta 1570s
-  HMM 16500/53973 | elapsed 680s | eta 1543s
-  HMM 17000/53973 | elapsed 704s | eta 1531s
-  HMM 17500/53973 | elapsed 725s | eta 1511s
-  HMM 18000/53973 | elapsed 745s | eta 1488s
-  HMM 18500/53973 | elapsed 765s | eta 1467s
-  HMM 19000/53973 | elapsed 784s | eta 1442s
-  HMM 19500/53973 | elapsed 805s | eta 1423s
-  HMM 20000/53973 | elapsed 823s | eta 1398s
-  HMM 20500/53973 | elapsed 843s | eta 1377s
-  HMM 21000/53973 | elapsed 864s | eta 1356s
-  HMM 21500/53973 | elapsed 889s | eta 1343s
-  HMM 22000/53973 | elapsed 913s | eta 1327s
-  HMM 22500/53973 | elapsed 938s | eta 1312s
-  HMM 23000/53973 | elapsed 968s | eta 1304s
-  HMM 23500/53973 | elapsed 990s | eta 1284s
-  HMM 24000/53973 | elapsed 1014s | eta 1267s
-  HMM 24500/53973 | elapsed 1044s | eta 1256s
-  HMM 25000/53973 | elapsed 1077s | eta 1248s
-  HMM 25500/53973 | elapsed 1112s | eta 1242s
-  HMM 26000/53973 | elapsed 1144s | eta 1231s
-  HMM 26500/53973 | elapsed 1179s | eta 1223s
-  HMM 27000/53973 | elapsed 1218s | eta 1217s
-  HMM 27500/53973 | elapsed 1252s | eta 1206s
-  HMM 28000/53973 | elapsed 1299s | eta 1205s
-  HMM 28500/53973 | elapsed 1337s | eta 1195s
-  HMM 29000/53973 | elapsed 1378s | eta 1186s
-  HMM 29500/53973 | elapsed 1419s | eta 1177s
-  HMM 30000/53973 | elapsed 1451s | eta 1159s
-  HMM 30500/53973 | elapsed 1493s | eta 1149s
-  HMM 31000/53973 | elapsed 1538s | eta 1140s
-  HMM 31500/53973 | elapsed 1577s | eta 1125s
-  HMM 32000/53973 | elapsed 1612s | eta 1107s
-  HMM 32500/53973 | elapsed 1659s | eta 1096s
-  HMM 33000/53973 | elapsed 1690s | eta 1074s
-  HMM 33500/53973 | elapsed 1720s | eta 1051s
-  HMM 34000/53973 | elapsed 1759s | eta 1033s
-  HMM 34500/53973 | elapsed 1808s | eta 1020s
-  HMM 35000/53973 | elapsed 1852s | eta 1004s
-  HMM 35500/53973 | elapsed 1881s | eta 979s
-  HMM 36000/53973 | elapsed 1915s | eta 956s
-  HMM 36500/53973 | elapsed 1960s | eta 938s
-  HMM 37000/53973 | elapsed 1995s | eta 915s
-  HMM 37500/53973 | elapsed 2036s | eta 894s
-  HMM 38000/53973 | elapsed 2062s | eta 867s
-  HMM 38500/53973 | elapsed 2096s | eta 842s
-  HMM 39000/53973 | elapsed 2130s | eta 818s
-  HMM 39500/53973 | elapsed 2162s | eta 792s
-  HMM 40000/53973 | elapsed 2199s | eta 768s
-  HMM 40500/53973 | elapsed 2236s | eta 744s
-  HMM 41000/53973 | elapsed 2274s | eta 720s
-  HMM 41500/53973 | elapsed 2310s | eta 694s
-  HMM 42000/53973 | elapsed 2342s | eta 668s
-  HMM 42500/53973 | elapsed 2369s | eta 639s
-  HMM 43000/53973 | elapsed 2404s | eta 613s
-  HMM 43500/53973 | elapsed 2453s | eta 591s
-  HMM 44000/53973 | elapsed 2488s | eta 564s
-  HMM 44500/53973 | elapsed 2529s | eta 538s
-  HMM 45000/53973 | elapsed 2559s | eta 510s
-  HMM 45500/53973 | elapsed 2587s | eta 482s
-  HMM 46000/53973 | elapsed 2619s | eta 454s
-  HMM 46500/53973 | elapsed 2635s | eta 424s
-  HMM 47000/53973 | elapsed 2660s | eta 395s
-  HMM 47500/53973 | elapsed 2704s | eta 369s
-  HMM 48000/53973 | elapsed 2742s | eta 341s
-  HMM 48500/53973 | elapsed 2783s | eta 314s
-  HMM 49000/53973 | elapsed 2828s | eta 287s
-  HMM 49500/53973 | elapsed 2872s | eta 260s
-  HMM 50000/53973 | elapsed 2919s | eta 232s
-  HMM 50500/53973 | elapsed 2963s | eta 204s
-  HMM 51000/53973 | elapsed 2993s | eta 174s
-  HMM 51500/53973 | elapsed 3011s | eta 145s
-  HMM 52000/53973 | elapsed 3037s | eta 115s
-  HMM 52500/53973 | elapsed 3075s | eta 86s
-  HMM 53000/53973 | elapsed 3116s | eta 57s
-  HMM 53500/53973 | elapsed 3140s | eta 28s
-  HMM 53973/53973 | elapsed 3166s | eta 0s
-Saved segments (68,806,442 rows) → /Users/jiayichiyun/Code/deep-gw-cnv/models/experiments/40/../../../data/results/40_06convvae_400bp_sinloss2.0_warmup80_st096/segments.parquet
-Calling gene CNVs...
-Precomputing per-chromosome sanity checks...
-Parsing genes from /Users/jiayichiyun/Code/deep-gw-cnv/models/experiments/40/../../../assets/PlasmoDB-54_Pfalciparum3D7.gff...
-  5,285 protein-coding genes on nuclear chromosomes
-HMM-primary calling: CN>=2 gene-body coverage >= 0.50 (confidence >= 0.25); CRR rescue >= 1.55 for reference genes (no noise filter).
-Calling genome-wide CNVs for 53,973 samples...
-/Users/jiayichiyun/Code/deep-gw-cnv/models/cnv/16_genome_cnv_caller.py:290: RuntimeWarning: Mean of empty slice
-  mean_gene  = np.nanmean(cr_chrom[:, gene_mask_l],  axis=1)
-/Users/jiayichiyun/Code/deep-gw-cnv/models/cnv/16_genome_cnv_caller.py:291: RuntimeWarning: Mean of empty slice
-  mean_flank = np.nanmean(cr_chrom[:, flank_mask_l], axis=1)
-/Users/jiayichiyun/Code/deep-gw-cnv/models/cnv/16_genome_cnv_caller.py:290: RuntimeWarning: Mean of empty slice
-  mean_gene  = np.nanmean(cr_chrom[:, gene_mask_l],  axis=1)
-/Users/jiayichiyun/Code/deep-gw-cnv/models/cnv/16_genome_cnv_caller.py:291: RuntimeWarning: Mean of empty slice
-  mean_flank = np.nanmean(cr_chrom[:, flank_mask_l], axis=1)
-/Users/jiayichiyun/Code/deep-gw-cnv/models/cnv/16_genome_cnv_caller.py:290: RuntimeWarning: Mean of empty slice
-  mean_gene  = np.nanmean(cr_chrom[:, gene_mask_l],  axis=1)
-/Users/jiayichiyun/Code/deep-gw-cnv/models/cnv/16_genome_cnv_caller.py:291: RuntimeWarning: Mean of empty slice
-  mean_flank = np.nanmean(cr_chrom[:, flank_mask_l], axis=1)
-  500/5285 genes | elapsed 241s
-/Users/jiayichiyun/Code/deep-gw-cnv/models/cnv/16_genome_cnv_caller.py:290: RuntimeWarning: Mean of empty slice
-  mean_gene  = np.nanmean(cr_chrom[:, gene_mask_l],  axis=1)
-/Users/jiayichiyun/Code/deep-gw-cnv/models/cnv/16_genome_cnv_caller.py:291: RuntimeWarning: Mean of empty slice
-  mean_flank = np.nanmean(cr_chrom[:, flank_mask_l], axis=1)
-/Users/jiayichiyun/Code/deep-gw-cnv/models/cnv/16_genome_cnv_caller.py:290: RuntimeWarning: Mean of empty slice
-  mean_gene  = np.nanmean(cr_chrom[:, gene_mask_l],  axis=1)
-/Users/jiayichiyun/Code/deep-gw-cnv/models/cnv/16_genome_cnv_caller.py:291: RuntimeWarning: Mean of empty slice
-  mean_flank = np.nanmean(cr_chrom[:, flank_mask_l], axis=1)
-  1000/5285 genes | elapsed 590s
-/Users/jiayichiyun/Code/deep-gw-cnv/models/cnv/16_genome_cnv_caller.py:290: RuntimeWarning: Mean of empty slice
-  mean_gene  = np.nanmean(cr_chrom[:, gene_mask_l],  axis=1)
-/Users/jiayichiyun/Code/deep-gw-cnv/models/cnv/16_genome_cnv_caller.py:291: RuntimeWarning: Mean of empty slice
-  mean_flank = np.nanmean(cr_chrom[:, flank_mask_l], axis=1)
-/Users/jiayichiyun/Code/deep-gw-cnv/models/cnv/16_genome_cnv_caller.py:290: RuntimeWarning: Mean of empty slice
-  mean_gene  = np.nanmean(cr_chrom[:, gene_mask_l],  axis=1)
-/Users/jiayichiyun/Code/deep-gw-cnv/models/cnv/16_genome_cnv_caller.py:291: RuntimeWarning: Mean of empty slice
-  mean_flank = np.nanmean(cr_chrom[:, flank_mask_l], axis=1)
-  1500/5285 genes | elapsed 982s
-/Users/jiayichiyun/Code/deep-gw-cnv/models/cnv/16_genome_cnv_caller.py:290: RuntimeWarning: Mean of empty slice
-  mean_gene  = np.nanmean(cr_chrom[:, gene_mask_l],  axis=1)
-/Users/jiayichiyun/Code/deep-gw-cnv/models/cnv/16_genome_cnv_caller.py:291: RuntimeWarning: Mean of empty slice
-  mean_flank = np.nanmean(cr_chrom[:, flank_mask_l], axis=1)
-/Users/jiayichiyun/Code/deep-gw-cnv/models/cnv/16_genome_cnv_caller.py:290: RuntimeWarning: Mean of empty slice
-  mean_gene  = np.nanmean(cr_chrom[:, gene_mask_l],  axis=1)
-/Users/jiayichiyun/Code/deep-gw-cnv/models/cnv/16_genome_cnv_caller.py:291: RuntimeWarning: Mean of empty slice
-  mean_flank = np.nanmean(cr_chrom[:, flank_mask_l], axis=1)
-  2000/5285 genes | elapsed 1400s
-/Users/jiayichiyun/Code/deep-gw-cnv/models/cnv/16_genome_cnv_caller.py:290: RuntimeWarning: Mean of empty slice
-  mean_gene  = np.nanmean(cr_chrom[:, gene_mask_l],  axis=1)
-/Users/jiayichiyun/Code/deep-gw-cnv/models/cnv/16_genome_cnv_caller.py:291: RuntimeWarning: Mean of empty slice
-  mean_flank = np.nanmean(cr_chrom[:, flank_mask_l], axis=1)
-  2500/5285 genes | elapsed 1847s
-/Users/jiayichiyun/Code/deep-gw-cnv/models/cnv/16_genome_cnv_caller.py:290: RuntimeWarning: Mean of empty slice
-  mean_gene  = np.nanmean(cr_chrom[:, gene_mask_l],  axis=1)
-/Users/jiayichiyun/Code/deep-gw-cnv/models/cnv/16_genome_cnv_caller.py:291: RuntimeWarning: Mean of empty slice
-  mean_flank = np.nanmean(cr_chrom[:, flank_mask_l], axis=1)
-  3000/5285 genes | elapsed 2405s
-/Users/jiayichiyun/Code/deep-gw-cnv/models/cnv/16_genome_cnv_caller.py:290: RuntimeWarning: Mean of empty slice
-  mean_gene  = np.nanmean(cr_chrom[:, gene_mask_l],  axis=1)
-/Users/jiayichiyun/Code/deep-gw-cnv/models/cnv/16_genome_cnv_caller.py:291: RuntimeWarning: Mean of empty slice
-  mean_flank = np.nanmean(cr_chrom[:, flank_mask_l], axis=1)
-  3500/5285 genes | elapsed 3063s
-/Users/jiayichiyun/Code/deep-gw-cnv/models/cnv/16_genome_cnv_caller.py:290: RuntimeWarning: Mean of empty slice
-  mean_gene  = np.nanmean(cr_chrom[:, gene_mask_l],  axis=1)
-/Users/jiayichiyun/Code/deep-gw-cnv/models/cnv/16_genome_cnv_caller.py:291: RuntimeWarning: Mean of empty slice
-  mean_flank = np.nanmean(cr_chrom[:, flank_mask_l], axis=1)
-  4000/5285 genes | elapsed 3916s
-/Users/jiayichiyun/Code/deep-gw-cnv/models/cnv/16_genome_cnv_caller.py:290: RuntimeWarning: Mean of empty slice
-  mean_gene  = np.nanmean(cr_chrom[:, gene_mask_l],  axis=1)
-/Users/jiayichiyun/Code/deep-gw-cnv/models/cnv/16_genome_cnv_caller.py:291: RuntimeWarning: Mean of empty slice
-  mean_flank = np.nanmean(cr_chrom[:, flank_mask_l], axis=1)
-  4500/5285 genes | elapsed 4873s
-Done | 5,285 genes processed | elapsed 5771s
-Saved genome-wide amplifications: 13,944,820 calls | 25,903 samples | 4,952 genes → /Users/jiayichiyun/Code/deep-gw-cnv/models/experiments/40/../../../data/results/40_06convvae_400bp_sinloss2.0_warmup80_st096/genome_wide_amplifications.tsv
-Saved reference gene calls (53,973 samples) → /Users/jiayichiyun/Code/deep-gw-cnv/models/experiments/40/../../../data/results/40_06convvae_400bp_sinloss2.0_warmup80_st096/gene_calls.tsv
-Saved evaluation → /Users/jiayichiyun/Code/deep-gw-cnv/models/experiments/40/../../../data/results/40_06convvae_400bp_sinloss2.0_warmup80_st096/evaluation.txt
-2026-05-13 20:19:20  Experiment 40 complete.
-2026-05-13 20:19:20  Invoking Claude to propose next experiment...
-2026-05-13 20:28:51  AUTHORISE received. Running experiment.
-Sent. Message-ID: <177870053166.76688.16217486145719188504@deep-gw-cnv>
-Device: mps
-Curriculum sampler: 6944 CNV-positive, 47029 normal | ratio 0.05→0.30 over 80 epochs
-  [curriculum] epoch 0: cnv_ratio=0.050
-samples=53973 | latent_dim=10
-Skipping training+inference: reconstructions.npy already exists.
-Fitting HMM segments...
-Fitting HMM for 53973 samples (n_jobs=-1)...
-  HMM 500/53973 | elapsed 19s | eta 2061s
-  HMM 1000/53973 | elapsed 38s | eta 2004s
-  HMM 1500/53973 | elapsed 57s | eta 1981s
-  HMM 2000/53973 | elapsed 78s | eta 2015s
-  HMM 2500/53973 | elapsed 96s | eta 1977s
-  HMM 3000/53973 | elapsed 111s | eta 1884s
-  HMM 3500/53973 | elapsed 129s | eta 1861s
-  HMM 4000/53973 | elapsed 146s | eta 1822s
-  HMM 4500/53973 | elapsed 164s | eta 1806s
-  HMM 5000/53973 | elapsed 185s | eta 1815s
-  HMM 5500/53973 | elapsed 205s | eta 1803s
-  HMM 6000/53973 | elapsed 223s | eta 1784s
-  HMM 6500/53973 | elapsed 239s | eta 1742s
-  HMM 7000/53973 | elapsed 260s | eta 1744s
-  HMM 7500/53973 | elapsed 279s | eta 1728s
-  HMM 8000/53973 | elapsed 299s | eta 1721s
-  HMM 8500/53973 | elapsed 314s | eta 1682s
-  HMM 9000/53973 | elapsed 325s | eta 1626s
-  HMM 9500/53973 | elapsed 340s | eta 1589s
-  HMM 10000/53973 | elapsed 355s | eta 1561s
-  HMM 10500/53973 | elapsed 378s | eta 1564s
-  HMM 11000/53973 | elapsed 396s | eta 1546s
-  HMM 11500/53973 | elapsed 411s | eta 1518s
-  HMM 12000/53973 | elapsed 427s | eta 1495s
-  HMM 12500/53973 | elapsed 443s | eta 1468s
-  HMM 13000/53973 | elapsed 460s | eta 1449s
-  HMM 13500/53973 | elapsed 480s | eta 1438s
-  HMM 14000/53973 | elapsed 499s | eta 1423s
-  HMM 14500/53973 | elapsed 516s | eta 1404s
-  HMM 15000/53973 | elapsed 541s | eta 1406s
-  HMM 15500/53973 | elapsed 569s | eta 1413s
-  HMM 16000/53973 | elapsed 591s | eta 1403s
-  HMM 16500/53973 | elapsed 608s | eta 1380s
-  HMM 17000/53973 | elapsed 630s | eta 1369s
-  HMM 17500/53973 | elapsed 649s | eta 1352s
-  HMM 18000/53973 | elapsed 667s | eta 1332s
-  HMM 18500/53973 | elapsed 686s | eta 1315s
-  HMM 19000/53973 | elapsed 703s | eta 1294s
-  HMM 19500/53973 | elapsed 724s | eta 1279s
-  HMM 20000/53973 | elapsed 742s | eta 1260s
-  HMM 20500/53973 | elapsed 762s | eta 1243s
-  HMM 21000/53973 | elapsed 781s | eta 1227s
-  HMM 21500/53973 | elapsed 806s | eta 1218s
-  HMM 22000/53973 | elapsed 830s | eta 1207s
-  HMM 22500/53973 | elapsed 856s | eta 1198s
-  HMM 23000/53973 | elapsed 888s | eta 1196s
-  HMM 23500/53973 | elapsed 913s | eta 1184s
-  HMM 24000/53973 | elapsed 940s | eta 1174s
-  HMM 24500/53973 | elapsed 974s | eta 1171s
-  HMM 25000/53973 | elapsed 1008s | eta 1168s
-  HMM 25500/53973 | elapsed 1042s | eta 1163s
-  HMM 26000/53973 | elapsed 1071s | eta 1152s
-  HMM 26500/53973 | elapsed 1102s | eta 1143s
-  HMM 27000/53973 | elapsed 1137s | eta 1135s
-  HMM 27500/53973 | elapsed 1167s | eta 1124s
-  HMM 28000/53973 | elapsed 1208s | eta 1121s
-  HMM 28500/53973 | elapsed 1242s | eta 1110s
-  HMM 29000/53973 | elapsed 1279s | eta 1101s
-  HMM 29500/53973 | elapsed 1315s | eta 1091s
-  HMM 30000/53973 | elapsed 1343s | eta 1074s
-  HMM 30500/53973 | elapsed 1380s | eta 1062s
-  HMM 31000/53973 | elapsed 1419s | eta 1052s
-  HMM 31500/53973 | elapsed 1453s | eta 1037s
-  HMM 32000/53973 | elapsed 1485s | eta 1020s
-  HMM 32500/53973 | elapsed 1525s | eta 1008s
-  HMM 33000/53973 | elapsed 1553s | eta 987s
-  HMM 33500/53973 | elapsed 1580s | eta 966s
-  HMM 34000/53973 | elapsed 1614s | eta 948s
-  HMM 34500/53973 | elapsed 1657s | eta 936s
-  HMM 35000/53973 | elapsed 1697s | eta 920s
-  HMM 35500/53973 | elapsed 1723s | eta 896s
-  HMM 36000/53973 | elapsed 1753s | eta 875s
-  HMM 36500/53973 | elapsed 1793s | eta 858s
-  HMM 37000/53973 | elapsed 1825s | eta 837s
-  HMM 37500/53973 | elapsed 1861s | eta 817s
-  HMM 38000/53973 | elapsed 1884s | eta 792s
-  HMM 38500/53973 | elapsed 1914s | eta 769s
-  HMM 39000/53973 | elapsed 1944s | eta 747s
-  HMM 39500/53973 | elapsed 1971s | eta 722s
-  HMM 40000/53973 | elapsed 2004s | eta 700s
-  HMM 40500/53973 | elapsed 2038s | eta 678s
-  HMM 41000/53973 | elapsed 2071s | eta 655s
-  HMM 41500/53973 | elapsed 2102s | eta 632s
-  HMM 42000/53973 | elapsed 2131s | eta 608s
-  HMM 42500/53973 | elapsed 2155s | eta 582s
-  HMM 43000/53973 | elapsed 2186s | eta 558s
-  HMM 43500/53973 | elapsed 2229s | eta 537s
-  HMM 44000/53973 | elapsed 2260s | eta 512s
-  HMM 44500/53973 | elapsed 2295s | eta 489s
-  HMM 45000/53973 | elapsed 2323s | eta 463s
-  HMM 45500/53973 | elapsed 2347s | eta 437s
-  HMM 46000/53973 | elapsed 2376s | eta 412s
-  HMM 46500/53973 | elapsed 2390s | eta 384s
-  HMM 47000/53973 | elapsed 2411s | eta 358s
-  HMM 47500/53973 | elapsed 2451s | eta 334s
-  HMM 48000/53973 | elapsed 2484s | eta 309s
-  HMM 48500/53973 | elapsed 2521s | eta 285s
-  HMM 49000/53973 | elapsed 2560s | eta 260s
-  HMM 49500/53973 | elapsed 2598s | eta 235s
-  HMM 50000/53973 | elapsed 2640s | eta 210s
-  HMM 50500/53973 | elapsed 2679s | eta 184s
-  HMM 51000/53973 | elapsed 2706s | eta 158s
-  HMM 51500/53973 | elapsed 2722s | eta 131s
-  HMM 52000/53973 | elapsed 2744s | eta 104s
-  HMM 52500/53973 | elapsed 2779s | eta 78s
-  HMM 53000/53973 | elapsed 2815s | eta 52s
-  HMM 53500/53973 | elapsed 2837s | eta 25s
-  HMM 53973/53973 | elapsed 2859s | eta 0s
-Saved segments (58,054,121 rows) → /Users/jiayichiyun/Code/deep-gw-cnv/models/experiments/41/../../../data/results/41_06convvae_400bp_sinloss2.0_warmup80_st099/segments.parquet
-Calling gene CNVs...
-Precomputing per-chromosome sanity checks...
-Parsing genes from /Users/jiayichiyun/Code/deep-gw-cnv/models/experiments/41/../../../assets/PlasmoDB-54_Pfalciparum3D7.gff...
-  5,285 protein-coding genes on nuclear chromosomes
-HMM-primary calling: CN>=2 gene-body coverage >= 0.50 (confidence >= 0.25); CRR rescue >= 1.55 for reference genes (no noise filter).
-Calling genome-wide CNVs for 53,973 samples...
-/Users/jiayichiyun/Code/deep-gw-cnv/models/cnv/16_genome_cnv_caller.py:290: RuntimeWarning: Mean of empty slice
-  mean_gene  = np.nanmean(cr_chrom[:, gene_mask_l],  axis=1)
-/Users/jiayichiyun/Code/deep-gw-cnv/models/cnv/16_genome_cnv_caller.py:291: RuntimeWarning: Mean of empty slice
-  mean_flank = np.nanmean(cr_chrom[:, flank_mask_l], axis=1)
-/Users/jiayichiyun/Code/deep-gw-cnv/models/cnv/16_genome_cnv_caller.py:290: RuntimeWarning: Mean of empty slice
-  mean_gene  = np.nanmean(cr_chrom[:, gene_mask_l],  axis=1)
-/Users/jiayichiyun/Code/deep-gw-cnv/models/cnv/16_genome_cnv_caller.py:291: RuntimeWarning: Mean of empty slice
-  mean_flank = np.nanmean(cr_chrom[:, flank_mask_l], axis=1)
-/Users/jiayichiyun/Code/deep-gw-cnv/models/cnv/16_genome_cnv_caller.py:290: RuntimeWarning: Mean of empty slice
-  mean_gene  = np.nanmean(cr_chrom[:, gene_mask_l],  axis=1)
-/Users/jiayichiyun/Code/deep-gw-cnv/models/cnv/16_genome_cnv_caller.py:291: RuntimeWarning: Mean of empty slice
-  mean_flank = np.nanmean(cr_chrom[:, flank_mask_l], axis=1)
-  500/5285 genes | elapsed 199s
-/Users/jiayichiyun/Code/deep-gw-cnv/models/cnv/16_genome_cnv_caller.py:290: RuntimeWarning: Mean of empty slice
-  mean_gene  = np.nanmean(cr_chrom[:, gene_mask_l],  axis=1)
-/Users/jiayichiyun/Code/deep-gw-cnv/models/cnv/16_genome_cnv_caller.py:291: RuntimeWarning: Mean of empty slice
-  mean_flank = np.nanmean(cr_chrom[:, flank_mask_l], axis=1)
-/Users/jiayichiyun/Code/deep-gw-cnv/models/cnv/16_genome_cnv_caller.py:290: RuntimeWarning: Mean of empty slice
-  mean_gene  = np.nanmean(cr_chrom[:, gene_mask_l],  axis=1)
-/Users/jiayichiyun/Code/deep-gw-cnv/models/cnv/16_genome_cnv_caller.py:291: RuntimeWarning: Mean of empty slice
-  mean_flank = np.nanmean(cr_chrom[:, flank_mask_l], axis=1)
-  1000/5285 genes | elapsed 491s
-/Users/jiayichiyun/Code/deep-gw-cnv/models/cnv/16_genome_cnv_caller.py:290: RuntimeWarning: Mean of empty slice
-  mean_gene  = np.nanmean(cr_chrom[:, gene_mask_l],  axis=1)
-/Users/jiayichiyun/Code/deep-gw-cnv/models/cnv/16_genome_cnv_caller.py:291: RuntimeWarning: Mean of empty slice
-  mean_flank = np.nanmean(cr_chrom[:, flank_mask_l], axis=1)
-/Users/jiayichiyun/Code/deep-gw-cnv/models/cnv/16_genome_cnv_caller.py:290: RuntimeWarning: Mean of empty slice
-  mean_gene  = np.nanmean(cr_chrom[:, gene_mask_l],  axis=1)
-/Users/jiayichiyun/Code/deep-gw-cnv/models/cnv/16_genome_cnv_caller.py:291: RuntimeWarning: Mean of empty slice
-  mean_flank = np.nanmean(cr_chrom[:, flank_mask_l], axis=1)
-  1500/5285 genes | elapsed 811s
-/Users/jiayichiyun/Code/deep-gw-cnv/models/cnv/16_genome_cnv_caller.py:290: RuntimeWarning: Mean of empty slice
-  mean_gene  = np.nanmean(cr_chrom[:, gene_mask_l],  axis=1)
-/Users/jiayichiyun/Code/deep-gw-cnv/models/cnv/16_genome_cnv_caller.py:291: RuntimeWarning: Mean of empty slice
-  mean_flank = np.nanmean(cr_chrom[:, flank_mask_l], axis=1)
-/Users/jiayichiyun/Code/deep-gw-cnv/models/cnv/16_genome_cnv_caller.py:290: RuntimeWarning: Mean of empty slice
-  mean_gene  = np.nanmean(cr_chrom[:, gene_mask_l],  axis=1)
-/Users/jiayichiyun/Code/deep-gw-cnv/models/cnv/16_genome_cnv_caller.py:291: RuntimeWarning: Mean of empty slice
-  mean_flank = np.nanmean(cr_chrom[:, flank_mask_l], axis=1)
-  2000/5285 genes | elapsed 1152s
-/Users/jiayichiyun/Code/deep-gw-cnv/models/cnv/16_genome_cnv_caller.py:290: RuntimeWarning: Mean of empty slice
-  mean_gene  = np.nanmean(cr_chrom[:, gene_mask_l],  axis=1)
-/Users/jiayichiyun/Code/deep-gw-cnv/models/cnv/16_genome_cnv_caller.py:291: RuntimeWarning: Mean of empty slice
-  mean_flank = np.nanmean(cr_chrom[:, flank_mask_l], axis=1)
-  2500/5285 genes | elapsed 1522s
-/Users/jiayichiyun/Code/deep-gw-cnv/models/cnv/16_genome_cnv_caller.py:290: RuntimeWarning: Mean of empty slice
-  mean_gene  = np.nanmean(cr_chrom[:, gene_mask_l],  axis=1)
-/Users/jiayichiyun/Code/deep-gw-cnv/models/cnv/16_genome_cnv_caller.py:291: RuntimeWarning: Mean of empty slice
-  mean_flank = np.nanmean(cr_chrom[:, flank_mask_l], axis=1)
-  3000/5285 genes | elapsed 1983s
-/Users/jiayichiyun/Code/deep-gw-cnv/models/cnv/16_genome_cnv_caller.py:290: RuntimeWarning: Mean of empty slice
-  mean_gene  = np.nanmean(cr_chrom[:, gene_mask_l],  axis=1)
-/Users/jiayichiyun/Code/deep-gw-cnv/models/cnv/16_genome_cnv_caller.py:291: RuntimeWarning: Mean of empty slice
-  mean_flank = np.nanmean(cr_chrom[:, flank_mask_l], axis=1)
-  3500/5285 genes | elapsed 2521s
-/Users/jiayichiyun/Code/deep-gw-cnv/models/cnv/16_genome_cnv_caller.py:290: RuntimeWarning: Mean of empty slice
-  mean_gene  = np.nanmean(cr_chrom[:, gene_mask_l],  axis=1)
-/Users/jiayichiyun/Code/deep-gw-cnv/models/cnv/16_genome_cnv_caller.py:291: RuntimeWarning: Mean of empty slice
-  mean_flank = np.nanmean(cr_chrom[:, flank_mask_l], axis=1)
-  4000/5285 genes | elapsed 3232s
-/Users/jiayichiyun/Code/deep-gw-cnv/models/cnv/16_genome_cnv_caller.py:290: RuntimeWarning: Mean of empty slice
-  mean_gene  = np.nanmean(cr_chrom[:, gene_mask_l],  axis=1)
-/Users/jiayichiyun/Code/deep-gw-cnv/models/cnv/16_genome_cnv_caller.py:291: RuntimeWarning: Mean of empty slice
-  mean_flank = np.nanmean(cr_chrom[:, flank_mask_l], axis=1)
+  epoch 1 | batch 0/844 | loss 2136895.5000
+  epoch 1 | batch 1/844 | loss 2119046.5000
+  epoch 1 | batch 2/844 | loss 2254713.0000
+  epoch 1 | batch 3/844 | loss 2215469.5000
+  epoch 1 | batch 4/844 | loss 2294325.5000
+  epoch 1 | batch 5/844 | loss 2268207.5000
+  epoch 1 | batch 6/844 | loss 2159058.5000
+  epoch 1 | batch 7/844 | loss 1833251.7500
+  epoch 1 | batch 8/844 | loss 2075929.2500
+  epoch 1 | batch 9/844 | loss 2144669.5000
+  epoch 1 | batch 10/844 | loss 2175766.2500
+  epoch 1 | batch 11/844 | loss 2159206.0000
+  epoch 1 | batch 12/844 | loss 2280148.5000
+  epoch 1 | batch 13/844 | loss 2315425.2500
+  epoch 1 | batch 14/844 | loss 1992899.1250
+  epoch 1 | batch 15/844 | loss 2422526.5000
+  epoch 1 | batch 16/844 | loss 1993631.7500
+  epoch 1 | batch 17/844 | loss 2231211.7500
+  epoch 1 | batch 18/844 | loss 2212169.2500
+  epoch 1 | batch 19/844 | loss 1936057.7500
+  epoch 1 | batch 20/844 | loss 2171432.5000
+  epoch 1 | batch 21/844 | loss 2283352.0000
+  epoch 1 | batch 22/844 | loss 2057439.8750
+  epoch 1 | batch 23/844 | loss 2380090.2500
+  epoch 1 | batch 24/844 | loss 2147940.0000
+  epoch 1 | batch 25/844 | loss 2145244.5000
+  epoch 1 | batch 26/844 | loss 2022307.6250
+  epoch 1 | batch 27/844 | loss 2170658.0000
+  epoch 1 | batch 28/844 | loss 2118077.0000
+  epoch 1 | batch 29/844 | loss 2089028.5000
+  epoch 1 | batch 30/844 | loss 2043247.8750
+  epoch 1 | batch 31/844 | loss 1893329.5000
+  epoch 1 | batch 32/844 | loss 2210693.7500
+  epoch 1 | batch 33/844 | loss 2166259.5000
+  epoch 1 | batch 34/844 | loss 2423495.0000
+  epoch 1 | batch 35/844 | loss 1955438.1250
+  epoch 1 | batch 36/844 | loss 2053717.7500
+  epoch 1 | batch 37/844 | loss 2233578.5000
+  epoch 1 | batch 38/844 | loss 2006264.8750
+  epoch 1 | batch 39/844 | loss 1985127.2500
+  epoch 1 | batch 40/844 | loss 2278542.5000
+  epoch 1 | batch 41/844 | loss 2063942.0000
+  epoch 1 | batch 42/844 | loss 2213941.5000
+  epoch 1 | batch 43/844 | loss 2103293.2500
+  epoch 1 | batch 44/844 | loss 2036115.3750
+  epoch 1 | batch 45/844 | loss 2097942.0000
+  epoch 1 | batch 46/844 | loss 2202303.5000
+  epoch 1 | batch 47/844 | loss 2235560.5000
+  epoch 1 | batch 48/844 | loss 1821369.5000
+  epoch 1 | batch 49/844 | loss 2072607.2500
+  epoch 1 | batch 50/844 | loss 2234699.0000
+  epoch 1 | batch 51/844 | loss 2272385.5000
+  epoch 1 | batch 52/844 | loss 1915471.3750
+  epoch 1 | batch 53/844 | loss 1636375.7500
+  epoch 1 | batch 54/844 | loss 1997576.2500
+  epoch 1 | batch 55/844 | loss 2384726.2500
+  epoch 1 | batch 56/844 | loss 2202849.7500
+  epoch 1 | batch 57/844 | loss 1670149.2500
+  epoch 1 | batch 58/844 | loss 1677605.0000
+  epoch 1 | batch 59/844 | loss 2038245.1250
+  epoch 1 | batch 60/844 | loss 1943918.5000
+  epoch 1 | batch 61/844 | loss 2067140.1250
+  epoch 1 | batch 62/844 | loss 2010721.7500
+  epoch 1 | batch 63/844 | loss 2038366.1250
+  epoch 1 | batch 64/844 | loss 1988274.5000
+  epoch 1 | batch 65/844 | loss 2024345.2500
+  epoch 1 | batch 66/844 | loss 1980767.0000
+  epoch 1 | batch 67/844 | loss 2122766.0000
+  epoch 1 | batch 68/844 | loss 2061444.1250
+  epoch 1 | batch 69/844 | loss 1935334.0000
+  epoch 1 | batch 70/844 | loss 1814421.1250
+  epoch 1 | batch 71/844 | loss 2276807.7500
+  epoch 1 | batch 72/844 | loss 1905095.7500
+  epoch 1 | batch 73/844 | loss 2002411.2500
+  epoch 1 | batch 74/844 | loss 1684615.0000
+  epoch 1 | batch 75/844 | loss 2143263.5000
+  epoch 1 | batch 76/844 | loss 2173622.0000
+  epoch 1 | batch 77/844 | loss 1876654.2500
+  epoch 1 | batch 78/844 | loss 2197773.5000
+  epoch 1 | batch 79/844 | loss 2022770.0000
+  epoch 1 | batch 80/844 | loss 2045852.6250
+  epoch 1 | batch 81/844 | loss 2103453.2500
+  epoch 1 | batch 82/844 | loss 2176017.7500
+  epoch 1 | batch 83/844 | loss 2013431.3750
+  epoch 1 | batch 84/844 | loss 2219982.5000
+  epoch 1 | batch 85/844 | loss 2001229.0000
+  epoch 1 | batch 86/844 | loss 2002171.2500
+  epoch 1 | batch 87/844 | loss 2056594.0000
+  epoch 1 | batch 88/844 | loss 2112762.0000
+  epoch 1 | batch 89/844 | loss 1984885.0000
+  epoch 1 | batch 90/844 | loss 2096852.8750
+  epoch 1 | batch 91/844 | loss 1972361.3750
+  epoch 1 | batch 92/844 | loss 2013199.5000
+  epoch 1 | batch 93/844 | loss 2228190.2500
+  epoch 1 | batch 94/844 | loss 2058613.8750
+  epoch 1 | batch 95/844 | loss 2304569.0000
+  epoch 1 | batch 96/844 | loss 1961571.2500
+  epoch 1 | batch 97/844 | loss 1915965.0000
+  epoch 1 | batch 98/844 | loss 2074195.7500
+  epoch 1 | batch 99/844 | loss 2096950.3750
+  epoch 1 | batch 100/844 | loss 1903511.0000
+  epoch 1 | batch 101/844 | loss 2081335.1250
+  epoch 1 | batch 102/844 | loss 2074009.0000
+  epoch 1 | batch 103/844 | loss 2211451.5000
+  epoch 1 | batch 104/844 | loss 2077990.3750
+  epoch 1 | batch 105/844 | loss 1952625.8750
+  epoch 1 | batch 106/844 | loss 1833988.2500
+  epoch 1 | batch 107/844 | loss 1707888.2500
+  epoch 1 | batch 108/844 | loss 2117842.5000
+  epoch 1 | batch 109/844 | loss 2000249.8750
+  epoch 1 | batch 110/844 | loss 2043469.1250
+  epoch 1 | batch 111/844 | loss 1850459.5000
+  epoch 1 | batch 112/844 | loss 2153351.0000
+  epoch 1 | batch 113/844 | loss 2206188.5000
+  epoch 1 | batch 114/844 | loss 2155127.0000
+  epoch 1 | batch 115/844 | loss 2243946.2500
+  epoch 1 | batch 116/844 | loss 1855301.2500
+  epoch 1 | batch 117/844 | loss 1951908.3750
+  epoch 1 | batch 118/844 | loss 1927169.5000
+  epoch 1 | batch 119/844 | loss 1965608.6250
+  epoch 1 | batch 120/844 | loss 1961849.7500
+  epoch 1 | batch 121/844 | loss 2219513.0000
+  epoch 1 | batch 122/844 | loss 1895664.2500
+  epoch 1 | batch 123/844 | loss 2196876.7500
+  epoch 1 | batch 124/844 | loss 1832724.0000
+  epoch 1 | batch 125/844 | loss 1897257.5000
+  epoch 1 | batch 126/844 | loss 2093147.3750
+  epoch 1 | batch 127/844 | loss 1861943.2500
+  epoch 1 | batch 128/844 | loss 2303412.2500
+  epoch 1 | batch 129/844 | loss 2124299.5000
+  epoch 1 | batch 130/844 | loss 2106456.5000
+  epoch 1 | batch 131/844 | loss 1841653.7500
+  epoch 1 | batch 132/844 | loss 2052544.6250
+  epoch 1 | batch 133/844 | loss 2084642.0000
+  epoch 1 | batch 134/844 | loss 1921817.5000
+  epoch 1 | batch 135/844 | loss 1921246.7500
+  epoch 1 | batch 136/844 | loss 2158597.2500
+  epoch 1 | batch 137/844 | loss 2106567.2500
+  epoch 1 | batch 138/844 | loss 2320633.0000
+  epoch 1 | batch 139/844 | loss 2142059.2500
+  epoch 1 | batch 140/844 | loss 1947990.2500
+  epoch 1 | batch 141/844 | loss 2039629.7500
+  epoch 1 | batch 142/844 | loss 2150055.5000
+  epoch 1 | batch 143/844 | loss 1869306.7500
+  epoch 1 | batch 144/844 | loss 2203457.7500
+  epoch 1 | batch 145/844 | loss 2145018.0000
+  epoch 1 | batch 146/844 | loss 1965343.0000
+  epoch 1 | batch 147/844 | loss 2318581.5000
+  epoch 1 | batch 148/844 | loss 2016042.8750
+  epoch 1 | batch 149/844 | loss 2048893.7500
+  epoch 1 | batch 150/844 | loss 2260191.5000
+  epoch 1 | batch 151/844 | loss 1922821.7500
+  epoch 1 | batch 152/844 | loss 2081662.6250
+  epoch 1 | batch 153/844 | loss 2136219.5000
+  epoch 1 | batch 154/844 | loss 1915506.5000
+  epoch 1 | batch 155/844 | loss 2220530.5000
+  epoch 1 | batch 156/844 | loss 1977840.5000
+  epoch 1 | batch 157/844 | loss 2318982.0000
+  epoch 1 | batch 158/844 | loss 2090028.0000
+  epoch 1 | batch 159/844 | loss 2069357.2500
+  epoch 1 | batch 160/844 | loss 2060393.2500
+  epoch 1 | batch 161/844 | loss 2188093.2500
+  epoch 1 | batch 162/844 | loss 1949681.6250
+  epoch 1 | batch 163/844 | loss 2038581.6250
+  epoch 1 | batch 164/844 | loss 2229919.0000
+  epoch 1 | batch 165/844 | loss 1823897.0000
+  epoch 1 | batch 166/844 | loss 1917824.5000
+  epoch 1 | batch 167/844 | loss 2021022.5000
+  epoch 1 | batch 168/844 | loss 2221739.2500
+  epoch 1 | batch 169/844 | loss 2035753.0000
+  epoch 1 | batch 170/844 | loss 2196100.2500
+  epoch 1 | batch 171/844 | loss 1982953.7500
+  epoch 1 | batch 172/844 | loss 2312806.0000
+  epoch 1 | batch 173/844 | loss 2186176.5000
+  epoch 1 | batch 174/844 | loss 1969324.7500
+  epoch 1 | batch 175/844 | loss 2053849.6250
+  epoch 1 | batch 176/844 | loss 2151953.2500
+  epoch 1 | batch 177/844 | loss 1924019.0000
+  epoch 1 | batch 178/844 | loss 2446024.2500
+  epoch 1 | batch 179/844 | loss 1951637.0000
+  epoch 1 | batch 180/844 | loss 2079871.5000
+  epoch 1 | batch 181/844 | loss 1942522.5000
+  epoch 1 | batch 182/844 | loss 2200639.2500
+  epoch 1 | batch 183/844 | loss 1746753.3750
+  epoch 1 | batch 184/844 | loss 2207327.7500
+  epoch 1 | batch 185/844 | loss 2081059.8750
+  epoch 1 | batch 186/844 | loss 2052613.5000
+  epoch 1 | batch 187/844 | loss 2180525.5000
+  epoch 1 | batch 188/844 | loss 2015163.8750
+  epoch 1 | batch 189/844 | loss 2224274.2500
+  epoch 1 | batch 190/844 | loss 2102134.5000
+  epoch 1 | batch 191/844 | loss 2163730.2500
+  epoch 1 | batch 192/844 | loss 1992855.7500
+  epoch 1 | batch 193/844 | loss 2065274.2500
+  epoch 1 | batch 194/844 | loss 1999247.7500
+  epoch 1 | batch 195/844 | loss 1918511.5000
+  epoch 1 | batch 196/844 | loss 1792694.2500
+  epoch 1 | batch 197/844 | loss 2084779.2500
+  epoch 1 | batch 198/844 | loss 2149303.0000
+  epoch 1 | batch 199/844 | loss 2100211.0000
+  epoch 1 | batch 200/844 | loss 1940277.3750
+  epoch 1 | batch 201/844 | loss 2088673.2500
+  epoch 1 | batch 202/844 | loss 1990557.7500
+  epoch 1 | batch 203/844 | loss 1806460.7500
+  epoch 1 | batch 204/844 | loss 2288303.7500
+  epoch 1 | batch 205/844 | loss 2052177.6250
+  epoch 1 | batch 206/844 | loss 1993670.0000
+  epoch 1 | batch 207/844 | loss 2002479.3750
+  epoch 1 | batch 208/844 | loss 2244619.0000
+  epoch 1 | batch 209/844 | loss 1721494.5000
+  epoch 1 | batch 210/844 | loss 2076017.2500
+  epoch 1 | batch 211/844 | loss 2254478.0000
+  epoch 1 | batch 212/844 | loss 1889542.7500
+  epoch 1 | batch 213/844 | loss 1849148.7500
+  epoch 1 | batch 214/844 | loss 1890511.7500
+  epoch 1 | batch 215/844 | loss 1896220.0000
+  epoch 1 | batch 216/844 | loss 1886289.0000
+  epoch 1 | batch 217/844 | loss 1930265.8750
+  epoch 1 | batch 218/844 | loss 2224718.0000
+  epoch 1 | batch 219/844 | loss 2020281.5000
+  epoch 1 | batch 220/844 | loss 1929020.2500
+  epoch 1 | batch 221/844 | loss 1978365.5000
+  epoch 1 | batch 222/844 | loss 2049306.7500
+  epoch 1 | batch 223/844 | loss 2031167.1250
+  epoch 1 | batch 224/844 | loss 2229834.5000
+  epoch 1 | batch 225/844 | loss 1944579.0000
+  epoch 1 | batch 226/844 | loss 1962470.2500
+  epoch 1 | batch 227/844 | loss 2008084.0000
+  epoch 1 | batch 228/844 | loss 1815006.1250
+  epoch 1 | batch 229/844 | loss 2059561.5000
+  epoch 1 | batch 230/844 | loss 2121278.2500
+  epoch 1 | batch 231/844 | loss 2014316.5000
+  epoch 1 | batch 232/844 | loss 2140846.2500
+  epoch 1 | batch 233/844 | loss 1771379.5000
+  epoch 1 | batch 234/844 | loss 2203148.5000
+  epoch 1 | batch 235/844 | loss 2076530.7500
+  epoch 1 | batch 236/844 | loss 2006233.6250
+  epoch 1 | batch 237/844 | loss 2166299.0000
+  epoch 1 | batch 238/844 | loss 1910777.5000
+  epoch 1 | batch 239/844 | loss 1960770.8750
+  epoch 1 | batch 240/844 | loss 1991486.5000
+  epoch 1 | batch 241/844 | loss 1691763.5000
+  epoch 1 | batch 242/844 | loss 2229892.0000
+  epoch 1 | batch 243/844 | loss 2123991.0000
+  epoch 1 | batch 244/844 | loss 1787419.0000
+  epoch 1 | batch 245/844 | loss 2113592.0000
+  epoch 1 | batch 246/844 | loss 2051490.5000
+  epoch 1 | batch 247/844 | loss 2085425.5000
+  epoch 1 | batch 248/844 | loss 1778853.3750
+  epoch 1 | batch 249/844 | loss 2069717.7500
+  epoch 1 | batch 250/844 | loss 2056263.7500
+  epoch 1 | batch 251/844 | loss 1783427.2500
+  epoch 1 | batch 252/844 | loss 2224676.0000
+  epoch 1 | batch 253/844 | loss 1926740.0000
+  epoch 1 | batch 254/844 | loss 2015321.5000
+  epoch 1 | batch 255/844 | loss 1984081.0000
+  epoch 1 | batch 256/844 | loss 2074636.7500
+  epoch 1 | batch 257/844 | loss 1915942.3750
+  epoch 1 | batch 258/844 | loss 1886437.2500
+  epoch 1 | batch 259/844 | loss 1968522.7500
+  epoch 1 | batch 260/844 | loss 1969147.7500
+  epoch 1 | batch 261/844 | loss 1914829.3750
+  epoch 1 | batch 262/844 | loss 2177419.2500
+  epoch 1 | batch 263/844 | loss 1724359.8750
+  epoch 1 | batch 264/844 | loss 1711564.0000
+  epoch 1 | batch 265/844 | loss 2176092.5000
+  epoch 1 | batch 266/844 | loss 2145279.0000
+  epoch 1 | batch 267/844 | loss 1952393.6250
+  epoch 1 | batch 268/844 | loss 1948905.5000
+  epoch 1 | batch 269/844 | loss 2162468.5000
+  epoch 1 | batch 270/844 | loss 2063655.3750
+  epoch 1 | batch 271/844 | loss 2065140.1250
+  epoch 1 | batch 272/844 | loss 2022206.5000
+  epoch 1 | batch 273/844 | loss 1921103.5000
+  epoch 1 | batch 274/844 | loss 2273187.0000
+  epoch 1 | batch 275/844 | loss 2091253.3750
+  epoch 1 | batch 276/844 | loss 1858889.2500
+  epoch 1 | batch 277/844 | loss 2235517.7500
+  epoch 1 | batch 278/844 | loss 2019077.5000
+  epoch 1 | batch 279/844 | loss 2254818.0000
+  epoch 1 | batch 280/844 | loss 1967976.6250
+  epoch 1 | batch 281/844 | loss 2120662.2500
+  epoch 1 | batch 282/844 | loss 1781392.1250
+  epoch 1 | batch 283/844 | loss 2245241.0000
+  epoch 1 | batch 284/844 | loss 1982601.0000
+  epoch 1 | batch 285/844 | loss 2225939.5000
+  epoch 1 | batch 286/844 | loss 1997070.0000
+  epoch 1 | batch 287/844 | loss 2138432.5000
+  epoch 1 | batch 288/844 | loss 1896959.0000
+  epoch 1 | batch 289/844 | loss 2231763.2500
+  epoch 1 | batch 290/844 | loss 2243434.0000
+  epoch 1 | batch 291/844 | loss 2149180.0000
+  epoch 1 | batch 292/844 | loss 1869215.3750
+  epoch 1 | batch 293/844 | loss 2029434.5000
+  epoch 1 | batch 294/844 | loss 2240188.5000
+  epoch 1 | batch 295/844 | loss 1920552.7500
+  epoch 1 | batch 296/844 | loss 2051509.2500
+  epoch 1 | batch 297/844 | loss 2115239.5000
+  epoch 1 | batch 298/844 | loss 2104587.0000
+  epoch 1 | batch 299/844 | loss 2255420.5000
+  epoch 1 | batch 300/844 | loss 1906770.5000
+  epoch 1 | batch 301/844 | loss 1919755.2500
+  epoch 1 | batch 302/844 | loss 1795090.7500
+  epoch 1 | batch 303/844 | loss 2122705.2500
+  epoch 1 | batch 304/844 | loss 1960046.2500
+  epoch 1 | batch 305/844 | loss 2133397.5000
+  epoch 1 | batch 306/844 | loss 2111273.0000
+  epoch 1 | batch 307/844 | loss 2056365.0000
+  epoch 1 | batch 308/844 | loss 1793129.3750
+  epoch 1 | batch 309/844 | loss 1876399.5000
+  epoch 1 | batch 310/844 | loss 1870678.0000
+  epoch 1 | batch 311/844 | loss 1912508.2500
+  epoch 1 | batch 312/844 | loss 2037529.5000
+  epoch 1 | batch 313/844 | loss 2075803.7500
+  epoch 1 | batch 314/844 | loss 1733086.6250
+  epoch 1 | batch 315/844 | loss 2083746.8750
+  epoch 1 | batch 316/844 | loss 1875616.6250
+  epoch 1 | batch 317/844 | loss 2108047.2500
+  epoch 1 | batch 318/844 | loss 2253580.2500
+  epoch 1 | batch 319/844 | loss 1906992.5000
+  epoch 1 | batch 320/844 | loss 2188719.2500
+  epoch 1 | batch 321/844 | loss 2050554.5000
+  epoch 1 | batch 322/844 | loss 1992224.2500
+  epoch 1 | batch 323/844 | loss 2256594.5000
+  epoch 1 | batch 324/844 | loss 1945839.3750
+  epoch 1 | batch 325/844 | loss 1893598.6250
+  epoch 1 | batch 326/844 | loss 2074381.0000
+  epoch 1 | batch 327/844 | loss 2068944.7500
+  epoch 1 | batch 328/844 | loss 2038155.8750
+  epoch 1 | batch 329/844 | loss 2019219.1250
+  epoch 1 | batch 330/844 | loss 1911907.8750
+  epoch 1 | batch 331/844 | loss 2041323.0000
+  epoch 1 | batch 332/844 | loss 2269642.5000
+  epoch 1 | batch 333/844 | loss 2055291.7500
+  epoch 1 | batch 334/844 | loss 2200876.7500
+  epoch 1 | batch 335/844 | loss 2035338.2500
+  epoch 1 | batch 336/844 | loss 2076944.5000
+  epoch 1 | batch 337/844 | loss 2031281.0000
+  epoch 1 | batch 338/844 | loss 2080418.8750
+  epoch 1 | batch 339/844 | loss 1899961.2500
+  epoch 1 | batch 340/844 | loss 1895072.8750
+  epoch 1 | batch 341/844 | loss 1915834.3750
+  epoch 1 | batch 342/844 | loss 1991353.5000
+  epoch 1 | batch 343/844 | loss 1887378.2500
+  epoch 1 | batch 344/844 | loss 1896301.7500
+  epoch 1 | batch 345/844 | loss 2172782.7500
+  epoch 1 | batch 346/844 | loss 2110174.0000
+  epoch 1 | batch 347/844 | loss 2041421.0000
+  epoch 1 | batch 348/844 | loss 1854485.7500
+  epoch 1 | batch 349/844 | loss 2331918.5000
+  epoch 1 | batch 350/844 | loss 1953578.2500
+  epoch 1 | batch 351/844 | loss 2396652.7500
+  epoch 1 | batch 352/844 | loss 1822147.7500
+  epoch 1 | batch 353/844 | loss 2041266.6250
+  epoch 1 | batch 354/844 | loss 2232481.7500
+  epoch 1 | batch 355/844 | loss 2056998.3750
+  epoch 1 | batch 356/844 | loss 2122313.5000
+  epoch 1 | batch 357/844 | loss 1890099.0000
+  epoch 1 | batch 358/844 | loss 1854621.1250
+  epoch 1 | batch 359/844 | loss 1973592.5000
+  epoch 1 | batch 360/844 | loss 1989754.0000
+  epoch 1 | batch 361/844 | loss 1806917.2500
+  epoch 1 | batch 362/844 | loss 1829327.2500
+  epoch 1 | batch 363/844 | loss 1680896.5000
+  epoch 1 | batch 364/844 | loss 2061221.7500
+  epoch 1 | batch 365/844 | loss 1900542.0000
+  epoch 1 | batch 366/844 | loss 2291224.5000
+  epoch 1 | batch 367/844 | loss 2382934.0000
+  epoch 1 | batch 368/844 | loss 2003173.7500
+  epoch 1 | batch 369/844 | loss 2096956.6250
+  epoch 1 | batch 370/844 | loss 2291093.5000
+  epoch 1 | batch 371/844 | loss 2023004.8750
+  epoch 1 | batch 372/844 | loss 1857252.7500
+  epoch 1 | batch 373/844 | loss 2087729.8750
+  epoch 1 | batch 374/844 | loss 1974010.5000
+  epoch 1 | batch 375/844 | loss 1866788.0000
+  epoch 1 | batch 376/844 | loss 2540107.5000
+  epoch 1 | batch 377/844 | loss 2037944.0000
+  epoch 1 | batch 378/844 | loss 2064552.6250
+  epoch 1 | batch 379/844 | loss 1905295.0000
+  epoch 1 | batch 380/844 | loss 1882981.1250
+  epoch 1 | batch 381/844 | loss 1893622.7500
+  epoch 1 | batch 382/844 | loss 2042352.5000
+  epoch 1 | batch 383/844 | loss 2169692.2500
+  epoch 1 | batch 384/844 | loss 1994494.0000
+  epoch 1 | batch 385/844 | loss 2010606.6250
+  epoch 1 | batch 386/844 | loss 1898311.0000
+  epoch 1 | batch 387/844 | loss 2120203.2500
+  epoch 1 | batch 388/844 | loss 1872180.5000
+  epoch 1 | batch 389/844 | loss 2150732.0000
+  epoch 1 | batch 390/844 | loss 2099320.7500
+  epoch 1 | batch 391/844 | loss 2200199.0000
+  epoch 1 | batch 392/844 | loss 2013645.3750
+  epoch 1 | batch 393/844 | loss 1799897.7500
+  epoch 1 | batch 394/844 | loss 1892714.0000
+  epoch 1 | batch 395/844 | loss 1915735.6250
+  epoch 1 | batch 396/844 | loss 2048261.2500
+  epoch 1 | batch 397/844 | loss 2072169.0000
+  epoch 1 | batch 398/844 | loss 2107534.5000
+  epoch 1 | batch 399/844 | loss 1889560.2500
+  epoch 1 | batch 400/844 | loss 2006753.7500
+  epoch 1 | batch 401/844 | loss 2020739.5000
+  epoch 1 | batch 402/844 | loss 1983491.1250
+  epoch 1 | batch 403/844 | loss 2358068.2500
+  epoch 1 | batch 404/844 | loss 1941834.7500
+  epoch 1 | batch 405/844 | loss 1912353.0000
+  epoch 1 | batch 406/844 | loss 1972149.7500
+  epoch 1 | batch 407/844 | loss 2055259.7500
+  epoch 1 | batch 408/844 | loss 2301998.7500
+  epoch 1 | batch 409/844 | loss 1948346.8750
+  epoch 1 | batch 410/844 | loss 1790083.0000
+  epoch 1 | batch 411/844 | loss 2097258.5000
+  epoch 1 | batch 412/844 | loss 1973995.7500
+  epoch 1 | batch 413/844 | loss 1965209.0000
+  epoch 1 | batch 414/844 | loss 2161304.0000
+  epoch 1 | batch 415/844 | loss 1939520.8750
+  epoch 1 | batch 416/844 | loss 2102265.0000
+  epoch 1 | batch 417/844 | loss 1594783.5000
+  epoch 1 | batch 418/844 | loss 2041116.7500
+  epoch 1 | batch 419/844 | loss 2021409.7500
+  epoch 1 | batch 420/844 | loss 1986552.0000
+  epoch 1 | batch 421/844 | loss 2126454.0000
+  epoch 1 | batch 422/844 | loss 1797772.2500
+  epoch 1 | batch 423/844 | loss 2219256.0000
+  epoch 1 | batch 424/844 | loss 2108395.0000
+  epoch 1 | batch 425/844 | loss 2295100.2500
+  epoch 1 | batch 426/844 | loss 2134007.7500
+  epoch 1 | batch 427/844 | loss 2079880.1250
+  epoch 1 | batch 428/844 | loss 2147426.0000
+  epoch 1 | batch 429/844 | loss 1902779.5000
+  epoch 1 | batch 430/844 | loss 2172697.0000
+  epoch 1 | batch 431/844 | loss 1910044.1250
+  epoch 1 | batch 432/844 | loss 1958986.5000
+  epoch 1 | batch 433/844 | loss 2071289.1250
+  epoch 1 | batch 434/844 | loss 2035440.5000
+  epoch 1 | batch 435/844 | loss 2060581.1250
+  epoch 1 | batch 436/844 | loss 2033729.6250
+  epoch 1 | batch 437/844 | loss 2266420.7500
+  epoch 1 | batch 438/844 | loss 2027754.5000
+  epoch 1 | batch 439/844 | loss 1770268.0000
+  epoch 1 | batch 440/844 | loss 2174564.0000
+  epoch 1 | batch 441/844 | loss 1791698.3750
+  epoch 1 | batch 442/844 | loss 1959375.5000
+  epoch 1 | batch 443/844 | loss 2057906.5000
+  epoch 1 | batch 444/844 | loss 2132441.5000
+  epoch 1 | batch 445/844 | loss 2078076.1250
+  epoch 1 | batch 446/844 | loss 2213041.0000
+  epoch 1 | batch 447/844 | loss 1839316.7500
+  epoch 1 | batch 448/844 | loss 2152727.5000
+  epoch 1 | batch 449/844 | loss 2147562.2500
+  epoch 1 | batch 450/844 | loss 1969666.3750
+  epoch 1 | batch 451/844 | loss 1955607.5000
+  epoch 1 | batch 452/844 | loss 1757565.7500
+  epoch 1 | batch 453/844 | loss 2157616.5000
+  epoch 1 | batch 454/844 | loss 2144485.5000
+  epoch 1 | batch 455/844 | loss 2005401.1250
+  epoch 1 | batch 456/844 | loss 1979546.8750
+  epoch 1 | batch 457/844 | loss 2297254.5000
+  epoch 1 | batch 458/844 | loss 2302459.0000
+  epoch 1 | batch 459/844 | loss 1984346.7500
+  epoch 1 | batch 460/844 | loss 2030697.0000
+  epoch 1 | batch 461/844 | loss 2180364.0000
+  epoch 1 | batch 462/844 | loss 2029285.0000
+  epoch 1 | batch 463/844 | loss 2272143.0000
+  epoch 1 | batch 464/844 | loss 2050322.8750
+  epoch 1 | batch 465/844 | loss 1989538.5000
+  epoch 1 | batch 466/844 | loss 1961873.5000
+  epoch 1 | batch 467/844 | loss 2170733.5000
+  epoch 1 | batch 468/844 | loss 2307868.5000
+  epoch 1 | batch 469/844 | loss 2062041.0000
+  epoch 1 | batch 470/844 | loss 2318228.0000
+  epoch 1 | batch 471/844 | loss 1932790.3750
+  epoch 1 | batch 472/844 | loss 2285121.5000
+  epoch 1 | batch 473/844 | loss 2103609.5000
+  epoch 1 | batch 474/844 | loss 2023395.0000
+  epoch 1 | batch 475/844 | loss 1975969.2500
+  epoch 1 | batch 476/844 | loss 1801791.2500
+  epoch 1 | batch 477/844 | loss 2052350.0000
+  epoch 1 | batch 478/844 | loss 2123519.5000
+  epoch 1 | batch 479/844 | loss 2147571.0000
+  epoch 1 | batch 480/844 | loss 1723850.0000
+  epoch 1 | batch 481/844 | loss 1733934.6250
+  epoch 1 | batch 482/844 | loss 1946545.5000
+  epoch 1 | batch 483/844 | loss 1834099.0000
+  epoch 1 | batch 484/844 | loss 1894739.5000
+  epoch 1 | batch 485/844 | loss 2069792.2500
+  epoch 1 | batch 486/844 | loss 2176816.5000
+  epoch 1 | batch 487/844 | loss 2024624.5000
+  epoch 1 | batch 488/844 | loss 1904579.0000
+  epoch 1 | batch 489/844 | loss 2093126.5000
+  epoch 1 | batch 490/844 | loss 1975370.6250
+  epoch 1 | batch 491/844 | loss 2150523.5000
+  epoch 1 | batch 492/844 | loss 1943847.5000
+  epoch 1 | batch 493/844 | loss 2171157.0000
+  epoch 1 | batch 494/844 | loss 2084633.0000
+  epoch 1 | batch 495/844 | loss 2094631.2500
+  epoch 1 | batch 496/844 | loss 1792650.7500
+  epoch 1 | batch 497/844 | loss 1962736.6250
+  epoch 1 | batch 498/844 | loss 2079413.2500
+  epoch 1 | batch 499/844 | loss 1966293.0000
+  epoch 1 | batch 500/844 | loss 2138917.5000
+  epoch 1 | batch 501/844 | loss 2311627.5000
+  epoch 1 | batch 502/844 | loss 2059540.7500
+  epoch 1 | batch 503/844 | loss 2044643.2500
+  epoch 1 | batch 504/844 | loss 1977711.5000
+  epoch 1 | batch 505/844 | loss 1897309.0000
+  epoch 1 | batch 506/844 | loss 2171074.2500
+  epoch 1 | batch 507/844 | loss 1716313.5000
+  epoch 1 | batch 508/844 | loss 1908610.0000
+  epoch 1 | batch 509/844 | loss 1917190.0000
+  epoch 1 | batch 510/844 | loss 1962312.8750
+  epoch 1 | batch 511/844 | loss 2048398.8750
+  epoch 1 | batch 512/844 | loss 1973454.0000
+  epoch 1 | batch 513/844 | loss 2046613.2500
+  epoch 1 | batch 514/844 | loss 2110395.5000
+  epoch 1 | batch 515/844 | loss 1842704.6250
+  epoch 1 | batch 516/844 | loss 2029104.1250
+  epoch 1 | batch 517/844 | loss 1938126.0000
+  epoch 1 | batch 518/844 | loss 1964257.1250
+  epoch 1 | batch 519/844 | loss 2156367.0000
+  epoch 1 | batch 520/844 | loss 2080754.5000
+  epoch 1 | batch 521/844 | loss 2111695.5000
+  epoch 1 | batch 522/844 | loss 2061360.5000
+  epoch 1 | batch 523/844 | loss 2136678.0000
+  epoch 1 | batch 524/844 | loss 2017465.5000
+  epoch 1 | batch 525/844 | loss 2057156.0000
+  epoch 1 | batch 526/844 | loss 2180328.5000
+  epoch 1 | batch 527/844 | loss 1937384.8750
+  epoch 1 | batch 528/844 | loss 2311516.5000
+  epoch 1 | batch 529/844 | loss 1945440.3750
+  epoch 1 | batch 530/844 | loss 1855693.0000
+  epoch 1 | batch 531/844 | loss 1862803.2500
+  epoch 1 | batch 532/844 | loss 1805507.7500
+  epoch 1 | batch 533/844 | loss 2033091.2500
+  epoch 1 | batch 534/844 | loss 1995599.6250
+  epoch 1 | batch 535/844 | loss 1877759.2500
+  epoch 1 | batch 536/844 | loss 1911305.3750
+  epoch 1 | batch 537/844 | loss 2039225.5000
+  epoch 1 | batch 538/844 | loss 2052110.5000
+  epoch 1 | batch 539/844 | loss 2179256.7500
+  epoch 1 | batch 540/844 | loss 1835034.5000
+  epoch 1 | batch 541/844 | loss 1961355.2500
+  epoch 1 | batch 542/844 | loss 1842661.5000
+  epoch 1 | batch 543/844 | loss 1907438.2500
+  epoch 1 | batch 544/844 | loss 1999348.5000
+  epoch 1 | batch 545/844 | loss 2247230.0000
+  epoch 1 | batch 546/844 | loss 2120583.5000
+  epoch 1 | batch 547/844 | loss 2138232.7500
+  epoch 1 | batch 548/844 | loss 2138743.5000
+  epoch 1 | batch 549/844 | loss 1767169.1250
+  epoch 1 | batch 550/844 | loss 2165614.5000
+  epoch 1 | batch 551/844 | loss 1982795.8750
+  epoch 1 | batch 552/844 | loss 2082390.5000
+  epoch 1 | batch 553/844 | loss 1838433.5000
+  epoch 1 | batch 554/844 | loss 1745623.1250
+  epoch 1 | batch 555/844 | loss 1901633.5000
+  epoch 1 | batch 556/844 | loss 2157029.5000
+  epoch 1 | batch 557/844 | loss 1814146.5000
+  epoch 1 | batch 558/844 | loss 2050233.2500
+  epoch 1 | batch 559/844 | loss 1871550.0000
+  epoch 1 | batch 560/844 | loss 1933604.8750
+  epoch 1 | batch 561/844 | loss 2027961.7500
+  epoch 1 | batch 562/844 | loss 2049542.2500
+  epoch 1 | batch 563/844 | loss 2182635.5000
+  epoch 1 | batch 564/844 | loss 2021881.1250
+  epoch 1 | batch 565/844 | loss 1887187.0000
+  epoch 1 | batch 566/844 | loss 1930579.2500
+  epoch 1 | batch 567/844 | loss 1813902.1250
+  epoch 1 | batch 568/844 | loss 2012058.7500
+  epoch 1 | batch 569/844 | loss 2020164.6250
+  epoch 1 | batch 570/844 | loss 1992557.0000
+  epoch 1 | batch 571/844 | loss 2093096.6250
+  epoch 1 | batch 572/844 | loss 2019808.6250
+  epoch 1 | batch 573/844 | loss 2238638.7500
+  epoch 1 | batch 574/844 | loss 2241576.5000
+  epoch 1 | batch 575/844 | loss 1991144.5000
+  epoch 1 | batch 576/844 | loss 1988123.5000
+  epoch 1 | batch 577/844 | loss 2117035.0000
+  epoch 1 | batch 578/844 | loss 1789247.7500
+  epoch 1 | batch 579/844 | loss 1843451.3750
+  epoch 1 | batch 580/844 | loss 2099857.0000
+  epoch 1 | batch 581/844 | loss 2003082.0000
+  epoch 1 | batch 582/844 | loss 1841794.0000
+  epoch 1 | batch 583/844 | loss 1975233.6250
+  epoch 1 | batch 584/844 | loss 1789719.1250
+  epoch 1 | batch 585/844 | loss 2232429.0000
+  epoch 1 | batch 586/844 | loss 2117173.0000
+  epoch 1 | batch 587/844 | loss 2065094.3750
+  epoch 1 | batch 588/844 | loss 1987085.5000
+  epoch 1 | batch 589/844 | loss 2100849.0000
+  epoch 1 | batch 590/844 | loss 1803469.8750
+  epoch 1 | batch 591/844 | loss 2089193.2500
+  epoch 1 | batch 592/844 | loss 2084658.8750
+  epoch 1 | batch 593/844 | loss 2048226.7500
+  epoch 1 | batch 594/844 | loss 1780622.2500
+  epoch 1 | batch 595/844 | loss 2128115.5000
+  epoch 1 | batch 596/844 | loss 1809025.8750
+  epoch 1 | batch 597/844 | loss 2062703.7500
+  epoch 1 | batch 598/844 | loss 1864520.6250
+  epoch 1 | batch 599/844 | loss 2066670.2500
+  epoch 1 | batch 600/844 | loss 2037360.6250
+  epoch 1 | batch 601/844 | loss 2203357.0000
+  epoch 1 | batch 602/844 | loss 1925381.3750
+  epoch 1 | batch 603/844 | loss 2070625.2500
+  epoch 1 | batch 604/844 | loss 1939187.2500
+  epoch 1 | batch 605/844 | loss 2124617.5000
+  epoch 1 | batch 606/844 | loss 2038398.5000
+  epoch 1 | batch 607/844 | loss 1861565.0000
+  epoch 1 | batch 608/844 | loss 1862354.5000
+  epoch 1 | batch 609/844 | loss 2114523.5000
+  epoch 1 | batch 610/844 | loss 2006089.3750
+  epoch 1 | batch 611/844 | loss 2054266.5000
+  epoch 1 | batch 612/844 | loss 1865385.7500
+  epoch 1 | batch 613/844 | loss 2124076.5000
+  epoch 1 | batch 614/844 | loss 2008929.0000
+  epoch 1 | batch 615/844 | loss 2291255.5000
+  epoch 1 | batch 616/844 | loss 1891167.6250
+  epoch 1 | batch 617/844 | loss 2008585.5000
+  epoch 1 | batch 618/844 | loss 1980465.5000
+  epoch 1 | batch 619/844 | loss 2045142.0000
+  epoch 1 | batch 620/844 | loss 1918239.2500
+  epoch 1 | batch 621/844 | loss 2013230.5000
+  epoch 1 | batch 622/844 | loss 2215923.0000
+  epoch 1 | batch 623/844 | loss 1962389.2500
+  epoch 1 | batch 624/844 | loss 1880401.3750
+  epoch 1 | batch 625/844 | loss 1879146.2500
+  epoch 1 | batch 626/844 | loss 2110028.0000
+  epoch 1 | batch 627/844 | loss 1860731.0000
+  epoch 1 | batch 628/844 | loss 1859158.0000
+  epoch 1 | batch 629/844 | loss 1858033.2500
+  epoch 1 | batch 630/844 | loss 2020321.7500
+  epoch 1 | batch 631/844 | loss 2052726.7500
+  epoch 1 | batch 632/844 | loss 1952488.3750
+  epoch 1 | batch 633/844 | loss 2325800.0000
+  epoch 1 | batch 634/844 | loss 1968894.7500
+  epoch 1 | batch 635/844 | loss 2118990.5000
+  epoch 1 | batch 636/844 | loss 1963349.6250
+  epoch 1 | batch 637/844 | loss 1955071.7500
+  epoch 1 | batch 638/844 | loss 2039534.0000
+  epoch 1 | batch 639/844 | loss 1966009.7500
+  epoch 1 | batch 640/844 | loss 1975935.0000
+  epoch 1 | batch 641/844 | loss 2073058.0000
+  epoch 1 | batch 642/844 | loss 2069729.8750
+  epoch 1 | batch 643/844 | loss 1989516.0000
+  epoch 1 | batch 644/844 | loss 2217783.5000
+  epoch 1 | batch 645/844 | loss 2032521.5000
+  epoch 1 | batch 646/844 | loss 1760780.7500
+  epoch 1 | batch 647/844 | loss 1766677.7500
+  epoch 1 | batch 648/844 | loss 1815410.7500
+  epoch 1 | batch 649/844 | loss 2094422.1250
+  epoch 1 | batch 650/844 | loss 2048289.3750
+  epoch 1 | batch 651/844 | loss 2293300.7500
+  epoch 1 | batch 652/844 | loss 2104457.2500
+  epoch 1 | batch 653/844 | loss 1932920.0000
+  epoch 1 | batch 654/844 | loss 1917640.7500
+  epoch 1 | batch 655/844 | loss 2036819.7500
+  epoch 1 | batch 656/844 | loss 2010914.0000
+  epoch 1 | batch 657/844 | loss 1850955.3750
+  epoch 1 | batch 658/844 | loss 1844637.2500
+  epoch 1 | batch 659/844 | loss 2055698.0000
+  epoch 1 | batch 660/844 | loss 2114399.2500
+  epoch 1 | batch 661/844 | loss 2083322.5000
+  epoch 1 | batch 662/844 | loss 2154293.2500
+  epoch 1 | batch 663/844 | loss 2004135.5000
+  epoch 1 | batch 664/844 | loss 2220218.0000
+  epoch 1 | batch 665/844 | loss 1955152.2500
+  epoch 1 | batch 666/844 | loss 1886384.5000
+  epoch 1 | batch 667/844 | loss 2261411.5000
+  epoch 1 | batch 668/844 | loss 1910578.5000
+  epoch 1 | batch 669/844 | loss 2241544.2500
+  epoch 1 | batch 670/844 | loss 1878053.7500
+  epoch 1 | batch 671/844 | loss 1935951.6250
+  epoch 1 | batch 672/844 | loss 2149561.0000
+  epoch 1 | batch 673/844 | loss 2137325.2500
+  epoch 1 | batch 674/844 | loss 2010028.2500
+  epoch 1 | batch 675/844 | loss 2177480.0000
+  epoch 1 | batch 676/844 | loss 2014493.5000
+  epoch 1 | batch 677/844 | loss 2049364.2500
+  epoch 1 | batch 678/844 | loss 1891755.5000
+  epoch 1 | batch 679/844 | loss 2158240.0000
+  epoch 1 | batch 680/844 | loss 1857828.5000
+  epoch 1 | batch 681/844 | loss 2058210.2500
+  epoch 1 | batch 682/844 | loss 2013484.5000
+  epoch 1 | batch 683/844 | loss 1906792.0000
+  epoch 1 | batch 684/844 | loss 2132262.0000
+  epoch 1 | batch 685/844 | loss 2039337.3750
+  epoch 1 | batch 686/844 | loss 1718331.7500
+  epoch 1 | batch 687/844 | loss 2111346.7500
+  epoch 1 | batch 688/844 | loss 2193474.5000
+  epoch 1 | batch 689/844 | loss 2053334.1250
+  epoch 1 | batch 690/844 | loss 2111617.0000
+  epoch 1 | batch 691/844 | loss 2158692.0000
+  epoch 1 | batch 692/844 | loss 1917506.6250
+  epoch 1 | batch 693/844 | loss 1959371.7500
+  epoch 1 | batch 694/844 | loss 2128904.5000
+  epoch 1 | batch 695/844 | loss 2068337.7500
+  epoch 1 | batch 696/844 | loss 1800805.2500
+  epoch 1 | batch 697/844 | loss 2094049.8750
+  epoch 1 | batch 698/844 | loss 2224982.0000
+  epoch 1 | batch 699/844 | loss 1832161.0000
+  epoch 1 | batch 700/844 | loss 1949334.5000
+  epoch 1 | batch 701/844 | loss 1902098.3750
+  epoch 1 | batch 702/844 | loss 1798420.8750
+  epoch 1 | batch 703/844 | loss 2178968.7500
+  epoch 1 | batch 704/844 | loss 2027589.5000
+  epoch 1 | batch 705/844 | loss 1839013.0000
+  epoch 1 | batch 706/844 | loss 1983483.3750
+  epoch 1 | batch 707/844 | loss 1764709.8750
+  epoch 1 | batch 708/844 | loss 1929308.8750
+  epoch 1 | batch 709/844 | loss 2024422.7500
+  epoch 1 | batch 710/844 | loss 1855020.6250
+  epoch 1 | batch 711/844 | loss 2175345.5000
+  epoch 1 | batch 712/844 | loss 2170541.5000
+  epoch 1 | batch 713/844 | loss 2006641.7500
+  epoch 1 | batch 714/844 | loss 2163868.7500
+  epoch 1 | batch 715/844 | loss 1846293.3750
+  epoch 1 | batch 716/844 | loss 1807598.7500
+  epoch 1 | batch 717/844 | loss 2103923.0000
+  epoch 1 | batch 718/844 | loss 2016051.5000
+  epoch 1 | batch 719/844 | loss 1996823.0000
+  epoch 1 | batch 720/844 | loss 2285264.5000
+  epoch 1 | batch 721/844 | loss 2176005.5000
+  epoch 1 | batch 722/844 | loss 2116709.0000
+  epoch 1 | batch 723/844 | loss 2183845.5000
+  epoch 1 | batch 724/844 | loss 2109456.0000
+  epoch 1 | batch 725/844 | loss 1821604.7500
+  epoch 1 | batch 726/844 | loss 2118301.5000
+  epoch 1 | batch 727/844 | loss 1956483.2500
+  epoch 1 | batch 728/844 | loss 2246971.2500
+  epoch 1 | batch 729/844 | loss 1999272.5000
+  epoch 1 | batch 730/844 | loss 1841425.0000
+  epoch 1 | batch 731/844 | loss 1879979.2500
+  epoch 1 | batch 732/844 | loss 1852313.2500
+  epoch 1 | batch 733/844 | loss 2234775.7500
+  epoch 1 | batch 734/844 | loss 2281310.2500
+  epoch 1 | batch 735/844 | loss 2222217.5000
+  epoch 1 | batch 736/844 | loss 1856922.5000
+  epoch 1 | batch 737/844 | loss 1925001.0000
+  epoch 1 | batch 738/844 | loss 2227128.0000
+  epoch 1 | batch 739/844 | loss 1822098.3750
+  epoch 1 | batch 740/844 | loss 1955909.0000
+  epoch 1 | batch 741/844 | loss 1893285.7500
+  epoch 1 | batch 742/844 | loss 1859305.0000
+  epoch 1 | batch 743/844 | loss 1961587.7500
+  epoch 1 | batch 744/844 | loss 1898437.0000
+  epoch 1 | batch 745/844 | loss 2101770.0000
+  epoch 1 | batch 746/844 | loss 2140780.0000
+  epoch 1 | batch 747/844 | loss 1953857.5000
+  epoch 1 | batch 748/844 | loss 1630117.7500
+  epoch 1 | batch 749/844 | loss 2065364.8750
+  epoch 1 | batch 750/844 | loss 2247257.7500
+  epoch 1 | batch 751/844 | loss 1982178.2500
+  epoch 1 | batch 752/844 | loss 1711831.7500
+  epoch 1 | batch 753/844 | loss 1812600.3750
+  epoch 1 | batch 754/844 | loss 1947217.5000
+  epoch 1 | batch 755/844 | loss 2139450.2500
+  epoch 1 | batch 756/844 | loss 2104745.0000
+  epoch 1 | batch 757/844 | loss 2083443.5000
+  epoch 1 | batch 758/844 | loss 2128535.0000
+  epoch 1 | batch 759/844 | loss 2075317.7500
+  epoch 1 | batch 760/844 | loss 2137873.5000
+  epoch 1 | batch 761/844 | loss 1941436.2500
+  epoch 1 | batch 762/844 | loss 2084353.0000
+  epoch 1 | batch 763/844 | loss 2148544.0000
+  epoch 1 | batch 764/844 | loss 2089467.1250
+  epoch 1 | batch 765/844 | loss 2168668.5000
+  epoch 1 | batch 766/844 | loss 2208227.5000
+  epoch 1 | batch 767/844 | loss 1961699.6250
+  epoch 1 | batch 768/844 | loss 1957561.5000
+  epoch 1 | batch 769/844 | loss 1932552.5000
+  epoch 1 | batch 770/844 | loss 1851299.6250
+  epoch 1 | batch 771/844 | loss 2039041.2500
+  epoch 1 | batch 772/844 | loss 2111063.0000
+  epoch 1 | batch 773/844 | loss 2157494.2500
+  epoch 1 | batch 774/844 | loss 2043518.2500
+  epoch 1 | batch 775/844 | loss 2087631.5000
+  epoch 1 | batch 776/844 | loss 2257081.0000
+  epoch 1 | batch 777/844 | loss 2139891.5000
+  epoch 1 | batch 778/844 | loss 1939023.3750
+  epoch 1 | batch 779/844 | loss 2132756.2500
+  epoch 1 | batch 780/844 | loss 2038684.0000
+  epoch 1 | batch 781/844 | loss 2122649.5000
+  epoch 1 | batch 782/844 | loss 1983683.6250
+  epoch 1 | batch 783/844 | loss 1565894.5000
+  epoch 1 | batch 784/844 | loss 2107640.0000
+  epoch 1 | batch 785/844 | loss 2019204.3750
+  epoch 1 | batch 786/844 | loss 1983983.7500
+  epoch 1 | batch 787/844 | loss 2448385.0000
+  epoch 1 | batch 788/844 | loss 1973258.7500
+  epoch 1 | batch 789/844 | loss 2107446.0000
+  epoch 1 | batch 790/844 | loss 1884728.5000
+  epoch 1 | batch 791/844 | loss 1976297.0000
+  epoch 1 | batch 792/844 | loss 1970693.2500
+  epoch 1 | batch 793/844 | loss 2006319.5000
+  epoch 1 | batch 794/844 | loss 2326204.0000
+  epoch 1 | batch 795/844 | loss 2181625.5000
+  epoch 1 | batch 796/844 | loss 1852696.8750
+  epoch 1 | batch 797/844 | loss 2182569.5000
+  epoch 1 | batch 798/844 | loss 1796833.2500
+  epoch 1 | batch 799/844 | loss 2319750.5000
+  epoch 1 | batch 800/844 | loss 1864573.0000
+  epoch 1 | batch 801/844 | loss 1898736.7500
+  epoch 1 | batch 802/844 | loss 2008729.7500
+  epoch 1 | batch 803/844 | loss 2185023.0000
+  epoch 1 | batch 804/844 | loss 1755755.8750
+  epoch 1 | batch 805/844 | loss 1991420.5000
+  epoch 1 | batch 806/844 | loss 1883914.0000
+  epoch 1 | batch 807/844 | loss 1860952.0000
+  epoch 1 | batch 808/844 | loss 1917962.2500
+  epoch 1 | batch 809/844 | loss 2209149.5000
+  epoch 1 | batch 810/844 | loss 2182164.0000
+  epoch 1 | batch 811/844 | loss 2055959.5000
+  epoch 1 | batch 812/844 | loss 2049822.5000
+  epoch 1 | batch 813/844 | loss 2201823.5000
+  epoch 1 | batch 814/844 | loss 1817337.1250
+  epoch 1 | batch 815/844 | loss 1980536.5000
+  epoch 1 | batch 816/844 | loss 1922604.3750
+  epoch 1 | batch 817/844 | loss 1828220.3750
+  epoch 1 | batch 818/844 | loss 2217416.0000
+  epoch 1 | batch 819/844 | loss 1896124.7500
+  epoch 1 | batch 820/844 | loss 1895205.8750
+  epoch 1 | batch 821/844 | loss 2096824.0000
+  epoch 1 | batch 822/844 | loss 2250734.7500
+  epoch 1 | batch 823/844 | loss 1895480.3750
+  epoch 1 | batch 824/844 | loss 2086163.2500
+  epoch 1 | batch 825/844 | loss 1959842.2500
+  epoch 1 | batch 826/844 | loss 1875338.3750
+  epoch 1 | batch 827/844 | loss 2024026.0000
+  epoch 1 | batch 828/844 | loss 2146867.2500
+  epoch 1 | batch 829/844 | loss 1902403.8750
+  epoch 1 | batch 830/844 | loss 1811547.2500
+  epoch 1 | batch 831/844 | loss 1854507.6250
+  epoch 1 | batch 832/844 | loss 1983328.2500
+  epoch 1 | batch 833/844 | loss 2111516.2500
+  epoch 1 | batch 834/844 | loss 1817474.1250
+  epoch 1 | batch 835/844 | loss 1758915.3750
+  epoch 1 | batch 836/844 | loss 2140079.7500
+  epoch 1 | batch 837/844 | loss 2039487.5000
+  epoch 1 | batch 838/844 | loss 2047626.5000
+  epoch 1 | batch 839/844 | loss 1936544.2500
+  epoch 1 | batch 840/844 | loss 2130844.0000
+  epoch 1 | batch 841/844 | loss 2001179.2500
+  epoch 1 | batch 842/844 | loss 2129323.5000
+  epoch 1 | batch 843/844 | loss 1832007.2500
+0001 | loss 1714941250.00 | recon 1714941250.00 | kl 429634008.27 | sin 0.00 | beta 0.000 | sin_w 0.0000
+  epoch 2 | batch 0/844 | loss 6079575.5000
+  epoch 2 | batch 50/844 | loss 1951419.2500
+  epoch 2 | batch 100/844 | loss 2060210.3750
+  epoch 2 | batch 150/844 | loss 2112210.0000
+  epoch 2 | batch 200/844 | loss 2125723.7500
