@@ -1,0 +1,59 @@
+# Versioned components — same as exp 44; only curriculum sampler final ratio changes.
+# Full retrain required: curriculum change affects training dynamics.
+architecture: "06_conv_vae"
+hmm:          "03_gaussian_hmm"   # v03: standard Gaussian HMM, no rolling-mean smoothing
+cnv:          "18_genome_cnv_caller"  # v18: CRR rescue elevated above sanity check
+evaluation:   "05_pf9_evaluation"    # v05: masked CNV rate diagnostic
+
+# Data — same 400bp core genome as exp 44
+store_path: "../../../data/inputs/Pf9-53973-samples-400bp-core-npy"
+out_dir:    "../../../data/results/45_06convvae_beta4_cnvdrop05_18cnvcaller"
+normalise:  true
+
+# Gene annotation — unchanged
+gff_path: "../../../assets/PlasmoDB-54_Pfalciparum3D7.gff"
+
+# Model — same as exp 44; full retrain required for curriculum change.
+latent_dim:    10
+batch_size:    64
+epochs:        100
+lr:            1.0e-4
+weight_decay:  1.0e-5
+max_beta:      4.0
+warmup_epochs: 0
+patience:      20
+
+# Curriculum-weighted sampler — final CNV ratio lowered 0.10 → 0.05.
+# In exp 44, 177/178 remaining GCH1 FNs still had frac=0: the HMM gave no CN>=2 coverage
+# despite raw CRR p50=1.44. This means the VAE still reconstructs these amplified profiles
+# well enough (low reconstruction residual) that the HMM sees no signal.
+# At 10%, the VAE learned a cleaner boundary for ~128 FNs but a subpopulation of
+# highly-prevalent African GCH1 amplifications still bleeds through as near-normal.
+# Setting final ratio = initial ratio (both 0.05) eliminates the curriculum ramp:
+# the VAE sees 5% CNV profiles throughout all 100 epochs, maximising anomaly contrast.
+cnv_downsample_ratio_initial:  0.05
+cnv_downsample_ratio_final:    0.05   # lowered from 0.10; flat 5% curriculum throughout
+cnv_downsample_warmup_epochs:  80
+
+# Sin loss — removed (same as exp 43/44)
+sin_loss_max_weight:    0.0
+sin_loss_warmup_epochs: 0
+
+# HMM segmentation — unchanged from exp 44
+hmm_n_states:          6
+hmm_self_transition:   0.99
+hmm_low_cov_threshold: 10
+hmm_n_jobs:            -1
+
+# CNV calling — unchanged from exp 44
+cnv_min_cn1_proportion:         0.55
+cnv_min_confidence:             0.25
+cnv_min_gene_coverage_fraction: 0.50
+cnv_flank_padding:            100000
+cnv_max_transitions:            ~      # null: noise filter remains disabled
+cnv_crr_rescue_threshold:       1.55   # global threshold; unchanged
+
+# Evaluation — unchanged
+pf9_gt_path:   "../../../assets/20260313_full_cnv_data_pf9.tsv"
+pf9_meta_path: "../../../assets/Pf_9_samples_20260227.txt"
+eval_min_group_n: 10

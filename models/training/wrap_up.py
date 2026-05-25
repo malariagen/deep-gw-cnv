@@ -50,11 +50,15 @@ def run_inference(model, dataset, device, out_dir, batch_size=128):
     all_mu    = []
     all_recon = []
 
+    n_bins_raw = dataset.n_bins_raw
+
     with torch.no_grad():
         for batch in dl:
             x     = batch.to(device)
             mu, _ = model.enc(x)
-            recon = model.dec(mu)                       # deterministic: use mu
+            # Trim to n_bins_raw: FC VAE decoder outputs n_bins_padded; conv VAE
+            # already matches, so the slice is a no-op for older architectures.
+            recon = model.dec(mu)[:, :n_bins_raw]       # deterministic: use mu
             recon_denorm = torch.pow(2, recon) - 1      # inverse of log2(count+1)
             all_mu.append(mu.cpu().numpy())
             all_recon.append(recon_denorm.cpu().numpy())

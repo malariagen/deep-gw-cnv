@@ -1,48 +1,21 @@
 Hi Chiyun,
 
-Experiment 43 results summary:
-- 18_genome_cnv_caller eliminated the masked CNV pool: masked rate dropped from 12–33% to
-  ≈0% across all genes; total FNR converged to evaluable FNR (CRT=0.02, GCH1=0.15, MDR1=0.00,
-  PM2_PM3=0.02).
-- β=4 improved HMM stability substantially (transitions p50: 306 → 127, 57% further reduction)
-  with no posterior collapse (callability 0.995). But β=4 did NOT improve CRR contrast for
-  GCH1 FNs: p50 moved 1.43 → 1.42, essentially unchanged.
-- 306 GCH1 FNs remain (FNR=0.15): all have frac=0 (HMM gives no CN>=2 coverage) and CRR p50=1.42
-  — below the 1.55 rescue threshold and unreachable by parameter tuning alone.
+Experiment 46 training completed successfully (100 epochs, checkpoint.pth saved). The HMM crashed
+with a shape mismatch:
+  ValueError: operands could not be broadcast together with shapes (51986,) (52000,)
 
-My diagnosis:
-The 306 GCH1 FNs are a training data composition problem. GCH1 amplification is extremely
-common in African Pf9 populations (AF-E FNR=0.39, AF-W FNR=0.34), which dominate the dataset.
-With cnv_downsample_ratio_final=0.30, the VAE still sees enough amplified GCH1 profiles in
-late training that it learns elevated GCH1 read counts as near-normal — keeping reconstruction
-residual low and the HMM uninformed. β=4 added KL regularisation but cannot fix the fact that
-the model has been shown too many amplified profiles: the normal-vs-amplified boundary remains
-blurry for GCH1. Lowering the steady-state CNV proportion forces the model to treat amplification
-as genuinely anomalous.
+Root cause: wrap_up.py called model.dec(mu) directly, bypassing the [:, :self.n_bins] trim in
+FCVAE.forward(). Reconstructions were saved at padded size (52000) instead of actual size (51986).
 
-Proposed experiment 44: lower cnv_downsample_ratio_final 0.30 → 0.10
-Changes from exp 43:
-- cnv_downsample_ratio_final: 0.30 → 0.10 (full retrain required)
-  At 10%, amplified profiles are rare enough in late training that the VAE reconstructs them
-  poorly, raising the reconstruction residual and giving the HMM a signal to segment them CN>=2.
-  All other parameters unchanged (β=4, 18_genome_cnv_caller, rescue threshold 1.55).
+Fixes applied:
+- training/wrap_up.py: trim decoder output to dataset.n_bins_raw before saving reconstructions.npy
+- models/train.py: use checkpoint.pth (not reconstructions.npy) as the "training done" sentinel,
+  so a missing/deleted reconstructions.npy won't trigger a full retrain
+- models/experiments/46/run.sh: now calls wrap_up.py directly, skipping training entirely
 
-What I expect:
-GCH1 frac=0 FNs should gain non-zero frac as the HMM starts seeing real reconstruction residual.
-If enough cross the 0.50 gene-coverage threshold, GCH1 FNR could drop toward 0.05–0.10.
-The main risk is that 10% is too low and the VAE becomes noisy for all samples, raising
-transitions p50 back above 200+. Key diagnostic: if transitions p50 climbs above 250 without
-a corresponding GCH1 FNR improvement, the ratio is too aggressive (next step: 0.15 or 0.20).
+The bad reconstructions.npy has been deleted. The checkpoint is valid. When you AUTHORISE, wrap_up.py
+will re-run inference (~10 min), then HMM + CNV calling + evaluation.
 
-What we could do instead:
-1. Intermediate ratio (0.15 or 0.20): more conservative step between 0.30 and 0.10; safer but
-   likely insufficient if African GCH1 prevalence is ~40-60% (same composition problem persists).
-2. Exclude known-CNV samples from the normal training pool entirely: train only on samples called
-   normal in a prior experiment, so the VAE never sees amplified profiles as normal. Harder to
-   implement but addresses the root cause more directly.
-
-Run time estimate: ~7–8 hours (VAE training ~5–6h + HMM ~2h + CNV calling ~30 min + evaluation ~5 min).
-
-Reply AUTHORISE to run this on the Mac mini, or reply with feedback and I'll revise the proposal.
+Reply AUTHORISE to resume experiment 46, or reply with feedback and I'll revise.
 
 Claude

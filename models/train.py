@@ -207,19 +207,25 @@ def main():
         if os.path.exists(checkpoint_path):
             model.load_state_dict(torch.load(checkpoint_path, map_location=device, weights_only=True))
     else:
-        train_vae(
-            model, dl, optimiser,
-            epochs                 = cfg["epochs"],
-            max_beta               = cfg["max_beta"],
-            warmup_epochs          = cfg["warmup_epochs"],
-            patience               = cfg["patience"],
-            device                 = device,
-            model_save_path        = checkpoint_path,
-            log_path               = log_path,
-            sin_loss_max_weight    = cfg.get("sin_loss_max_weight", 0.0),
-            sin_loss_warmup_epochs = cfg.get("sin_loss_warmup_epochs", 0),
-            make_loader_fn         = make_loader_fn,
-        )
+        # Only train if no checkpoint exists. If the checkpoint is present but
+        # reconstructions.npy is missing (e.g. deleted to fix a bad file), skip
+        # straight to inference rather than retraining from scratch.
+        if not os.path.exists(checkpoint_path):
+            train_vae(
+                model, dl, optimiser,
+                epochs                 = cfg["epochs"],
+                max_beta               = cfg["max_beta"],
+                warmup_epochs          = cfg["warmup_epochs"],
+                patience               = cfg["patience"],
+                device                 = device,
+                model_save_path        = checkpoint_path,
+                log_path               = log_path,
+                sin_loss_max_weight    = cfg.get("sin_loss_max_weight", 0.0),
+                sin_loss_warmup_epochs = cfg.get("sin_loss_warmup_epochs", 0),
+                make_loader_fn         = make_loader_fn,
+            )
+        else:
+            print("Skipping training: checkpoint.pth already exists.", flush=True)
 
         if os.path.exists(checkpoint_path):
             model.load_state_dict(torch.load(checkpoint_path, map_location=device, weights_only=True))
